@@ -26,7 +26,7 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "DEPOSIT",
+      "transactionType" : "POS",
       "version" : ""
     }
   inactive: false
@@ -34,7 +34,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true'
 cleanup: []
-severity: High
+severity: Medium
 category: ABAC_Level1
 tags:
 - V1

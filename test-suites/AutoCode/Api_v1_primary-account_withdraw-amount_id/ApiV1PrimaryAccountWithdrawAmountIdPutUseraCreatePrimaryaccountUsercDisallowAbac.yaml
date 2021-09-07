@@ -20,7 +20,7 @@ testCases:
     {
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
-      "accountType" : "CURRENT",
+      "accountType" : "SAVING",
       "createdBy" : "",
       "createdDate" : "",
       "id" : "{{@PrimaryAccountCreateUserAInitAbac_Response.requestId}}",
@@ -36,7 +36,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1PrimaryAccountPrimaryAccountIdDeletePrimaryaccountAbstractAbac
-severity: High
+severity: Medium
 category: ABAC_Level1
 tags:
 - V1

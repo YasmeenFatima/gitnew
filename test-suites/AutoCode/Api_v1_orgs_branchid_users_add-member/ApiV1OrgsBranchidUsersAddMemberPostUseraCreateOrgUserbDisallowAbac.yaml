@@ -28,7 +28,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgId" : "{{@Random}}",
-      "orgRole" : "ENTERPRISE_ADMIN",
+      "orgRole" : "BANK_MANAGER",
       "password" : "{{@PassAlphaNumSpl}}",
       "username" : "{{@Faker.name.username}}",
       "version" : ""
@@ -40,7 +40,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgAbstractAbac
-severity: High
+severity: Medium
 category: ABAC_Level1
 tags:
 - V1
