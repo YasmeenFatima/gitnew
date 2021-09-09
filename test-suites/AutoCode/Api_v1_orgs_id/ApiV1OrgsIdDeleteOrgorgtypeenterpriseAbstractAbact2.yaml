@@ -18,7 +18,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 200'
 cleanup: []
-severity: High
+severity: Medium
 category: ABAC_Level2
 tags:
 - V1

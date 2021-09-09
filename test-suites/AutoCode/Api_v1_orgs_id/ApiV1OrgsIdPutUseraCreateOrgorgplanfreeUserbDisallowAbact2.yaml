@@ -40,7 +40,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgorgplanfreeAbstractAbact2
-severity: High
+severity: Medium
 category: ABAC_Level2
 tags:
 - V1
