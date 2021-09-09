@@ -36,7 +36,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1PrimaryAccountPrimaryAccountIdDeletePrimaryaccountaccounttypesavingAbstractAbact2
-severity: Medium
+severity: High
 category: ABAC_Level2
 tags:
 - V1

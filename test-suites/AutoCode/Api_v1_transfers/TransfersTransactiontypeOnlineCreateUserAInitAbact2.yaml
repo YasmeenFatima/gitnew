@@ -34,7 +34,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true'
 cleanup: []
-severity: Medium
+severity: High
 category: ABAC_Level2
 tags:
 - V1
