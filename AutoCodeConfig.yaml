@@ -48,7 +48,7 @@ generators:
   - "Security Misconfiguration"
   - "Non-Intrusive"
   - "[2020 CWE TOP 24] CWE - 306"
-  severity: "Critical"
+  severity: "Medium"
   database: null
   inactive: false
   matches:
@@ -68,7 +68,738 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: null
+  payloads:
+  - id: "8a7481687c254b23017c25e27bf84444"
+    createdBy: null
+    createdDate: 1632723172344
+    modifiedBy: null
+    modifiedDate: 1632723172344
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/branches"
+    payload: "{\n  \"access\" : \"{{@Random}}\",\n  \"atmAtBranch\" : \"{{@Random}}\"\
+      ,\n  \"branchMediatedServiceName\" : \"{{@Random}}\",\n  \"branchName\" : \"\
+      {{@Random}}\",\n  \"branchType\" : \"{{@Random}}\",\n  \"createdBy\" : \"\"\
+      ,\n  \"createdDate\" : \"\",\n  \"customerSegment\" : \"{{@Random}}\",\n  \"\
+      faxNumber\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c2b446c"
+    createdBy: null
+    createdDate: 1632723172395
+    modifiedBy: null
+    modifiedDate: 1632723172395
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/primary-account/primary-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27be84438"
+    createdBy: null
+    createdDate: 1632723172328
+    modifiedBy: null
+    modifiedDate: 1632723172328
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/bank-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27bec443b"
+    createdBy: null
+    createdDate: 1632723172332
+    modifiedBy: null
+    modifiedDate: 1632723172332
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/bank-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27bf1443e"
+    createdBy: null
+    createdDate: 1632723172337
+    modifiedBy: null
+    modifiedDate: 1632723172337
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/bank-account/deposit-amount"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27bf44441"
+    createdBy: null
+    createdDate: 1632723172340
+    modifiedBy: null
+    modifiedDate: 1632723172340
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/bank-account/withdraw-amount"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27bfc4448"
+    createdBy: null
+    createdDate: 1632723172348
+    modifiedBy: null
+    modifiedDate: 1632723172348
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/branches/update"
+    payload: "{\n  \"access\" : \"{{@Random}}\",\n  \"atmAtBranch\" : \"{{@Random}}\"\
+      ,\n  \"branchMediatedServiceName\" : \"{{@Random}}\",\n  \"branchName\" : \"\
+      {{@Random}}\",\n  \"branchType\" : \"{{@Random}}\",\n  \"createdBy\" : \"\"\
+      ,\n  \"createdDate\" : \"\",\n  \"customerSegment\" : \"{{@Random}}\",\n  \"\
+      faxNumber\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27bff444b"
+    createdBy: null
+    createdDate: 1632723172351
+    modifiedBy: null
+    modifiedDate: 1632723172351
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/issues"
+    payload: "{\n  \"assertions\" : \"{{@Random}}\",\n  \"assignedTo\" : \"{{@Random}}\"\
+      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
+      {{@Random}}\",\n  \"endpoint\" : \"{{@Random}}\",\n  \"env\" : \"{{@Random}}\"\
+      ,\n  \"failedAssertions\" : \"{{@Random}}\",\n  \"headers\" : [ \"{{@Random}}\"\
+      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Random}}\"\
+      ,\n  \"issueStatus\" : \"OPEN\",\n  \"issueType\" : \"AUTOMATIC\",\n  \"method\"\
+      \ : \"TRACE\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
+      \ : \"{{@Random}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
+      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
+      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Random}}\",\n\
+      \      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Random}}\",\n    \"\
+      version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Random}}\",\n  \"responseBody\"\
+      \ : \"{{@Random}}\",\n  \"responseHeaders\" : \"{{@Random}}\",\n  \"result\"\
+      \ : \"{{@Random}}\",\n  \"statusCode\" : \"{{@Random}}\",\n  \"tags\" : [ \"\
+      {{@Random}}\" ],\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c1b445d"
+    createdBy: null
+    createdDate: 1632723172379
+    modifiedBy: null
+    modifiedDate: 1632723172379
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/orgs/{branchId}/users/{userId}"
+    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\
+      \",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" :\
+      \ \"\",\n  \"org\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\"\
+      ,\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\"\
+      ,\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\",\n    \"version\"\
+      \ : \"\"\n  },\n  \"orgRole\" : \"BANK_ACCOUNTANT\",\n  \"status\" : \"REMOVED\"\
+      ,\n  \"users\" : {\n    \"company\" : \"{{@Faker.company.name}}\",\n    \"createdBy\"\
+      \ : \"\",\n    \"createdDate\" : \"\",\n    \"email\" : \"{{@Faker.internet.emailAddress}}\"\
+      ,\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"jobTitle\" : \"{{@Faker.job.title}}\"\
+      ,\n    \"location\" : \"{{@Random}}\",\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Random}}\",\n    \"username\" : \"{{@Faker.name.username}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c03444e"
+    createdBy: null
+    createdDate: 1632723172355
+    modifiedBy: null
+    modifiedDate: 1632723172355
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/issues"
+    payload: "{\n  \"assertions\" : \"{{@Random}}\",\n  \"assignedTo\" : \"{{@Random}}\"\
+      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
+      {{@Random}}\",\n  \"endpoint\" : \"{{@Random}}\",\n  \"env\" : \"{{@Random}}\"\
+      ,\n  \"failedAssertions\" : \"{{@Random}}\",\n  \"headers\" : [ \"{{@Random}}\"\
+      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Random}}\"\
+      ,\n  \"issueStatus\" : \"OPEN\",\n  \"issueType\" : \"AUTOMATIC\",\n  \"method\"\
+      \ : \"TRACE\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
+      \ : \"{{@Random}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
+      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
+      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Random}}\",\n\
+      \      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Random}}\",\n    \"\
+      version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Random}}\",\n  \"responseBody\"\
+      \ : \"{{@Random}}\",\n  \"responseHeaders\" : \"{{@Random}}\",\n  \"result\"\
+      \ : \"{{@Random}}\",\n  \"statusCode\" : \"{{@Random}}\",\n  \"tags\" : [ \"\
+      {{@Random}}\" ],\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c074451"
+    createdBy: null
+    createdDate: 1632723172359
+    modifiedBy: null
+    modifiedDate: 1632723172359
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/issues/ui"
+    payload: "{\n  \"assertions\" : \"{{@Random}}\",\n  \"assignedTo\" : \"{{@Random}}\"\
+      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
+      {{@Random}}\",\n  \"endpoint\" : \"{{@Random}}\",\n  \"env\" : \"{{@Random}}\"\
+      ,\n  \"failedAssertions\" : \"{{@Random}}\",\n  \"headers\" : [ \"{{@Random}}\"\
+      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Random}}\"\
+      ,\n  \"issueStatus\" : \"OPEN\",\n  \"issueType\" : \"AUTOMATIC\",\n  \"method\"\
+      \ : \"TRACE\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
+      \ : \"{{@Random}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
+      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
+      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Random}}\",\n\
+      \      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Random}}\",\n    \"\
+      version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Random}}\",\n  \"responseBody\"\
+      \ : \"{{@Random}}\",\n  \"responseHeaders\" : \"{{@Random}}\",\n  \"result\"\
+      \ : \"{{@Random}}\",\n  \"statusCode\" : \"{{@Random}}\",\n  \"tags\" : [ \"\
+      {{@Random}}\" ],\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c0c4454"
+    createdBy: null
+    createdDate: 1632723172364
+    modifiedBy: null
+    modifiedDate: 1632723172364
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/issues/ui"
+    payload: "{\n  \"assertions\" : \"{{@Random}}\",\n  \"assignedTo\" : \"{{@Random}}\"\
+      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
+      {{@Random}}\",\n  \"endpoint\" : \"{{@Random}}\",\n  \"env\" : \"{{@Random}}\"\
+      ,\n  \"failedAssertions\" : \"{{@Random}}\",\n  \"headers\" : [ \"{{@Random}}\"\
+      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Random}}\"\
+      ,\n  \"issueStatus\" : \"OPEN\",\n  \"issueType\" : \"AUTOMATIC\",\n  \"method\"\
+      \ : \"TRACE\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
+      \ : \"{{@Random}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
+      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
+      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Random}}\",\n\
+      \      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Random}}\",\n    \"\
+      version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Random}}\",\n  \"responseBody\"\
+      \ : \"{{@Random}}\",\n  \"responseHeaders\" : \"{{@Random}}\",\n  \"result\"\
+      \ : \"{{@Random}}\",\n  \"statusCode\" : \"{{@Random}}\",\n  \"tags\" : [ \"\
+      {{@Random}}\" ],\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c134457"
+    createdBy: null
+    createdDate: 1632723172371
+    modifiedBy: null
+    modifiedDate: 1632723172371
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/orgs"
+    payload: "{\n  \"billingEmail\" : \"{{@Faker.internet.emailAddress}}\",\n  \"\
+      company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\"\
+      \ : \"\",\n  \"description\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"location\" : \"{{@Random}}\",\n  \"modifiedBy\" : \"\",\n  \"\
+      modifiedDate\" : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"orgPlan\" : \"PRO\"\
+      ,\n  \"orgType\" : \"TEAM\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c17445a"
+    createdBy: null
+    createdDate: 1632723172375
+    modifiedBy: null
+    modifiedDate: 1632723172375
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/orgs/{branchId}/users/add-member"
+    payload: "{\n  \"confirmPassword\" : \"{{@Random}}\",\n  \"createdBy\" : \"\"\
+      ,\n  \"createdDate\" : \"\",\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
+      ,\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"\
+      modifiedDate\" : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"orgId\" : \"{{@Random}}\"\
+      ,\n  \"orgRole\" : \"READ\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\",\n \
+      \ \"username\" : \"{{@Faker.name.username}}\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c1e4460"
+    createdBy: null
+    createdDate: 1632723172382
+    modifiedBy: null
+    modifiedDate: 1632723172382
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/orgs/{branchId}/users/{userId}/reset-password"
+    payload: "{\n  \"confirmPassword\" : \"{{@Random}}\",\n  \"createdBy\" : \"\"\
+      ,\n  \"createdDate\" : \"\",\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
+      ,\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"\
+      modifiedDate\" : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"orgId\" : \"{{@Random}}\"\
+      ,\n  \"orgRole\" : \"READ\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\",\n \
+      \ \"username\" : \"{{@Faker.name.username}}\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c224463"
+    createdBy: null
+    createdDate: 1632723172386
+    modifiedBy: null
+    modifiedDate: 1632723172386
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/orgs/{id}"
+    payload: "{\n  \"billingEmail\" : \"{{@Faker.internet.emailAddress}}\",\n  \"\
+      company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\"\
+      \ : \"\",\n  \"description\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"location\" : \"{{@Random}}\",\n  \"modifiedBy\" : \"\",\n  \"\
+      modifiedDate\" : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"orgPlan\" : \"PRO\"\
+      ,\n  \"orgType\" : \"TEAM\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c254466"
+    createdBy: null
+    createdDate: 1632723172389
+    modifiedBy: null
+    modifiedDate: 1632723172389
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/primary-account/deposit-amount/{id}"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c284469"
+    createdBy: null
+    createdDate: 1632723172392
+    modifiedBy: null
+    modifiedDate: 1632723172392
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/primary-account/primary-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c2d446f"
+    createdBy: null
+    createdDate: 1632723172397
+    modifiedBy: null
+    modifiedDate: 1632723172397
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/primary-account/withdraw-amount/{id}"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c304472"
+    createdBy: null
+    createdDate: 1632723172400
+    modifiedBy: null
+    modifiedDate: 1632723172400
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/primary-transaction"
+    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"description\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
+      \ : \"{{@Random}}\",\n  \"type\" : \"{{@Random}}\",\n  \"user\" : {\n    \"\
+      createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n    \"\
+      inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\"\
+      ,\n    \"name\" : \"{{@Random}}\",\n    \"version\" : \"\"\n  },\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c334475"
+    createdBy: null
+    createdDate: 1632723172403
+    modifiedBy: null
+    modifiedDate: 1632723172403
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/primary-transaction"
+    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"description\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
+      \ : \"{{@Random}}\",\n  \"type\" : \"{{@Random}}\",\n  \"user\" : {\n    \"\
+      createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n    \"\
+      inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\"\
+      ,\n    \"name\" : \"{{@Random}}\",\n    \"version\" : \"\"\n  },\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c364478"
+    createdBy: null
+    createdDate: 1632723172406
+    modifiedBy: null
+    modifiedDate: 1632723172406
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/products"
+    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\"\
+      \ : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\"\
+      \ : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"org\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" :\
+      \ \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Random}}\",\n    \"version\" : \"\"\n  },\n \
+      \ \"refId\" : \"{{@Random}}\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c5c4494"
+    createdBy: null
+    createdDate: 1632723172444
+    modifiedBy: null
+    modifiedDate: 1632723172444
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/transfers"
+    payload: "{\n  \"confirmed\" : false,\n  \"createdBy\" : \"\",\n  \"createdDate\"\
+      \ : \"\",\n  \"description\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"location\" : \"{{@Random}}\",\n  \"modifiedBy\" : \"\",\n  \"\
+      modifiedDate\" : \"\",\n  \"transactionType\" : \"WITHDRAW\",\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c3a447b"
+    createdBy: null
+    createdDate: 1632723172410
+    modifiedBy: null
+    modifiedDate: 1632723172410
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/products"
+    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\"\
+      \ : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\"\
+      \ : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"org\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" :\
+      \ \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Random}}\",\n    \"version\" : \"\"\n  },\n \
+      \ \"refId\" : \"{{@Random}}\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c3f447e"
+    createdBy: null
+    createdDate: 1632723172415
+    modifiedBy: null
+    modifiedDate: 1632723172415
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/recepient"
+    payload: "{\n  \"accountNumber\" : \"{{@Random}}\",\n  \"createdBy\" : \"\",\n\
+      \  \"createdDate\" : \"\",\n  \"description\" : \"{{@Random}}\",\n  \"email\"\
+      \ : \"{{@Faker.internet.emailAddress}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\"\
+      \ : \"{{@Random}}\",\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\",\n\
+      \  \"user\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n  \
+      \  \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n \
+      \   \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\",\n    \"version\"\
+      \ : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c434481"
+    createdBy: null
+    createdDate: 1632723172419
+    modifiedBy: null
+    modifiedDate: 1632723172419
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/recepient"
+    payload: "{\n  \"accountNumber\" : \"{{@Random}}\",\n  \"createdBy\" : \"\",\n\
+      \  \"createdDate\" : \"\",\n  \"description\" : \"{{@Random}}\",\n  \"email\"\
+      \ : \"{{@Faker.internet.emailAddress}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\"\
+      \ : \"{{@Random}}\",\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\",\n\
+      \  \"user\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n  \
+      \  \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n \
+      \   \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\",\n    \"version\"\
+      \ : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c474485"
+    createdBy: null
+    createdDate: 1632723172423
+    modifiedBy: null
+    modifiedDate: 1632723172423
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/savings-account/savings-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c4a4488"
+    createdBy: null
+    createdDate: 1632723172426
+    modifiedBy: null
+    modifiedDate: 1632723172426
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/savings-account/savings-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c4e448b"
+    createdBy: null
+    createdDate: 1632723172430
+    modifiedBy: null
+    modifiedDate: 1632723172430
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/savings-transaction"
+    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"description\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
+      \ : \"{{@Random}}\",\n  \"type\" : \"{{@Random}}\",\n  \"user\" : {\n    \"\
+      createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n    \"\
+      inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\"\
+      ,\n    \"name\" : \"{{@Random}}\",\n    \"version\" : \"\"\n  },\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c55448e"
+    createdBy: null
+    createdDate: 1632723172437
+    modifiedBy: null
+    modifiedDate: 1632723172437
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/savings-transaction"
+    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"description\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
+      \ : \"{{@Random}}\",\n  \"type\" : \"{{@Random}}\",\n  \"user\" : {\n    \"\
+      createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n    \"\
+      inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\"\
+      ,\n    \"name\" : \"{{@Random}}\",\n    \"version\" : \"\"\n  },\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c584491"
+    createdBy: null
+    createdDate: 1632723172440
+    modifiedBy: null
+    modifiedDate: 1632723172440
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/transfers"
+    payload: "{\n  \"confirmed\" : false,\n  \"createdBy\" : \"\",\n  \"createdDate\"\
+      \ : \"\",\n  \"description\" : \"{{@Random}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"location\" : \"{{@Random}}\",\n  \"modifiedBy\" : \"\",\n  \"\
+      modifiedDate\" : \"\",\n  \"transactionType\" : \"WITHDRAW\",\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c604497"
+    createdBy: null
+    createdDate: 1632723172448
+    modifiedBy: null
+    modifiedDate: 1632723172448
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/users/enterprise-sign-up"
+    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
+      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
+      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
+      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
+      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
+      location\" : \"{{@Random}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
+      \ : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c64449a"
+    createdBy: null
+    createdDate: 1632723172452
+    modifiedBy: null
+    modifiedDate: 1632723172452
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/users/personal-sign-up"
+    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
+      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
+      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
+      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
+      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
+      location\" : \"{{@Random}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
+      \ : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a7481687c254b23017c25e27c67449e"
+    createdBy: null
+    createdDate: 1632723172455
+    modifiedBy: null
+    modifiedDate: 1632723172455
+    version: null
+    inactive: false
+    projectId: "8a7481687c254b23017c25e24e684229"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/users/team-sign-up"
+    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
+      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
+      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
+      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
+      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
+      location\" : \"{{@Random}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
+      \ : \"\",\n  \"name\" : \"{{@Random}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -12919,7 +13650,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
