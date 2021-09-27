@@ -34,8 +34,8 @@ testCases:
         "name" : "{{@Random}}",
         "version" : ""
       },
-      "orgRole" : "ADMIN",
-      "status" : "DECLINED",
+      "orgRole" : "BANK_ACCOUNTANT",
+      "status" : "REMOVED",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",
@@ -60,7 +60,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgAbstractAbac
-severity: High
+severity: Medium
 category: ABAC_Level1
 tags:
 - V1

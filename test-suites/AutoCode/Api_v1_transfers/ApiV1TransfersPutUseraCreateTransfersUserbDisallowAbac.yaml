@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "POS",
+      "transactionType" : "WITHDRAW",
       "version" : ""
     }
   inactive: false
@@ -37,7 +37,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1TransfersIdDeleteTransfersAbstractAbac
-severity: High
+severity: Medium
 category: ABAC_Level1
 tags:
 - V1

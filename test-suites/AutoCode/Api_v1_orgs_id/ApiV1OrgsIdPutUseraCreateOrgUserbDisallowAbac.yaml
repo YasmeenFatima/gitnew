@@ -29,7 +29,7 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "ENTERPRISE",
+      "orgPlan" : "PRO",
       "orgType" : "TEAM",
       "version" : ""
     }
@@ -40,7 +40,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgAbstractAbac
-severity: High
+severity: Medium
 category: ABAC_Level1
 tags:
 - V1
