@@ -48,7 +48,7 @@ generators:
   - "Security Misconfiguration"
   - "Non-Intrusive"
   - "[2020 CWE TOP 24] CWE - 306"
-  severity: "Medium"
+  severity: "Critical"
   database: null
   inactive: false
   matches:
