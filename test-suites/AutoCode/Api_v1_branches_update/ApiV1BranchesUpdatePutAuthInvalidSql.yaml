@@ -37,7 +37,7 @@ useCategoryAssertion: false
 assertions:
 - '@ResponseTime < 7000 AND @StatusCode == 401'
 cleanup: []
-severity: Critical
+severity: Medium
 category: InvalidAuthSQL
 tags:
 - V1

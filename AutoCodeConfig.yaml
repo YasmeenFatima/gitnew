@@ -119,8 +119,8 @@ generators:
 - type: "auth_invalid_sql"
   owner: "FXLabs"
   assertions:
-  - "Allowed:@StatusCode == 200"
   - "Disallowed:@ResponseTime < 7000 AND @StatusCode == 401"
+  - "Allowed:@StatusCode == 200"
   tags:
   - "OWASP-API2"
   - "[PCI DSS 3.0] 6.5.1"
@@ -130,7 +130,7 @@ generators:
   - "Non-Intrusive"
   - "Injection"
   - "[2020 CWE TOP 14] CWE - 287"
-  severity: "Critical"
+  severity: "Medium"
   database:
     name: "MySQL"
     version: "5.7"
