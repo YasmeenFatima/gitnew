@@ -119,8 +119,8 @@ generators:
 - type: "auth_invalid_sql"
   owner: "FXLabs"
   assertions:
-  - "Disallowed:@ResponseTime < 7000 AND @StatusCode != 401"
   - "Allowed:@StatusCode == 200"
+  - "Disallowed:@ResponseTime < 7000 AND @StatusCode == 401"
   tags:
   - "OWASP-API2"
   - "[PCI DSS 3.0] 6.5.1"

@@ -41,7 +41,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@ResponseTime < 7000 AND @StatusCode != 401'
+- '@ResponseTime < 7000 AND @StatusCode == 401'
 cleanup: []
 severity: Critical
 category: InvalidAuthSQL
