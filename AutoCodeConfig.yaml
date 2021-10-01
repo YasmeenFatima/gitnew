@@ -120,7 +120,7 @@ generators:
   owner: "FXLabs"
   assertions:
   - "Allowed:@StatusCode == 200"
-  - "Disallowed:@ResponseTime < 7000 AND @StatusCode == 401"
+  - "Disallowed:@ResponseTime < 7000 AND @StatusCode != 401"
   tags:
   - "OWASP-API2"
   - "[PCI DSS 3.0] 6.5.1"
@@ -909,7 +909,10 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: null
-    resourceSamples: "Get:/api/v1/orgs/:Allowed[ROLE_ADMIN]\nPost:/api/v1/accounts/:Allowed[ROLE_ADMIN,ROLE_PM]"
+    resourceSamples: "Get:/api/v1/orgs/:Allowed[ROLE_ADMIN]\nPost:/api/v1/accounts/:Allowed[ROLE_ADMIN,ROLE_PM]\n\
+      GET:/api/v1/savings-transaction/{id}:Allowed[ROLE_PM,ROLE_USER,ROLE_ADMIN,ROLE_PM,ROLE_USER,ROLE_ADMIN]\n\
+      PUT:/api/v1/transfers:Allowed[ROLE_ADMIN,ROLE_ADMIN]\nDELETE:/api/v1/savings-transaction/{id}:Allowed[ROLE_ADMIN,ROLE_USER,ROLE_PM,ROLE_ADMIN,ROLE_USER,ROLE_PM]\n\
+      POST:/api/v1/transfers:Allowed[ROLE_ADMIN,ROLE_ADMIN]\n"
     queryParams: null
     bodyProperties: null
   authors: ""
