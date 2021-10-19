@@ -84,8 +84,8 @@ generators:
 - type: "auth_invalid_empty"
   owner: "FXLabs"
   assertions:
-  - "Allowed:@StatusCode == 200"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  - "Allowed:@StatusCode == 200"
   tags:
   - "OWASP-API2"
   - "[PCI DSS 3.0] 6.5.8"
@@ -95,7 +95,7 @@ generators:
   - "Broken Authentication"
   - "Non-Intrusive"
   - "[2020 CWE TOP 24] CWE - 306"
-  severity: "Critical"
+  severity: "High"
   database: null
   inactive: false
   matches:
