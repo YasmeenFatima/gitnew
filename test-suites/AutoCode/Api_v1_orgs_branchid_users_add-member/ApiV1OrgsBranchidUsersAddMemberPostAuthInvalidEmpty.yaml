@@ -27,7 +27,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgId" : "{{@Random}}",
-      "orgRole" : "READ",
+      "orgRole" : "BANK_MANAGER",
       "password" : "{{@PassAlphaNumSpl}}",
       "username" : "{{@Faker.name.username}}",
       "version" : ""
@@ -35,7 +35,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 403'
+- '@StatusCode != 401 OR @StatusCode == 403'
 cleanup: []
 severity: Critical
 category: InvalidAuthEmpty

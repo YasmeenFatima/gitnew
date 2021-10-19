@@ -29,9 +29,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "OPEN",
+      "issueStatus" : "CLOSED",
       "issueType" : "AUTOMATIC",
-      "method" : "TRACE",
+      "method" : "HEAD",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -67,7 +67,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 403'
+- '@StatusCode != 401 OR @StatusCode == 403'
 cleanup: []
 severity: Critical
 category: InvalidAuthEmpty

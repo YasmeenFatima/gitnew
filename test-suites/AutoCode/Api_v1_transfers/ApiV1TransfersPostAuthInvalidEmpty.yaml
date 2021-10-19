@@ -26,13 +26,13 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "WITHDRAW",
+      "transactionType" : "ONLINE",
       "version" : ""
     }
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 403'
+- '@StatusCode != 401 OR @StatusCode == 403'
 cleanup: []
 severity: Critical
 category: InvalidAuthEmpty
