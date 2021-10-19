@@ -19,7 +19,7 @@ testCases:
     {
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
-      "accountType" : "CREDIT",
+      "accountType" : "SAVING",
       "createdBy" : "",
       "createdDate" : "",
       "id" : "",
@@ -31,7 +31,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true'
+- '@StatusCode != 200 OR @StatusCode == 201 OR @Response.errors != true'
 cleanup: []
 severity: High
 category: ABAC_Level1

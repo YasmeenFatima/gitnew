@@ -28,14 +28,14 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "BUSINESS",
-      "orgType" : "ENTERPRISE",
+      "orgPlan" : "BASIC",
+      "orgType" : "PERSONAL",
       "version" : ""
     }
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true'
+- '@StatusCode != 200 OR @StatusCode == 201 OR @Response.errors != true'
 cleanup: []
 severity: High
 category: ABAC_Level1
