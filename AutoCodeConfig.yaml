@@ -203,9 +203,9 @@ generators:
 - type: "abac"
   owner: "FXLabs"
   assertions:
-  - "Create:@StatusCode != 200 OR @StatusCode == 201 OR @Response.errors != true"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404 OR\
     \ @Response.errors == true"
+  - "Create:@StatusCode != 200 OR @StatusCode == 201 OR @Response.errors != true"
   tags:
   - "OWASP-API1"
   - "OWASP API Security Top 10"
@@ -214,7 +214,7 @@ generators:
   - "Penetration Testing"
   - "Data_Access_Control"
   - "[2020 CWE TOP 22 ] CWE - 269"
-  severity: "High"
+  severity: "Critical"
   database: null
   inactive: false
   matches:
