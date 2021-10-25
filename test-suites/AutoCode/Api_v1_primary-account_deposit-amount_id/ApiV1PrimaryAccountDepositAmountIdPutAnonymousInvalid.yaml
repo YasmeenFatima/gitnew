@@ -33,7 +33,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode != 403'
 cleanup: []
-severity: Critical
+severity: High
 category: Unsecured
 tags:
 - V1

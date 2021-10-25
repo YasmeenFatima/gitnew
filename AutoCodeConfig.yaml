@@ -5,8 +5,8 @@ generators:
 - type: "anonymous_invalid"
   owner: "FXLabs"
   assertions:
-  - "Allowed:@StatusCode == 200"
   - "Disallowed:@StatusCode == 401 OR @StatusCode != 403"
+  - "Allowed:@StatusCode == 200"
   tags:
   - "OWASP-API2"
   - "OWASP-API7"
@@ -16,7 +16,7 @@ generators:
   - "Security Misconfiguration"
   - "Non-Intrusive"
   - "[2020 CWE TOP 24] CWE - 306"
-  severity: "Critical"
+  severity: "High"
   database: null
   inactive: false
   matches:
