@@ -34,7 +34,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 200'
 cleanup: []
-severity: Medium
+severity: High
 category: XSS_Injection
 tags:
 - V1

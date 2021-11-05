@@ -11063,7 +11063,7 @@ generators:
   - "INPUT VALIDATION"
   - "NON-INTRUSIVE"
   - "[2020 CWE TOP 1 ] CWE - 79"
-  severity: "Medium"
+  severity: "High"
   database: null
   inactive: false
   matches: []
