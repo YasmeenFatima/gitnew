@@ -29,9 +29,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "CLOSED",
-      "issueType" : "MANUAL",
-      "method" : "PUT",
+      "issueStatus" : "OPEN",
+      "issueType" : "AUTOMATIC",
+      "method" : "GET",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -67,8 +67,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 405 OR @StatusCode ==
-  406'
+- '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
 severity: Critical
 category: InvalidAuth
@@ -82,7 +81,6 @@ tags:
 - OWASP API Security Top 10
 - Broken Authentication
 - Non-Intrusive
-- '[MITRE ATT&CK] T1595.002'
 inactive: false
 policies:
   initExec: Request

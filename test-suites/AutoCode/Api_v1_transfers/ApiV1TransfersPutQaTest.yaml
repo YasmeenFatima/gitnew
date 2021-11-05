@@ -26,7 +26,7 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "ATM",
+      "transactionType" : "TRANSFER",
       "version" : ""
     }
   inactive: false

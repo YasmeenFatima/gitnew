@@ -8,7 +8,7 @@ type: SUITE
 init:
 - OrgCreateUserAInitAbac
 path: /api/v1/orgs/find-by-name/{name}
-endpoint: /api/v1/orgs/find-by-name/{{@OrgCreateUserAInitAbac_Response.data.name}}?page=0&pageSize=20
+endpoint: /api/v1/orgs/find-by-name/{{@OrgCreateUserAInitAbac_Response.data.name}}?pageSize=20&page=0
 method: GET
 auth: UserB
 headers:

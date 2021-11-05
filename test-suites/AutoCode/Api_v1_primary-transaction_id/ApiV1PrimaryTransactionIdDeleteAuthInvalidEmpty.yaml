@@ -30,7 +30,6 @@ tags:
 - Broken Authentication
 - Non-Intrusive
 - '[2020 CWE TOP 24] CWE - 306'
-- '[MITRE ATT&CK] T1595.002'
 inactive: false
 policies:
   initExec: Request

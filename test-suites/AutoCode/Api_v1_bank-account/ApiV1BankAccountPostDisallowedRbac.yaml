@@ -9,7 +9,7 @@ init: []
 path: /api/v1/bank-account
 endpoint: /api/v1/bank-account
 method: POST
-auth: ""
+auth: ROLE_USER,ROLE_PM
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

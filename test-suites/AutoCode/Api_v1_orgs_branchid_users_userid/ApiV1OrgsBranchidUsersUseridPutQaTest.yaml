@@ -34,7 +34,7 @@ testCases:
         "version" : ""
       },
       "orgRole" : "ADMIN",
-      "status" : "DECLINED",
+      "status" : "ACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",

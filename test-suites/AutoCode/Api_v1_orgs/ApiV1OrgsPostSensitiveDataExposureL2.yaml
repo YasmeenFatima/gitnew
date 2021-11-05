@@ -28,7 +28,7 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "TEAM",
+      "orgPlan" : "PAY_AS_YOU_GO",
       "orgType" : "PERSONAL",
       "version" : ""
     }
@@ -53,7 +53,6 @@ tags:
 - INPUT VALIDATION
 - NON-INTRUSIVE
 - '[2020 CWE TOP 7] CWE - 200'
-- '[MITRE ATT&CK] T1119'
 inactive: false
 policies:
   initExec: Request

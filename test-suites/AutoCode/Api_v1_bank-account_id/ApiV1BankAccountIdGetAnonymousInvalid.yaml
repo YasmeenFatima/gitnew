@@ -12,8 +12,7 @@ method: GET
 auth: Anonymous
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases: []
 useCategoryAssertion: false
 assertions:

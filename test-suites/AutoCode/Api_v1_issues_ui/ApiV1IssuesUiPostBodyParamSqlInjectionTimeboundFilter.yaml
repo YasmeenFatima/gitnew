@@ -12,7 +12,8 @@ method: POST
 auth: Default
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -29,9 +30,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "CLOSED",
-      "issueType" : "MANUAL",
-      "method" : "PUT",
+      "issueStatus" : "OPEN",
+      "issueType" : "AUTOMATIC",
+      "method" : "GET",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -70,8 +71,8 @@ assertions:
 - '@StatusCode != 404'
 - '@ResponseTime < 7000'
 cleanup: []
-severity: High
-category: SQL_Injection_Filter
+severity: Medium
+category: sql_injection_timebound_filter
 tags:
 - V1
 - OWASP-API8
@@ -82,7 +83,6 @@ tags:
 - Injection
 - Intrusive
 - '[2020 CWE TOP 6] CWE - 89'
-- '[MITRE ATT&CK] T1190'
 inactive: false
 policies:
   initExec: Request
@@ -91,7 +91,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@FXLabs/Common/MySQL-TimeBound-SQL_Injection_Strings'
+  repeatModule: '@FXLabs/Common/sql_injection_timebound_filter'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

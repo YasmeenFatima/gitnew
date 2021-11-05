@@ -8,12 +8,13 @@ type: SUITE
 init:
 - OrgCreateUserAInitAbac
 path: /api/v1/orgs/{id}/users
-endpoint: /api/v1/orgs/{{@OrgCreateUserAInitAbac_Response.data.id}}/users?page=0&pageSize=20
+endpoint: /api/v1/orgs/{{@OrgCreateUserAInitAbac_Response.data.id}}/users?pageSize=20&page=0
 method: GET
 auth: UserB
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Content-Type: application/json'
 testCases: []
 useCategoryAssertion: false
 assertions:
