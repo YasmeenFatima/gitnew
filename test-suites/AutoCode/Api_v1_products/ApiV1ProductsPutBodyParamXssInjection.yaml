@@ -41,7 +41,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 200'
+- '@StatusCode == 200'
 cleanup: []
 severity: Medium
 category: XSS_Injection
@@ -59,7 +59,6 @@ tags:
 - INPUT VALIDATION
 - NON-INTRUSIVE
 - '[2020 CWE TOP 1 ] CWE - 79'
-- '[MITRE ATT&CK] T1190'
 inactive: false
 policies:
   initExec: Request
