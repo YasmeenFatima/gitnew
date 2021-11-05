@@ -29,9 +29,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "CLOSED",
-      "issueType" : "MANUAL",
-      "method" : "PUT",
+      "issueStatus" : "OPEN",
+      "issueType" : "AUTOMATIC",
+      "method" : "GET",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -67,11 +67,11 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 404'
+- '@StatusCode != 400'
 - '@ResponseTime < 7000'
 cleanup: []
 severity: Critical
-category: SQL_Injection_Timebound
+category: sql_injection_timebound
 tags:
 - V1
 - OWASP-API8
@@ -82,7 +82,6 @@ tags:
 - Injection
 - Intrusive
 - '[2020 CWE TOP 6] CWE - 89'
-- '[MITRE ATT&CK] T1190'
 inactive: false
 policies:
   initExec: Request
@@ -91,7 +90,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@FXLabs/Common/MySQL-TimeBound-SQL_Injection_Strings'
+  repeatModule: '@FXLabs/Common/sql_injection_timebound'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

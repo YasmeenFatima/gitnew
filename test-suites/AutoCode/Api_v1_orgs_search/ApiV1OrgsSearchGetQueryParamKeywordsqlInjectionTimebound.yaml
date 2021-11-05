@@ -1,43 +1,19 @@
 ---
-parent: Api_v1_bank-account
-name: ApiV1BankAccountPutBodyParamSqlInjectionTimebound
+parent: Api_v1_orgs_search
+name: ApiV1OrgsSearchGetQueryParamKeywordsqlInjectionTimebound
 description: null
 authors:
 - apisec Bot
 type: SUITE
 init: []
-path: /api/v1/bank-account
-endpoint: /api/v1/bank-account
-method: PUT
+path: /api/v1/orgs/search
+endpoint: /api/v1/orgs/search?keyword={{@Injection}}
+method: GET
 auth: Default
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'
-testCases:
-- id: 1
-  body: |-
-    {
-      "accountBalance" : "{{@RandomInteger}}",
-      "accountNumber" : "{{@RandomInteger}}",
-      "createdBy" : "",
-      "createdDate" : "",
-      "id" : "",
-      "inactive" : false,
-      "modifiedBy" : "",
-      "modifiedDate" : "",
-      "user" : {
-        "createdBy" : "",
-        "createdDate" : "",
-        "id" : "",
-        "inactive" : false,
-        "modifiedBy" : "",
-        "modifiedDate" : "",
-        "name" : "{{@Injection}}",
-        "version" : ""
-      },
-      "version" : ""
-    }
-  inactive: false
+testCases: []
 useCategoryAssertion: false
 assertions:
 - '@StatusCode != 400'
