@@ -1,51 +1,46 @@
 ---
-parent: Api_v1_bank-account_withdraw-amount
-name: ApiV1BankAccountWithdrawAmountPutBodyParamNoSqlInjectionTimebound
+parent: Api_v1_branches
+name: ApiV1BranchesPostBodyParamMongodbInjection
 description: null
 authors:
 - apisec Bot
+- FXLabs
 type: SUITE
 init: []
-path: /api/v1/bank-account/withdraw-amount
-endpoint: /api/v1/bank-account/withdraw-amount
-method: PUT
+path: /api/v1/branches
+endpoint: /api/v1/branches
+method: POST
 auth: Default
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
     {
-      "accountBalance" : "{{@RandomInteger}}",
-      "accountNumber" : "{{@RandomInteger}}",
+      "access" : "{{@Injection}}",
+      "atmAtBranch" : "{{@Injection}}",
+      "branchMediatedServiceName" : "{{@Injection}}",
+      "branchName" : "{{@Injection}}",
+      "branchType" : "{{@Injection}}",
       "createdBy" : "",
       "createdDate" : "",
+      "customerSegment" : "{{@Injection}}",
+      "faxNumber" : "{{@Injection}}",
       "id" : "",
       "inactive" : false,
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "user" : {
-        "createdBy" : "",
-        "createdDate" : "",
-        "id" : "",
-        "inactive" : false,
-        "modifiedBy" : "",
-        "modifiedDate" : "",
-        "name" : "{{@Injection}}",
-        "version" : ""
-      },
       "version" : ""
     }
   inactive: false
 useCategoryAssertion: false
 assertions:
 - '@StatusCode != 404'
-- '@ResponseTime < 7000 OR @ResponseTime > 10000'
+- '@ResponseTime < 7000'
 cleanup: []
 severity: Critical
-category: NoSQL_Injection
+category: mongodb_injection
 tags:
 - V1
 - OWASP-API8
@@ -54,6 +49,7 @@ tags:
 - OWASP - OTG-INPVAL-005
 - OWASP API Security Top 10
 - Injection
+- Intrusive
 - '[2020 CWE TOP 6] CWE - 89'
 inactive: false
 policies:
@@ -63,7 +59,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@FXLabs/Common/MongoDB_TimeBound_SQL_Injection_Strings'
+  repeatModule: '@FXLabs/Common/mongodb_injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

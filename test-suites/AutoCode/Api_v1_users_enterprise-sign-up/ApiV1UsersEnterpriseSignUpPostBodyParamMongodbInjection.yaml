@@ -1,41 +1,41 @@
 ---
-parent: Api_v1_bank-account_withdraw-amount
-name: ApiV1BankAccountWithdrawAmountPutBodyParamSqlInjectionFilter
+parent: Api_v1_users_enterprise-sign-up
+name: ApiV1UsersEnterpriseSignUpPostBodyParamMongodbInjection
 description: null
 authors:
 - apisec Bot
+- FXLabs
 type: SUITE
 init: []
-path: /api/v1/bank-account/withdraw-amount
-endpoint: /api/v1/bank-account/withdraw-amount
-method: PUT
+path: /api/v1/users/enterprise-sign-up
+endpoint: /api/v1/users/enterprise-sign-up
+method: POST
 auth: Default
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
     {
-      "accountBalance" : "{{@RandomInteger}}",
-      "accountNumber" : "{{@RandomInteger}}",
+      "accountNonExpired" : false,
+      "accountNonLocked" : false,
+      "company" : "{{@Faker.company.name}}",
       "createdBy" : "",
       "createdDate" : "",
+      "credentialsNonExpired" : false,
+      "email" : "{{@Faker.internet.emailAddress}}",
+      "enabled" : false,
       "id" : "",
       "inactive" : false,
+      "jobTitle" : "{{@Faker.job.title}}",
+      "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "user" : {
-        "createdBy" : "",
-        "createdDate" : "",
-        "id" : "",
-        "inactive" : false,
-        "modifiedBy" : "",
-        "modifiedDate" : "",
-        "name" : "{{@Injection}}",
-        "version" : ""
-      },
+      "name" : "{{@Injection}}",
+      "password" : "{{@PassAlphaNumSpl}}",
+      "privileges" : [ "{{@Random}}" ],
+      "username" : "{{@Faker.name.username}}",
       "version" : ""
     }
   inactive: false
@@ -44,8 +44,8 @@ assertions:
 - '@StatusCode != 404'
 - '@ResponseTime < 7000'
 cleanup: []
-severity: Medium
-category: sql_injection_filter
+severity: Critical
+category: mongodb_injection
 tags:
 - V1
 - OWASP-API8
@@ -64,7 +64,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@FXLabs/Common/sql_injection_filter'
+  repeatModule: '@FXLabs/Common/mongodb_injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0
