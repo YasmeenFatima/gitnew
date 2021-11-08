@@ -12577,8 +12577,8 @@ generators:
 - type: "mongodb_injection"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
