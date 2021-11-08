@@ -13,8 +13,7 @@ method: POST
 auth: UserA
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -31,8 +30,8 @@ testCases:
       "inactive" : false,
       "issueName" : "{{@Random}}",
       "issueStatus" : "CLOSED",
-      "issueType" : "MANUAL",
-      "method" : "OPTIONS",
+      "issueType" : "AUTOMATIC",
+      "method" : "PUT",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : "{{@ProjectCreateUserAInitAbact3_Response.data}}",

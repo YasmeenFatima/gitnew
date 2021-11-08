@@ -13,8 +13,7 @@ method: GET
 auth: UserB
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases: []
 useCategoryAssertion: false
 assertions:

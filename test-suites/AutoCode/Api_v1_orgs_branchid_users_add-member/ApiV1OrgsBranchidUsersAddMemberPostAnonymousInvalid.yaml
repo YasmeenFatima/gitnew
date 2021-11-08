@@ -12,8 +12,7 @@ method: POST
 auth: Anonymous
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -28,7 +27,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgId" : "{{@Random}}",
-      "orgRole" : "ADMIN",
+      "orgRole" : "BANK_MANAGER",
       "password" : "{{@PassAlphaNumSpl}}",
       "username" : "{{@Faker.name.username}}",
       "version" : ""

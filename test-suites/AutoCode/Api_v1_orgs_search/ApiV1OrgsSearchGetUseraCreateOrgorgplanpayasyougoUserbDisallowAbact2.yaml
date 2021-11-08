@@ -8,7 +8,7 @@ type: SUITE
 init:
 - OrgOrgplanPayAsYouGoCreateUserAInitAbact2
 path: /api/v1/orgs/search
-endpoint: /api/v1/orgs/search?pageSize=20&page=0&keyword={{@OrgOrgplanPayAsYouGoCreateUserAInitAbact2_Response.data.id}}
+endpoint: /api/v1/orgs/search?keyword={{@OrgOrgplanPayAsYouGoCreateUserAInitAbact2_Response.data.id}}&page=0&pageSize=20
 method: GET
 auth: UserB
 headers:

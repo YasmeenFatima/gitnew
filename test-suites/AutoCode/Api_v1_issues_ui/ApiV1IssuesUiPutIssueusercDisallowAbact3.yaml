@@ -30,9 +30,9 @@ testCases:
       "id" : "{{@IssueCreateUserAInitAbact3_Response.data.id}}",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "OPEN",
-      "issueType" : "AUTOMATIC",
-      "method" : "GET",
+      "issueStatus" : "CLOSED",
+      "issueType" : "MANUAL",
+      "method" : "DELETE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

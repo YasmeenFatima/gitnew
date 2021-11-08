@@ -16,7 +16,7 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@ResponseTime < 7000 AND @StatusCode == 401'
+- '@StatusCode == 200'
 cleanup: []
 severity: Critical
 category: InvalidAuthSQL

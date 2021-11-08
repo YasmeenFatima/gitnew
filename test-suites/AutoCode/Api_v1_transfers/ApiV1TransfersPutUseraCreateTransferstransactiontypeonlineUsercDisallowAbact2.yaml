@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "TRANSFER",
+      "transactionType" : "WITHDRAW",
       "version" : ""
     }
   inactive: false

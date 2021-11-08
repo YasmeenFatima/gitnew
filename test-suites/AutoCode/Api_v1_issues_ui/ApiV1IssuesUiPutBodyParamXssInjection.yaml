@@ -29,9 +29,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "OPEN",
-      "issueType" : "AUTOMATIC",
-      "method" : "GET",
+      "issueStatus" : "CLOSED",
+      "issueType" : "MANUAL",
+      "method" : "DELETE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -67,9 +67,9 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 200'
+- '@StatusCode != 200'
 cleanup: []
-severity: High
+severity: Medium
 category: XSS_Injection
 tags:
 - V1

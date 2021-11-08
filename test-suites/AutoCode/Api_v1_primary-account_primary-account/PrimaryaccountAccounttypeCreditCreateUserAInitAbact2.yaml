@@ -19,7 +19,7 @@ testCases:
     {
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
-      "accountType" : " CREDIT",
+      "accountType" : "CREDIT",
       "createdBy" : "",
       "createdDate" : "",
       "id" : "",

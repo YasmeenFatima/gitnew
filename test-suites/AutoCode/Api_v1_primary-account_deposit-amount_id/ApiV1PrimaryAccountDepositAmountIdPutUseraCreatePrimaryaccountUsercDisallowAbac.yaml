@@ -20,7 +20,7 @@ testCases:
     {
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
-      "accountType" : "SAVING",
+      "accountType" : "CURRENT",
       "createdBy" : "",
       "createdDate" : "",
       "id" : "{{@PrimaryAccountCreateUserAInitAbac_Response.requestId}}",

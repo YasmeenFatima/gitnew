@@ -16,7 +16,7 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 200'
+- '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
 severity: Critical
 category: InvalidAuth

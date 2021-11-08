@@ -28,16 +28,16 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "PAY_AS_YOU_GO",
+      "orgPlan" : "BUSINESS",
       "orgType" : "PERSONAL",
       "version" : ""
     }
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 200'
+- '@StatusCode != 200'
 cleanup: []
-severity: High
+severity: Medium
 category: XSS_Injection
 tags:
 - V1

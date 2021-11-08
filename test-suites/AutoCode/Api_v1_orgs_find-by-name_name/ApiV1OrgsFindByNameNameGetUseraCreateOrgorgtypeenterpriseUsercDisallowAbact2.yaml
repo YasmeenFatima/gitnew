@@ -8,7 +8,7 @@ type: SUITE
 init:
 - OrgOrgtypeEnterpriseCreateUserAInitAbact2
 path: /api/v1/orgs/find-by-name/{name}
-endpoint: /api/v1/orgs/find-by-name/{{@OrgOrgtypeEnterpriseCreateUserAInitAbact2_Response.data.name}}?pageSize=20&page=0
+endpoint: /api/v1/orgs/find-by-name/{{@OrgOrgtypeEnterpriseCreateUserAInitAbact2_Response.data.name}}?page=0&pageSize=20
 method: GET
 auth: UserC
 headers:

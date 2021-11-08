@@ -9,10 +9,11 @@ init: []
 path: /api/v1/bank-account
 endpoint: /api/v1/bank-account
 method: POST
-auth: ROLE_USER,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Content-Type: application/json'
 testCases:
 - id: 1
   body: |-

@@ -8,13 +8,12 @@ type: SUITE
 init:
 - OrgOrgtypePersonalCreateUserAInitAbact2
 path: /api/v1/orgs/{id}/users
-endpoint: /api/v1/orgs/{{@OrgOrgtypePersonalCreateUserAInitAbact2_Response.data.id}}/users?pageSize=20&page=0
+endpoint: /api/v1/orgs/{{@OrgOrgtypePersonalCreateUserAInitAbact2_Response.data.id}}/users?page=0&pageSize=20
 method: GET
 auth: UserB
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases: []
 useCategoryAssertion: false
 assertions:

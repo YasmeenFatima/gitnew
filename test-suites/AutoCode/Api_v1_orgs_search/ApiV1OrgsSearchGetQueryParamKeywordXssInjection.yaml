@@ -16,9 +16,9 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 200'
+- '@StatusCode != 200'
 cleanup: []
-severity: High
+severity: Medium
 category: XSS_Injection
 tags:
 - V1

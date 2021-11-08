@@ -34,7 +34,7 @@ testCases:
         "name" : "{{@Random}}",
         "version" : ""
       },
-      "orgRole" : "ADMIN",
+      "orgRole" : "WRITE",
       "status" : "ACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",

@@ -12,8 +12,7 @@ method: POST
 auth: Invalid_Auth_Empty
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -30,9 +29,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "OPEN",
-      "issueType" : "AUTOMATIC",
-      "method" : "GET",
+      "issueStatus" : "CLOSED",
+      "issueType" : "MANUAL",
+      "method" : "DELETE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
