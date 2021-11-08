@@ -19275,8 +19275,8 @@ generators:
 - type: "sql_injection_timebound"
   owner: "FXLabs"
   assertions:
+  - "@StatusCode != 400"
   - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -24036,7 +24036,8 @@ generators:
     resourceName: null
     locked: false
   customHeaders: "POST:/api/v1/bank-account[Accept: application/json, Content-Type:\
-    \ application/json, Content-Type: application/json]"
+    \ application/json, Content-Type: application/json]\nPOST:/api/v1/bank-account[Accept:\
+    \ application/json,  Content-Type: application/json]"
   auth: null
   endpointSelection: "ALL"
 - type: "h2_db_sql_injection"
