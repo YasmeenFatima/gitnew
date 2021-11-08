@@ -13292,8 +13292,8 @@ generators:
 - type: "mysql_sql_injection"
   owner: "QA"
   assertions:
+  - "@StatusCode == 404"
   - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
   tags:
   - "[2020 CWE TOP 6] CWE - 89"
   - "OWASP-API8"
@@ -13319,269 +13319,6 @@ generators:
   authors: ""
   abacResources: null
   category: "Mysql_Sql_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
-- type: "openbase_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: "FXLabs"
-  abacResources: null
-  category: "openbase_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "ingres_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: "FXLabs"
-  abacResources: null
-  category: "ingres_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "couchdb_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: "FXLabs"
-  abacResources: null
-  category: "couchdb_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "amazon_neptune_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: "FXLabs"
-  abacResources: null
-  category: "amazon_neptune_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "alchemy_db_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: "FXLabs"
-  abacResources: null
-  category: "alchemy_db_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "hive_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: "FXLabs"
-  abacResources: null
-  category: "hive_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "clustrix_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: "FXLabs"
-  abacResources: null
-  category: "clustrix_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "incremental_ids_l2"
-  owner: "FXLabs"
-  assertions:
-  - "@Response.$..id != @Numbers"
-  tags:
-  - "OWASP-API3"
-  - "CWE - 99"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Incremental_Ids_L2"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "test"
-  owner: "QA"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "OWASP-API8"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-  authors: null
-  abacResources: null
-  category: "Test"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: null
-- type: "oracle_sql_injection"
-  owner: "QA"
-  assertions:
-  - "@StatusCode == 404"
-  - "@ResponseTime < 7000"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches:
-  - name: ""
-    value: null
-    methods: ""
-    denyRoles: ""
-    allowRoles: ""
-    pathPatterns: ""
-    resourceSamples: ""
-    queryParams: ""
-    bodyProperties: ""
-  authors: ""
-  abacResources: null
-  category: "Oracle_Sql_Injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: false
@@ -14319,6 +14056,269 @@ generators:
       ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
     resourceName: null
     locked: false
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
+- type: "openbase_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: "FXLabs"
+  abacResources: null
+  category: "openbase_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "ingres_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: "FXLabs"
+  abacResources: null
+  category: "ingres_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "couchdb_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: "FXLabs"
+  abacResources: null
+  category: "couchdb_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "amazon_neptune_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: "FXLabs"
+  abacResources: null
+  category: "amazon_neptune_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "alchemy_db_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: "FXLabs"
+  abacResources: null
+  category: "alchemy_db_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "hive_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: "FXLabs"
+  abacResources: null
+  category: "hive_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "clustrix_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: "FXLabs"
+  abacResources: null
+  category: "clustrix_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "incremental_ids_l2"
+  owner: "FXLabs"
+  assertions:
+  - "@Response.$..id != @Numbers"
+  tags:
+  - "OWASP-API3"
+  - "CWE - 99"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Incremental_Ids_L2"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "test"
+  owner: "QA"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "OWASP-API8"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches: []
+  authors: null
+  abacResources: null
+  category: "Test"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: null
+- type: "oracle_sql_injection"
+  owner: "QA"
+  assertions:
+  - "@StatusCode == 404"
+  - "@ResponseTime < 7000"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
+  authors: ""
+  abacResources: null
+  category: "Oracle_Sql_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
   customHeaders: null
   auth: ""
   endpointSelection: null

@@ -40,8 +40,8 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 404'
 - '@ResponseTime < 7000'
+- '@StatusCode == 404'
 cleanup: []
 severity: Critical
 category: mysql_sql_injection
