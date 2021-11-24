@@ -2,58 +2,6 @@
 genPolicy: "None"
 openAPISpec: null
 generators:
-- type: "ratelimit_authenticated"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseHeaders.X-RateLimit-Limit != @Empty AND @ResponseHeaders.X-RateLimit-Limit\
-    \ != null"
-  tags:
-  - "OWASP-API4"
-  - "OWASP API Security Top 10"
-  - "Security Misconfiguration"
-  - "CWE-307"
-  - "CWE-770"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Ratelimit_Authenticated"
-  customType: "BasicCustomHeader"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "GET_SINGLE_PLAYBOOK"
-- type: "memcachedb_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "memcachedb_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "anonymous_invalid"
   owner: "FXLabs"
   assertions:
@@ -92,36 +40,6 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "sqlserver_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Sqlserver_Sql_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
 - type: "auth_invalid"
   owner: "FXLabs"
   assertions:
@@ -160,32 +78,6 @@ generators:
   payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "extremedb_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "extremedb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "auth_invalid_empty"
   owner: "FXLabs"
@@ -226,32 +118,6 @@ generators:
   payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "amazon_simpledb_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_simpledb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "auth_invalid_sql"
   owner: "FXLabs"
@@ -294,33 +160,6 @@ generators:
   payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "sql_anywhere_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "sql_anywhere_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "rbac"
   owner: "FXLabs"
@@ -384,36 +223,6 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "stored_mysql_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Stored_Mysql_Sql_Injection"
-  customType: "stored_injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
 - type: "abac"
   owner: "FXLabs"
   assertions:
@@ -1360,32 +1169,6 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "amazon_aurora_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_aurora_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "orient_db_injection"
   owner: "FXLabs"
   assertions:
@@ -1413,34 +1196,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "resource_not_found_logging"
+- type: "ratelimit_authenticated"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 200"
+  - "@ResponseHeaders.X-RateLimit-Limit != @Empty AND @ResponseHeaders.X-RateLimit-Limit\
+    \ != null"
   tags:
-  - "OWASP-API10"
-  - "OWASP-A10"
-  - "Compliance"
-  - "OWASP-AT-004"
+  - "OWASP-API4"
   - "OWASP API Security Top 10"
-  - "Broken Authentication"
-  - "Non-Intrusive"
-  - "CWE - 392"
+  - "Security Misconfiguration"
+  - "CWE-307"
+  - "CWE-770"
   severity: "Medium"
   database: null
   inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "Resource_Not_Found_Logging"
-  customType: "Compliance1"
+  category: "Ratelimit_Authenticated"
+  customType: "BasicCustomHeader"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
-  endpointSelection: "ALL"
+  endpointSelection: "GET_SINGLE_PLAYBOOK"
 - type: "microsoft_access_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -1467,7 +1248,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "mariadb_sql_injection"
+- type: "memcachedb_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -1475,18 +1256,16 @@ generators:
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
+  - "INTRUSIVE "
+  severity: "Medium"
   database: null
   inactive: true
   matches: []
-  authors: "Luqman"
+  authors: ""
   abacResources: null
-  category: "mariadb_sql_injection"
+  category: "memcachedb_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -1521,29 +1300,36 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "report_successful_and_unsuccessful_login_attempts"
+- type: "sqlserver_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 200"
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
   tags:
-  - "Compliance"
-  - "[PCI DSS 3.2] 10.2.4"
-  - "CWE - 778"
-  severity: "Medium"
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Report_Successful_And_Unsuccessful_Login_Attempts"
-  customType: "Compliance1"
+  category: "Sqlserver_Sql_Injection"
+  customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
+  auth: ""
+  endpointSelection: null
 - type: "teradata_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -1562,32 +1348,6 @@ generators:
   authors: ""
   abacResources: null
   category: "teradata_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "hsqldb_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "hsqldb_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -5545,29 +5305,6 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "insufficient_monitoring"
-  owner: "FXLabs"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 693"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Insufficient_Monitoring"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "azure_cosmos_db_injection"
   owner: "FXLabs"
   assertions:
@@ -5594,35 +5331,6 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "postgres_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Postgres_Sql_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
 - type: "ibm_lotus_approach_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -5641,32 +5349,6 @@ generators:
   authors: ""
   abacResources: null
   category: "ibm_lotus_approach_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "hazelcast_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "hazelcast_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -5701,7 +5383,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "sqlite_sql_injection"
+- type: "extremedb_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -5711,15 +5393,14 @@ generators:
   - "[PCI DSS 3.0] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
+  - "INTRUSIVE "
+  severity: "Medium"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "sqlite_sql_injection"
+  category: "extremedb_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -7541,6 +7222,32 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
+- type: "amazon_simpledb_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_simpledb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "sqlite"
   owner: "FXLabs"
   assertions:
@@ -7568,7 +7275,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "amazon_elasticache_sql_injection"
+- type: "sql_anywhere_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -7578,14 +7285,15 @@ generators:
   - "[PCI DSS 3.0] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "amazon_elasticache_sql_injection"
+  category: "sql_anywhere_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -7594,6 +7302,36 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
+- type: "stored_mysql_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Stored_Mysql_Sql_Injection"
+  customType: "stored_injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
 - type: "ibm_db2_express-c_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -7620,36 +7358,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "stored_postgres_sql_injection"
+- type: "amazon_aurora_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
   tags:
-  - "OWASP-API8"
+  - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
   severity: "Medium"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Stored_Postgres_Sql_Injection"
-  customType: "stored_injection"
+  category: "amazon_aurora_sql_injection"
+  customType: "Injection"
   useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  addOptionalParams: null
+  categoryGroup: null
   payloads: null
   customHeaders: null
-  auth: ""
-  endpointSelection: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "missing_response_headers_authenticated"
   owner: "FXLabs"
   assertions:
@@ -7684,25 +7418,27 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: null
-- type: "hypergraph_injection"
+- type: "resource_not_found_logging"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@StatusCode != 200"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "OWASP-API10"
+  - "OWASP-A10"
+  - "Compliance"
+  - "OWASP-AT-004"
+  - "OWASP API Security Top 10"
+  - "Broken Authentication"
+  - "Non-Intrusive"
+  - "CWE - 392"
   severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "hypergraph_injection"
-  customType: "Injection"
+  category: "Resource_Not_Found_Logging"
+  customType: "Compliance1"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
@@ -8289,7 +8025,7 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "kognitio_sql_injection"
+- type: "mariadb_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -8297,16 +8033,18 @@ generators:
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
-  authors: ""
+  authors: "Luqman"
   abacResources: null
-  category: "kognitio_sql_injection"
+  category: "mariadb_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -8341,6 +8079,497 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
+- type: "report_successful_and_unsuccessful_login_attempts"
+  owner: "FXLabs"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "Compliance"
+  - "[PCI DSS 3.2] 10.2.4"
+  - "CWE - 778"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Report_Successful_And_Unsuccessful_Login_Attempts"
+  customType: "Compliance1"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "snowflake_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "snowflake_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "hsqldb_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "hsqldb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "azure_table_storage_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "azure_table_storage_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "insufficient_monitoring"
+  owner: "FXLabs"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 693"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Insufficient_Monitoring"
+  customType: "Compliance1"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "http_authentication_scheme"
+  owner: "FXLabs"
+  assertions:
+  - "@RequestHeaders.Authorization != null AND @RequestHeaders.Authorization startsWithIgnoreCase\
+    \ Bearer"
+  tags:
+  - "OWASP-A3"
+  - "NON-INTRUSIVE"
+  - "[2020 CWE TOP 7] CWE - 200"
+  - "CWE-319"
+  - "OWASP - OTG-AUTHN-001"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Http_Authentication_Scheme"
+  customType: "BasicCustomHeader"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "SINGLE_PLAYBOOK"
+- type: "postgres_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
+  authors: ""
+  abacResources: null
+  category: "Postgres_Sql_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
+- type: "sensitive_data_exposure_l2"
+  owner: "FXLabs"
+  assertions:
+  - "@Response.$..email == @Empty"
+  - "@Response.$..ssn == @Empty"
+  tags:
+  - "OWASP-API3"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.1"
+  - "OWASP - OTG-INPVAL-001"
+  - "OWASP - OTG-INPVAL-002"
+  - "OWASP OTG-INPVAL-013"
+  - "OWASP API Security Top 10"
+  - "Excessive Data Exposure"
+  - "INPUT VALIDATION"
+  - "NON-INTRUSIVE"
+  - "[2020 CWE TOP 7] CWE - 200"
+  - "[MITRE ATT&CK] T1119"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Sensitive_Data_Exposure_L2"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "hazelcast_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "hazelcast_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "sqlite_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "sqlite_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "open_api_spec_compliance"
+  owner: "FXLabs"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "Compliance"
+  - "OWASP-API10"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Open_API_Spec_Compliance"
+  customType: "Compliance1"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "amazon_elasticache_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_elasticache_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "cassandra_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "cassandra_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "stored_postgres_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
+  authors: ""
+  abacResources: null
+  category: "Stored_Postgres_Sql_Injection"
+  customType: "stored_injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
+- type: "openbase_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "openbase_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "hypergraph_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "hypergraph_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "kognitio_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "kognitio_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "ingres_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "ingres_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "infogrid_injection"
   owner: "FXLabs"
   assertions:
@@ -8367,7 +8596,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "snowflake_sql_injection"
+- type: "couchdb_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -8384,7 +8613,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "snowflake_sql_injection"
+  category: "couchdb_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -8422,407 +8651,6 @@ generators:
   customHeaders: null
   auth: ""
   endpointSelection: null
-- type: "azure_table_storage_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "azure_table_storage_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "4d_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "4d_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "http_authentication_scheme"
-  owner: "FXLabs"
-  assertions:
-  - "@RequestHeaders.Authorization != null AND @RequestHeaders.Authorization startsWithIgnoreCase\
-    \ Bearer"
-  tags:
-  - "OWASP-A3"
-  - "NON-INTRUSIVE"
-  - "[2020 CWE TOP 7] CWE - 200"
-  - "CWE-319"
-  - "OWASP - OTG-AUTHN-001"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Http_Authentication_Scheme"
-  customType: "BasicCustomHeader"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "SINGLE_PLAYBOOK"
-- type: "helix_database_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "helix_database_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "sensitive_data_exposure_l2"
-  owner: "FXLabs"
-  assertions:
-  - "@Response.$..email == @Empty"
-  - "@Response.$..ssn == @Empty"
-  tags:
-  - "OWASP-API3"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.1"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "OWASP OTG-INPVAL-013"
-  - "OWASP API Security Top 10"
-  - "Excessive Data Exposure"
-  - "INPUT VALIDATION"
-  - "NON-INTRUSIVE"
-  - "[2020 CWE TOP 7] CWE - 200"
-  - "[MITRE ATT&CK] T1119"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Sensitive_Data_Exposure_L2"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "open_api_spec_compliance"
-  owner: "FXLabs"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  - "OWASP-API10"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Open_API_Spec_Compliance"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "splice_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "splice_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "cassandra_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "cassandra_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "disable_user_after_5_failed_login_attempts"
-  owner: "FXLabs"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 307"
-  - ""
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Disable_User_After_5_Failed_Login_Attempts"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "openbase_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "openbase_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "ratelimit_unauthenticated"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseHeaders.X-RateLimit-Limit != @Empty AND @ResponseHeaders.X-RateLimit-Limit\
-    \ != null"
-  tags:
-  - "OWASP-API4"
-  - "OWASP API Security Top 10"
-  - "Security Misconfiguration"
-  - "CWE-307"
-  - "CWE-770"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Ratelimit_Unauthenticated"
-  customType: "BasicCustomHeader"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Anonymous"
-  endpointSelection: "GET_SINGLE_PLAYBOOK"
-- type: "ingres_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "ingres_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "cockroachdb_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "cockroachdb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "couchdb_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "couchdb_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "rbac_scope"
-  owner: "FXLabs"
-  assertions:
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
-  - "Allowed:@StatusCode != 401 AND @StatusCode != 403"
-  tags:
-  - "OWASP-API5"
-  - "OWASP - OTG-IDENT-001"
-  - "OWASP API Security Top 10"
-  - "Broken Function Level Authorization"
-  - "Endpoint_Access_Control"
-  - "[2020 CWE TOP 22 ] CWE - 269"
-  severity: "High"
-  database: null
-  inactive: true
-  matches:
-  - name: ""
-    value: "AutoMap"
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-  authors: ""
-  abacResources: null
-  category: "RBAC_Scope"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
 - type: "abact2positive"
   owner: "FXLabs"
   assertions:
@@ -11063,6 +10891,32 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
+- type: "4d_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "4d_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "amazon_neptune_injection"
   owner: "FXLabs"
   assertions:
@@ -11089,7 +10943,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "derby_(aka_java_db)_sql_injection"
+- type: "helix_database_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -11106,7 +10960,33 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "derby_(aka_java_db)_sql_injection"
+  category: "helix_database_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "splice_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "splice_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -11141,28 +11021,26 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "hadoop_injection"
+- type: "disable_user_after_5_failed_login_attempts"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@StatusCode != 200"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 307"
+  - ""
   severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "hadoop_injection"
-  customType: "Injection"
+  category: "Disable_User_After_5_Failed_Login_Attempts"
+  customType: "Compliance1"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -11193,32 +11071,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "couchbase_server_injection"
+- type: "ratelimit_unauthenticated"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@ResponseHeaders.X-RateLimit-Limit != @Empty AND @ResponseHeaders.X-RateLimit-Limit\
+    \ != null"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "OWASP-API4"
+  - "OWASP API Security Top 10"
+  - "Security Misconfiguration"
+  - "CWE-307"
+  - "CWE-770"
   severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "couchbase_server_injection"
-  customType: "Injection"
+  category: "Ratelimit_Unauthenticated"
+  customType: "BasicCustomHeader"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
+  auth: "Anonymous"
+  endpointSelection: "GET_SINGLE_PLAYBOOK"
 - type: "clustrix_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -11245,25 +11123,28 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "strong_and_unique_password"
+- type: "cockroachdb_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 200"
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
   tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 521"
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
   severity: "Medium"
   database: null
-  inactive: false
+  inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Strong_And_Unique_Password"
-  customType: "Compliance1"
+  category: "cockroachdb_sql_injection"
+  customType: "Injection"
   useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  addOptionalParams: null
+  categoryGroup: null
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -11290,7 +11171,43 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "amazon_documentdb_injection"
+- type: "rbac_scope"
+  owner: "FXLabs"
+  assertions:
+  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  - "Allowed:@StatusCode != 401 AND @StatusCode != 403"
+  tags:
+  - "OWASP-API5"
+  - "OWASP - OTG-IDENT-001"
+  - "OWASP API Security Top 10"
+  - "Broken Function Level Authorization"
+  - "Endpoint_Access_Control"
+  - "[2020 CWE TOP 22 ] CWE - 269"
+  severity: "High"
+  database: null
+  inactive: true
+  matches:
+  - name: ""
+    value: "AutoMap"
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+  authors: ""
+  abacResources: null
+  category: "RBAC_Scope"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "derby_(aka_java_db)_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -11307,7 +11224,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "amazon_documentdb_injection"
+  category: "derby_(aka_java_db)_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -11342,7 +11259,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "redis_sql_injection"
+- type: "hadoop_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -11359,7 +11276,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "redis_sql_injection"
+  category: "hadoop_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -11394,7 +11311,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "solr_sql_injection"
+- type: "couchbase_server_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -11411,7 +11328,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "solr_sql_injection"
+  category: "couchbase_server_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -12602,6 +12519,55 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
+- type: "strong_and_unique_password"
+  owner: "FXLabs"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 521"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Strong_And_Unique_Password"
+  customType: "Compliance1"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "amazon_documentdb_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_documentdb_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "excessive_data_exposure"
   owner: "FXLabs"
   assertions:
@@ -12638,6 +12604,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
+- type: "redis_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "redis_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "memsql_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -12656,6 +12648,32 @@ generators:
   authors: ""
   abacResources: null
   category: "memsql_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "solr_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "solr_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -12693,7 +12711,7 @@ generators:
 - type: "oracle_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 404"
+  - "@StatusCode == 404"
   - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
@@ -14570,8 +14588,8 @@ generators:
 - type: "stored_oracle_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -14583,8 +14601,17 @@ generators:
   - "[2020 CWE TOP 6] CWE - 89"
   severity: "Medium"
   database: null
-  inactive: true
-  matches: []
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
   authors: ""
   abacResources: null
   category: "Stored_Oracle_Sql_Injection"
