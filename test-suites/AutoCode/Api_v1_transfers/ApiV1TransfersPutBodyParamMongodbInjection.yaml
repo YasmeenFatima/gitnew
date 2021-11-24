@@ -26,7 +26,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "CHECK",
+      "transactionType" : "POS",
       "version" : ""
     }
   inactive: false
@@ -35,7 +35,7 @@ assertions:
 - '@StatusCode != 404'
 - '@ResponseTime < 7000'
 cleanup: []
-severity: High
+severity: Medium
 category: mongodb_injection
 tags:
 - V1
