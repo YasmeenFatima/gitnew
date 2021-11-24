@@ -92,36 +92,6 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "sqlserver_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Sqlserver_Sql_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
 - type: "auth_invalid"
   owner: "FXLabs"
   assertions:
@@ -161,6 +131,36 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
+- type: "sqlserver_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Sqlserver_Sql_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
 - type: "auth_invalid_empty"
   owner: "FXLabs"
   assertions:
@@ -200,6 +200,32 @@ generators:
   payloads: null
   customHeaders: null
   auth: null
+  endpointSelection: "ALL"
+- type: "extremedb_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "extremedb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
   endpointSelection: "ALL"
 - type: "auth_invalid_sql"
   owner: "FXLabs"
@@ -243,6 +269,32 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
+- type: "amazon_simpledb_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_simpledb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "rbac"
   owner: "FXLabs"
   assertions:
@@ -279,32 +331,6 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "extremedb_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "extremedb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "nexusdb_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -323,6 +349,33 @@ generators:
   authors: ""
   abacResources: null
   category: "nexusdb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "sql_anywhere_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "sql_anywhere_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -1277,32 +1330,36 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "amazon_simpledb_sql_injection"
+- type: "stored_mysql_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
   tags:
-  - "OWASP A1"
+  - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
   severity: "Medium"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "amazon_simpledb_sql_injection"
-  customType: "Injection"
+  category: "Stored_Mysql_Sql_Injection"
+  customType: "stored_injection"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
+  auth: ""
+  endpointSelection: null
 - type: "orient_db_injection"
   owner: "FXLabs"
   assertions:
@@ -1322,33 +1379,6 @@ generators:
   authors: ""
   abacResources: null
   category: "orient_db_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "sql_anywhere_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "sql_anywhere_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -1383,6 +1413,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
+- type: "amazon_aurora_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_aurora_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "apache_derby_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -1409,36 +1465,34 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "stored_mysql_sql_injection"
+- type: "resource_not_found_logging"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@StatusCode != 200"
   tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
+  - "OWASP-API10"
+  - "OWASP-A10"
+  - "Compliance"
+  - "OWASP-AT-004"
   - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
+  - "Broken Authentication"
+  - "Non-Intrusive"
+  - "CWE - 392"
   severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "Stored_Mysql_Sql_Injection"
-  customType: "stored_injection"
+  category: "Resource_Not_Found_Logging"
+  customType: "Compliance1"
   useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  addOptionalParams: null
+  categoryGroup: null
   payloads: null
   customHeaders: null
-  auth: ""
-  endpointSelection: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "teradata_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -5414,7 +5468,7 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "amazon_aurora_sql_injection"
+- type: "mariadb_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -5422,16 +5476,18 @@ generators:
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
-  authors: ""
+  authors: "Luqman"
   abacResources: null
-  category: "amazon_aurora_sql_injection"
+  category: "mariadb_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -5466,30 +5522,25 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "resource_not_found_logging"
+- type: "report_successful_and_unsuccessful_login_attempts"
   owner: "FXLabs"
   assertions:
   - "@StatusCode != 200"
   tags:
-  - "OWASP-API10"
-  - "OWASP-A10"
   - "Compliance"
-  - "OWASP-AT-004"
-  - "OWASP API Security Top 10"
-  - "Broken Authentication"
-  - "Non-Intrusive"
-  - "CWE - 392"
+  - "[PCI DSS 3.2] 10.2.4"
+  - "CWE - 778"
   severity: "Medium"
   database: null
-  inactive: false
+  inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Resource_Not_Found_Logging"
+  category: "Report_Successful_And_Unsuccessful_Login_Attempts"
   customType: "Compliance1"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -5512,6 +5563,32 @@ generators:
   authors: ""
   abacResources: null
   category: "ibm_lotus_approach_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "hsqldb_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "hsqldb_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -5546,27 +5623,22 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "mariadb_sql_injection"
+- type: "insufficient_monitoring"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@StatusCode != 200"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 693"
+  severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
-  authors: "Luqman"
+  authors: ""
   abacResources: null
-  category: "mariadb_sql_injection"
-  customType: "Injection"
+  category: "Insufficient_Monitoring"
+  customType: "Compliance1"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
@@ -7387,29 +7459,44 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "report_successful_and_unsuccessful_login_attempts"
+- type: "postgres_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 200"
+  - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
-  - "Compliance"
-  - "[PCI DSS 3.2] 10.2.4"
-  - "CWE - 778"
-  severity: "Medium"
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
   database: null
-  inactive: true
-  matches: []
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
   authors: ""
   abacResources: null
-  category: "Report_Successful_And_Unsuccessful_Login_Attempts"
-  customType: "Compliance1"
+  category: "Postgres_Sql_Injection"
+  customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
+  auth: ""
+  endpointSelection: null
 - type: "sqlite"
   owner: "FXLabs"
   assertions:
@@ -7463,7 +7550,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "hsqldb_sql_injection"
+- type: "hazelcast_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -7480,7 +7567,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "hsqldb_sql_injection"
+  category: "hazelcast_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -7523,22 +7610,26 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: null
-- type: "insufficient_monitoring"
+- type: "sqlite_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 200"
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
   tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 693"
-  severity: "Medium"
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
   database: null
-  inactive: false
+  inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Insufficient_Monitoring"
-  customType: "Compliance1"
+  category: "sqlite_sql_injection"
+  customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
@@ -8151,44 +8242,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "postgres_sql_injection"
+- type: "amazon_elasticache_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 404"
   - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
   tags:
-  - "OWASP-API8"
+  - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
   database: null
-  inactive: false
-  matches:
-  - name: ""
-    value: null
-    methods: ""
-    denyRoles: ""
-    allowRoles: ""
-    pathPatterns: ""
-    resourceSamples: ""
-    queryParams: ""
-    bodyProperties: ""
+  inactive: true
+  matches: []
   authors: ""
   abacResources: null
-  category: "Postgres_Sql_Injection"
+  category: "amazon_elasticache_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  addOptionalParams: null
+  categoryGroup: null
   payloads: null
   customHeaders: null
-  auth: ""
-  endpointSelection: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "snowflake_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -8215,32 +8294,45 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "hazelcast_sql_injection"
+- type: "stored_postgres_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
-  - "OWASP A1"
+  - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
   severity: "Medium"
   database: null
-  inactive: true
-  matches: []
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
   authors: ""
   abacResources: null
-  category: "hazelcast_sql_injection"
-  customType: "Injection"
+  category: "Stored_Postgres_Sql_Injection"
+  customType: "stored_injection"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
+  auth: ""
+  endpointSelection: null
 - type: "azure_table_storage_injection"
   owner: "FXLabs"
   assertions:
@@ -8259,33 +8351,6 @@ generators:
   authors: ""
   abacResources: null
   category: "azure_table_storage_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "sqlite_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "sqlite_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -8320,7 +8385,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "SINGLE_PLAYBOOK"
-- type: "amazon_elasticache_sql_injection"
+- type: "hypergraph_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -8337,7 +8402,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "amazon_elasticache_sql_injection"
+  category: "hypergraph_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -8401,45 +8466,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "stored_postgres_sql_injection"
+- type: "kognitio_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 404"
   - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
   tags:
-  - "OWASP-API8"
+  - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
   severity: "Medium"
   database: null
-  inactive: false
-  matches:
-  - name: ""
-    value: null
-    methods: ""
-    denyRoles: ""
-    allowRoles: ""
-    pathPatterns: ""
-    resourceSamples: ""
-    queryParams: ""
-    bodyProperties: ""
+  inactive: true
+  matches: []
   authors: ""
   abacResources: null
-  category: "Stored_Postgres_Sql_Injection"
-  customType: "stored_injection"
+  category: "kognitio_sql_injection"
+  customType: "Injection"
   useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  addOptionalParams: null
+  categoryGroup: null
   payloads: null
   customHeaders: null
-  auth: ""
-  endpointSelection: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "cassandra_injection"
   owner: "FXLabs"
   assertions:
@@ -8458,6 +8510,32 @@ generators:
   authors: ""
   abacResources: null
   category: "cassandra_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "infogrid_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "infogrid_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -8492,32 +8570,6 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "hypergraph_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "hypergraph_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "ingres_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -8544,32 +8596,35 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "kognitio_sql_injection"
+- type: "mysql_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
   tags:
-  - "OWASP A1"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "kognitio_sql_injection"
+  category: "Mysql_Sql_Injection"
   customType: "Injection"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
+  auth: ""
+  endpointSelection: null
 - type: "couchdb_injection"
   owner: "FXLabs"
   assertions:
@@ -8596,7 +8651,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "infogrid_injection"
+- type: "4d_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -8613,7 +8668,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "infogrid_injection"
+  category: "4d_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -10862,6 +10917,32 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
+- type: "helix_database_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "helix_database_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "amazon_neptune_injection"
   owner: "FXLabs"
   assertions:
@@ -10888,35 +10969,6 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "mysql_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Mysql_Sql_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
 - type: "alchemy_db_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -10943,7 +10995,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "4d_sql_injection"
+- type: "splice_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -10960,7 +11012,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "4d_sql_injection"
+  category: "splice_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -10995,28 +11047,26 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "helix_database_sql_injection"
+- type: "disable_user_after_5_failed_login_attempts"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@StatusCode != 200"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 307"
+  - ""
   severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "helix_database_sql_injection"
-  customType: "Injection"
+  category: "Disable_User_After_5_Failed_Login_Attempts"
+  customType: "Compliance1"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -11069,32 +11119,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "splice_injection"
+- type: "ratelimit_unauthenticated"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@ResponseHeaders.X-RateLimit-Limit != @Empty AND @ResponseHeaders.X-RateLimit-Limit\
+    \ != null"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "OWASP-API4"
+  - "OWASP API Security Top 10"
+  - "Security Misconfiguration"
+  - "CWE-307"
+  - "CWE-770"
   severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "splice_injection"
-  customType: "Injection"
+  category: "Ratelimit_Unauthenticated"
+  customType: "BasicCustomHeader"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
+  auth: "Anonymous"
+  endpointSelection: "GET_SINGLE_PLAYBOOK"
 - type: "impala_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -11121,26 +11171,28 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "disable_user_after_5_failed_login_attempts"
+- type: "cockroachdb_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@StatusCode != 200"
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
   tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 307"
-  - ""
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
   severity: "Medium"
   database: null
-  inactive: false
+  inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Disable_User_After_5_Failed_Login_Attempts"
-  customType: "Compliance1"
+  category: "cockroachdb_sql_injection"
+  customType: "Injection"
   useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  addOptionalParams: null
+  categoryGroup: null
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -11171,32 +11223,6 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "ratelimit_unauthenticated"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseHeaders.X-RateLimit-Limit != @Empty AND @ResponseHeaders.X-RateLimit-Limit\
-    \ != null"
-  tags:
-  - "OWASP-API4"
-  - "OWASP API Security Top 10"
-  - "Security Misconfiguration"
-  - "CWE-307"
-  - "CWE-770"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Ratelimit_Unauthenticated"
-  customType: "BasicCustomHeader"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Anonymous"
-  endpointSelection: "GET_SINGLE_PLAYBOOK"
 - type: "abact3positive"
   owner: "FXLabs"
   assertions:
@@ -12379,31 +12405,41 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "cockroachdb_sql_injection"
+- type: "rbac_scope"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  - "Allowed:@StatusCode != 401 AND @StatusCode != 403"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
+  - "OWASP-API5"
+  - "OWASP - OTG-IDENT-001"
+  - "OWASP API Security Top 10"
+  - "Broken Function Level Authorization"
+  - "Endpoint_Access_Control"
+  - "[2020 CWE TOP 22 ] CWE - 269"
+  severity: "High"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: ""
+    value: "AutoMap"
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
-  category: "cockroachdb_sql_injection"
+  category: "RBAC_Scope"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
   payloads: null
   customHeaders: null
-  auth: "Default"
+  auth: null
   endpointSelection: "ALL"
 - type: "excessive_data_exposure"
   owner: "FXLabs"
@@ -12441,6 +12477,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
+- type: "derby_(aka_java_db)_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "derby_(aka_java_db)_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "memsql_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -12467,41 +12529,31 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "rbac_scope"
+- type: "hadoop_injection"
   owner: "FXLabs"
   assertions:
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
-  - "Allowed:@StatusCode != 401 AND @StatusCode != 403"
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
   tags:
-  - "OWASP-API5"
-  - "OWASP - OTG-IDENT-001"
-  - "OWASP API Security Top 10"
-  - "Broken Function Level Authorization"
-  - "Endpoint_Access_Control"
-  - "[2020 CWE TOP 22 ] CWE - 269"
-  severity: "High"
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
   database: null
   inactive: true
-  matches:
-  - name: ""
-    value: "AutoMap"
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
+  matches: []
   authors: ""
   abacResources: null
-  category: "RBAC_Scope"
+  category: "hadoop_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
   payloads: null
   customHeaders: null
-  auth: null
+  auth: "Default"
   endpointSelection: "ALL"
 - type: "amazon_rds_sql_injection"
   owner: "FXLabs"
@@ -12529,6 +12581,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
+- type: "couchbase_server_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "couchbase_server_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "oracle_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -12543,7 +12621,7 @@ generators:
   - "Injection"
   - "Intrusive"
   - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
+  severity: "Medium"
   database: null
   inactive: false
   matches:
@@ -12563,32 +12641,761 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads: null
+  payloads:
+  - id: "8a8094e67d460c05017d50c6a61131f2"
+    createdBy: null
+    createdDate: 1637737735697
+    modifiedBy: null
+    modifiedDate: 1637737735697
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/bank-account/deposit-amount"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a60b31ef"
+    createdBy: null
+    createdDate: 1637737735691
+    modifiedBy: null
+    modifiedDate: 1637737735691
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/savings-account/savings-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a60531ec"
+    createdBy: null
+    createdDate: 1637737735685
+    modifiedBy: null
+    modifiedDate: 1637737735685
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/savings-account/savings-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5ff31e9"
+    createdBy: null
+    createdDate: 1637737735679
+    modifiedBy: null
+    modifiedDate: 1637737735679
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/products"
+    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\"\
+      \ : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\"\
+      \ : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"\
+      org\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\"\
+      \ : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
+      \  \"refId\" : \"{{@Injection}}\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5f831e6"
+    createdBy: null
+    createdDate: 1637737735672
+    modifiedBy: null
+    modifiedDate: 1637737735672
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/products"
+    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\"\
+      \ : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\"\
+      \ : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"\
+      org\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\"\
+      \ : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
+      \  \"refId\" : \"{{@Injection}}\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5f031e3"
+    createdBy: null
+    createdDate: 1637737735664
+    modifiedBy: null
+    modifiedDate: 1637737735664
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/primary-transaction"
+    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
+      \ : \"{{@Injection}}\",\n  \"type\" : \"{{@Injection}}\",\n  \"user\" : {\n\
+      \    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n\
+      \    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
+      \  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5e831e0"
+    createdBy: null
+    createdDate: 1637737735656
+    modifiedBy: null
+    modifiedDate: 1637737735656
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/primary-transaction"
+    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
+      \ : \"{{@Injection}}\",\n  \"type\" : \"{{@Injection}}\",\n  \"user\" : {\n\
+      \    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n\
+      \    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
+      \  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5e231dd"
+    createdBy: null
+    createdDate: 1637737735650
+    modifiedBy: null
+    modifiedDate: 1637737735650
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/issues"
+    payload: "{\n  \"assertions\" : \"{{@Injection}}\",\n  \"assignedTo\" : \"{{@Injection}}\"\
+      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
+      {{@Injection}}\",\n  \"endpoint\" : \"{{@Injection}}\",\n  \"env\" : \"{{@Injection}}\"\
+      ,\n  \"failedAssertions\" : \"{{@Injection}}\",\n  \"headers\" : [ \"{{@Random}}\"\
+      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Injection}}\"\
+      ,\n  \"issueStatus\" : \"CLOSED\",\n  \"issueType\" : \"MANUAL\",\n  \"method\"\
+      \ : \"PATCH\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
+      \ : \"{{@Injection}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n   \
+      \ \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
+      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
+      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Injection}}\"\
+      ,\n      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Injection}}\",\n \
+      \   \"version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Injection}}\",\n  \"\
+      responseBody\" : \"{{@Injection}}\",\n  \"responseHeaders\" : \"{{@Injection}}\"\
+      ,\n  \"result\" : \"{{@Injection}}\",\n  \"statusCode\" : \"{{@Injection}}\"\
+      ,\n  \"tags\" : [ \"{{@Random}}\" ],\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5db31da"
+    createdBy: null
+    createdDate: 1637737735643
+    modifiedBy: null
+    modifiedDate: 1637737735643
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/issues"
+    payload: "{\n  \"assertions\" : \"{{@Injection}}\",\n  \"assignedTo\" : \"{{@Injection}}\"\
+      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
+      {{@Injection}}\",\n  \"endpoint\" : \"{{@Injection}}\",\n  \"env\" : \"{{@Injection}}\"\
+      ,\n  \"failedAssertions\" : \"{{@Injection}}\",\n  \"headers\" : [ \"{{@Random}}\"\
+      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Injection}}\"\
+      ,\n  \"issueStatus\" : \"CLOSED\",\n  \"issueType\" : \"MANUAL\",\n  \"method\"\
+      \ : \"PATCH\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
+      \ : \"{{@Injection}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n   \
+      \ \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
+      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
+      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Injection}}\"\
+      ,\n      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Injection}}\",\n \
+      \   \"version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Injection}}\",\n  \"\
+      responseBody\" : \"{{@Injection}}\",\n  \"responseHeaders\" : \"{{@Injection}}\"\
+      ,\n  \"result\" : \"{{@Injection}}\",\n  \"statusCode\" : \"{{@Injection}}\"\
+      ,\n  \"tags\" : [ \"{{@Random}}\" ],\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5d331d7"
+    createdBy: null
+    createdDate: 1637737735635
+    modifiedBy: null
+    modifiedDate: 1637737735635
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/branches"
+    payload: "{\n  \"access\" : \"{{@Injection}}\",\n  \"atmAtBranch\" : \"{{@Injection}}\"\
+      ,\n  \"branchMediatedServiceName\" : \"{{@Injection}}\",\n  \"branchName\" :\
+      \ \"{{@Injection}}\",\n  \"branchType\" : \"{{@Injection}}\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"customerSegment\" : \"{{@Injection}}\"\
+      ,\n  \"faxNumber\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\" :\
+      \ false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5cd31d4"
+    createdBy: null
+    createdDate: 1637737735629
+    modifiedBy: null
+    modifiedDate: 1637737735629
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/primary-account/withdraw-amount/{id}"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5c631d1"
+    createdBy: null
+    createdDate: 1637737735622
+    modifiedBy: null
+    modifiedDate: 1637737735622
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/orgs/{id}"
+    payload: "{\n  \"billingEmail\" : \"{{@Faker.internet.emailAddress}}\",\n  \"\
+      company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\"\
+      \ : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n\
+      \  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"orgPlan\"\
+      \ : \"TEAM\",\n  \"orgType\" : \"ENTERPRISE\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5bd31ce"
+    createdBy: null
+    createdDate: 1637737735613
+    modifiedBy: null
+    modifiedDate: 1637737735613
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/recepient"
+    payload: "{\n  \"accountNumber\" : \"{{@Injection}}\",\n  \"createdBy\" : \"\"\
+      ,\n  \"createdDate\" : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"\
+      email\" : \"{{@Faker.internet.emailAddress}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\"\
+      \ : \"{{@Injection}}\",\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\"\
+      ,\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n\
+      \    \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n\
+      \    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\"\
+      \ : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5b731cb"
+    createdBy: null
+    createdDate: 1637737735607
+    modifiedBy: null
+    modifiedDate: 1637737735607
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/recepient"
+    payload: "{\n  \"accountNumber\" : \"{{@Injection}}\",\n  \"createdBy\" : \"\"\
+      ,\n  \"createdDate\" : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"\
+      email\" : \"{{@Faker.internet.emailAddress}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\"\
+      \ : \"{{@Injection}}\",\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\"\
+      ,\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n\
+      \    \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n\
+      \    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\"\
+      \ : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5b031c8"
+    createdBy: null
+    createdDate: 1637737735600
+    modifiedBy: null
+    modifiedDate: 1637737735600
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/orgs/{branchId}/users/{userId}/reset-password"
+    payload: "{\n  \"confirmPassword\" : \"{{@Injection}}\",\n  \"createdBy\" : \"\
+      \",\n  \"createdDate\" : \"\",\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
+      ,\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"\
+      modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"orgId\" : \"{{@Injection}}\"\
+      ,\n  \"orgRole\" : \"WRITE\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\",\n\
+      \  \"username\" : \"{{@Faker.name.username}}\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5a931c5"
+    createdBy: null
+    createdDate: 1637737735593
+    modifiedBy: null
+    modifiedDate: 1637737735593
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/orgs/{branchId}/users/{userId}"
+    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\
+      \",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" :\
+      \ \"\",\n  \"org\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\"\
+      ,\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\"\
+      ,\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"\
+      version\" : \"\"\n  },\n  \"orgRole\" : \"ENTERPRISE_ADMIN\",\n  \"status\"\
+      \ : \"ACTIVE\",\n  \"users\" : {\n    \"company\" : \"{{@Faker.company.name}}\"\
+      ,\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"email\" : \"\
+      {{@Faker.internet.emailAddress}}\",\n    \"id\" : \"\",\n    \"inactive\" :\
+      \ false,\n    \"jobTitle\" : \"{{@Faker.job.title}}\",\n    \"location\" : \"\
+      {{@Injection}}\",\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n\
+      \    \"name\" : \"{{@Injection}}\",\n    \"username\" : \"{{@Faker.name.username}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a59f31c2"
+    createdBy: null
+    createdDate: 1637737735583
+    modifiedBy: null
+    modifiedDate: 1637737735583
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/orgs/{branchId}/users/add-member"
+    payload: "{\n  \"confirmPassword\" : \"{{@Injection}}\",\n  \"createdBy\" : \"\
+      \",\n  \"createdDate\" : \"\",\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
+      ,\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"\
+      modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"orgId\" : \"{{@Injection}}\"\
+      ,\n  \"orgRole\" : \"WRITE\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\",\n\
+      \  \"username\" : \"{{@Faker.name.username}}\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a59931bf"
+    createdBy: null
+    createdDate: 1637737735577
+    modifiedBy: null
+    modifiedDate: 1637737735577
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/savings-transaction"
+    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
+      \ : \"{{@Injection}}\",\n  \"type\" : \"{{@Injection}}\",\n  \"user\" : {\n\
+      \    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n\
+      \    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
+      \  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a59431bc"
+    createdBy: null
+    createdDate: 1637737735572
+    modifiedBy: null
+    modifiedDate: 1637737735572
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/savings-transaction"
+    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
+      \ : \"{{@Injection}}\",\n  \"type\" : \"{{@Injection}}\",\n  \"user\" : {\n\
+      \    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n\
+      \    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
+      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
+      \  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a58e31b9"
+    createdBy: null
+    createdDate: 1637737735566
+    modifiedBy: null
+    modifiedDate: 1637737735566
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/users/personal-sign-up"
+    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
+      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
+      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
+      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
+      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
+      location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
+      \ : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a58931b6"
+    createdBy: null
+    createdDate: 1637737735561
+    modifiedBy: null
+    modifiedDate: 1637737735561
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/users/enterprise-sign-up"
+    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
+      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
+      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
+      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
+      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
+      location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
+      \ : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a58431b3"
+    createdBy: null
+    createdDate: 1637737735556
+    modifiedBy: null
+    modifiedDate: 1637737735556
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/issues/ui"
+    payload: "{\n  \"assertions\" : \"{{@Injection}}\",\n  \"assignedTo\" : \"{{@Injection}}\"\
+      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
+      {{@Injection}}\",\n  \"endpoint\" : \"{{@Injection}}\",\n  \"env\" : \"{{@Injection}}\"\
+      ,\n  \"failedAssertions\" : \"{{@Injection}}\",\n  \"headers\" : [ \"{{@Random}}\"\
+      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Injection}}\"\
+      ,\n  \"issueStatus\" : \"CLOSED\",\n  \"issueType\" : \"MANUAL\",\n  \"method\"\
+      \ : \"PATCH\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
+      \ : \"{{@Injection}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n   \
+      \ \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
+      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
+      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Injection}}\"\
+      ,\n      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Injection}}\",\n \
+      \   \"version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Injection}}\",\n  \"\
+      responseBody\" : \"{{@Injection}}\",\n  \"responseHeaders\" : \"{{@Injection}}\"\
+      ,\n  \"result\" : \"{{@Injection}}\",\n  \"statusCode\" : \"{{@Injection}}\"\
+      ,\n  \"tags\" : [ \"{{@Random}}\" ],\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a57b31b0"
+    createdBy: null
+    createdDate: 1637737735547
+    modifiedBy: null
+    modifiedDate: 1637737735547
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/issues/ui"
+    payload: "{\n  \"assertions\" : \"{{@Injection}}\",\n  \"assignedTo\" : \"{{@Injection}}\"\
+      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
+      {{@Injection}}\",\n  \"endpoint\" : \"{{@Injection}}\",\n  \"env\" : \"{{@Injection}}\"\
+      ,\n  \"failedAssertions\" : \"{{@Injection}}\",\n  \"headers\" : [ \"{{@Random}}\"\
+      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Injection}}\"\
+      ,\n  \"issueStatus\" : \"CLOSED\",\n  \"issueType\" : \"MANUAL\",\n  \"method\"\
+      \ : \"PATCH\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
+      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
+      \ : \"{{@Injection}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n   \
+      \ \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
+      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
+      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Injection}}\"\
+      ,\n      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Injection}}\",\n \
+      \   \"version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Injection}}\",\n  \"\
+      responseBody\" : \"{{@Injection}}\",\n  \"responseHeaders\" : \"{{@Injection}}\"\
+      ,\n  \"result\" : \"{{@Injection}}\",\n  \"statusCode\" : \"{{@Injection}}\"\
+      ,\n  \"tags\" : [ \"{{@Random}}\" ],\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a57731ad"
+    createdBy: null
+    createdDate: 1637737735543
+    modifiedBy: null
+    modifiedDate: 1637737735543
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/bank-account/withdraw-amount"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a57131aa"
+    createdBy: null
+    createdDate: 1637737735537
+    modifiedBy: null
+    modifiedDate: 1637737735537
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/primary-account/primary-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a56b31a7"
+    createdBy: null
+    createdDate: 1637737735531
+    modifiedBy: null
+    modifiedDate: 1637737735531
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/primary-account/primary-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a56631a4"
+    createdBy: null
+    createdDate: 1637737735526
+    modifiedBy: null
+    modifiedDate: 1637737735526
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/branches/update"
+    payload: "{\n  \"access\" : \"{{@Injection}}\",\n  \"atmAtBranch\" : \"{{@Injection}}\"\
+      ,\n  \"branchMediatedServiceName\" : \"{{@Injection}}\",\n  \"branchName\" :\
+      \ \"{{@Injection}}\",\n  \"branchType\" : \"{{@Injection}}\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"customerSegment\" : \"{{@Injection}}\"\
+      ,\n  \"faxNumber\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\" :\
+      \ false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a55e31a1"
+    createdBy: null
+    createdDate: 1637737735518
+    modifiedBy: null
+    modifiedDate: 1637737735518
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/orgs"
+    payload: "{\n  \"billingEmail\" : \"{{@Faker.internet.emailAddress}}\",\n  \"\
+      company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\"\
+      \ : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n\
+      \  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"orgPlan\"\
+      \ : \"TEAM\",\n  \"orgType\" : \"ENTERPRISE\",\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a559319e"
+    createdBy: null
+    createdDate: 1637737735513
+    modifiedBy: null
+    modifiedDate: 1637737735513
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/bank-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a552319b"
+    createdBy: null
+    createdDate: 1637737735506
+    modifiedBy: null
+    modifiedDate: 1637737735506
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/bank-account"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
+      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
+      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
+      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
+      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
+      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a54d3198"
+    createdBy: null
+    createdDate: 1637737735501
+    modifiedBy: null
+    modifiedDate: 1637737735501
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/users/team-sign-up"
+    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
+      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
+      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
+      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
+      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
+      location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
+      \ : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\n  \"version\" : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a5483195"
+    createdBy: null
+    createdDate: 1637737735496
+    modifiedBy: null
+    modifiedDate: 1637737735496
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "POST"
+    endpoint: "/api/v1/transfers"
+    payload: "{\n  \"confirmed\" : false,\n  \"createdBy\" : \"\",\n  \"createdDate\"\
+      \ : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n\
+      \  \"modifiedDate\" : \"\",\n  \"transactionType\" : \"POS\",\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a53f3192"
+    createdBy: null
+    createdDate: 1637737735487
+    modifiedBy: null
+    modifiedDate: 1637737735487
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/transfers"
+    payload: "{\n  \"confirmed\" : false,\n  \"createdBy\" : \"\",\n  \"createdDate\"\
+      \ : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
+      \ : false,\n  \"location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n\
+      \  \"modifiedDate\" : \"\",\n  \"transactionType\" : \"POS\",\n  \"version\"\
+      \ : \"\"\n}"
+    resourceName: null
+    locked: false
+  - id: "8a8094e67d460c05017d50c6a537318f"
+    createdBy: null
+    createdDate: 1637737735479
+    modifiedBy: null
+    modifiedDate: 1637737735479
+    version: null
+    inactive: false
+    projectId: "8a8094e67d460c05017d50c6948a302b"
+    categoryGroup: "INJECTION"
+    method: "PUT"
+    endpoint: "/api/v1/primary-account/deposit-amount/{id}"
+    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
+      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
+      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
+      }"
+    resourceName: null
+    locked: false
   customHeaders: null
   auth: ""
   endpointSelection: null
-- type: "derby_(aka_java_db)_sql_injection"
+- type: "strong_and_unique_password"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@StatusCode != 200"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 521"
   severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "derby_(aka_java_db)_sql_injection"
-  customType: "Injection"
+  category: "Strong_And_Unique_Password"
+  customType: "Compliance1"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -12630,7 +13437,7 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "hadoop_injection"
+- type: "amazon_documentdb_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -12647,7 +13454,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "hadoop_injection"
+  category: "amazon_documentdb_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -12682,6 +13489,32 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
+- type: "redis_sql_injection"
+  owner: "FXLabs"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "redis_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
 - type: "amazon_dynamodb_injection"
   owner: "FXLabs"
   assertions:
@@ -12708,7 +13541,7 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "couchbase_server_injection"
+- type: "solr_sql_injection"
   owner: "FXLabs"
   assertions:
   - "@ResponseTime < 7000"
@@ -12725,7 +13558,7 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "couchbase_server_injection"
+  category: "solr_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -12770,29 +13603,6 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "strong_and_unique_password"
-  owner: "FXLabs"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 521"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Strong_And_Unique_Password"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "amazon_qldb_sql_injection"
   owner: "FXLabs"
   assertions:
@@ -12811,32 +13621,6 @@ generators:
   authors: ""
   abacResources: null
   category: "amazon_qldb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "amazon_documentdb_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_documentdb_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -12919,32 +13703,6 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "redis_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "redis_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "ADoS"
   owner: "FXLabs"
   assertions:
@@ -13014,32 +13772,6 @@ generators:
   payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "solr_sql_injection"
-  owner: "FXLabs"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "solr_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads: null
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "Windows_Command_Injection_Filter"
   owner: "FXLabs"
@@ -13856,8 +14588,8 @@ generators:
 - type: "stored_oracle_sql_injection"
   owner: "FXLabs"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -13887,739 +14619,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8094e67d460c05017d50c6a61431f3"
-    createdBy: null
-    createdDate: 1637737735700
-    modifiedBy: null
-    modifiedDate: 1637737735700
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/bank-account/deposit-amount"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a60d31f0"
-    createdBy: null
-    createdDate: 1637737735693
-    modifiedBy: null
-    modifiedDate: 1637737735693
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/savings-account/savings-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a60731ed"
-    createdBy: null
-    createdDate: 1637737735687
-    modifiedBy: null
-    modifiedDate: 1637737735687
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/savings-account/savings-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a60131ea"
-    createdBy: null
-    createdDate: 1637737735681
-    modifiedBy: null
-    modifiedDate: 1637737735681
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/products"
-    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\"\
-      \ : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\"\
-      \ : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"\
-      org\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\"\
-      \ : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
-      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
-      \  \"refId\" : \"{{@Injection}}\",\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5fb31e7"
-    createdBy: null
-    createdDate: 1637737735675
-    modifiedBy: null
-    modifiedDate: 1637737735675
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/products"
-    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\"\
-      \ : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\"\
-      \ : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"\
-      org\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\"\
-      \ : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
-      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
-      \  \"refId\" : \"{{@Injection}}\",\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5f431e4"
-    createdBy: null
-    createdDate: 1637737735668
-    modifiedBy: null
-    modifiedDate: 1637737735668
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/primary-transaction"
-    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
-      \ : \"{{@Injection}}\",\n  \"type\" : \"{{@Injection}}\",\n  \"user\" : {\n\
-      \    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n\
-      \    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
-      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
-      \  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5eb31e1"
-    createdBy: null
-    createdDate: 1637737735659
-    modifiedBy: null
-    modifiedDate: 1637737735659
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/primary-transaction"
-    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
-      \ : \"{{@Injection}}\",\n  \"type\" : \"{{@Injection}}\",\n  \"user\" : {\n\
-      \    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n\
-      \    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
-      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
-      \  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5e331de"
-    createdBy: null
-    createdDate: 1637737735651
-    modifiedBy: null
-    modifiedDate: 1637737735651
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/issues"
-    payload: "{\n  \"assertions\" : \"{{@Injection}}\",\n  \"assignedTo\" : \"{{@Injection}}\"\
-      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
-      {{@Injection}}\",\n  \"endpoint\" : \"{{@Injection}}\",\n  \"env\" : \"{{@Injection}}\"\
-      ,\n  \"failedAssertions\" : \"{{@Injection}}\",\n  \"headers\" : [ \"{{@Random}}\"\
-      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Injection}}\"\
-      ,\n  \"issueStatus\" : \"CLOSED\",\n  \"issueType\" : \"MANUAL\",\n  \"method\"\
-      \ : \"PATCH\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
-      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
-      \ : \"{{@Injection}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n   \
-      \ \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
-      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
-      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Injection}}\"\
-      ,\n      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Injection}}\",\n \
-      \   \"version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Injection}}\",\n  \"\
-      responseBody\" : \"{{@Injection}}\",\n  \"responseHeaders\" : \"{{@Injection}}\"\
-      ,\n  \"result\" : \"{{@Injection}}\",\n  \"statusCode\" : \"{{@Injection}}\"\
-      ,\n  \"tags\" : [ \"{{@Random}}\" ],\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5de31db"
-    createdBy: null
-    createdDate: 1637737735646
-    modifiedBy: null
-    modifiedDate: 1637737735646
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/issues"
-    payload: "{\n  \"assertions\" : \"{{@Injection}}\",\n  \"assignedTo\" : \"{{@Injection}}\"\
-      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
-      {{@Injection}}\",\n  \"endpoint\" : \"{{@Injection}}\",\n  \"env\" : \"{{@Injection}}\"\
-      ,\n  \"failedAssertions\" : \"{{@Injection}}\",\n  \"headers\" : [ \"{{@Random}}\"\
-      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Injection}}\"\
-      ,\n  \"issueStatus\" : \"CLOSED\",\n  \"issueType\" : \"MANUAL\",\n  \"method\"\
-      \ : \"PATCH\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
-      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
-      \ : \"{{@Injection}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n   \
-      \ \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
-      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
-      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Injection}}\"\
-      ,\n      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Injection}}\",\n \
-      \   \"version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Injection}}\",\n  \"\
-      responseBody\" : \"{{@Injection}}\",\n  \"responseHeaders\" : \"{{@Injection}}\"\
-      ,\n  \"result\" : \"{{@Injection}}\",\n  \"statusCode\" : \"{{@Injection}}\"\
-      ,\n  \"tags\" : [ \"{{@Random}}\" ],\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5d631d8"
-    createdBy: null
-    createdDate: 1637737735638
-    modifiedBy: null
-    modifiedDate: 1637737735638
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/branches"
-    payload: "{\n  \"access\" : \"{{@Injection}}\",\n  \"atmAtBranch\" : \"{{@Injection}}\"\
-      ,\n  \"branchMediatedServiceName\" : \"{{@Injection}}\",\n  \"branchName\" :\
-      \ \"{{@Injection}}\",\n  \"branchType\" : \"{{@Injection}}\",\n  \"createdBy\"\
-      \ : \"\",\n  \"createdDate\" : \"\",\n  \"customerSegment\" : \"{{@Injection}}\"\
-      ,\n  \"faxNumber\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\" :\
-      \ false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\"\
-      \ : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5cf31d5"
-    createdBy: null
-    createdDate: 1637737735631
-    modifiedBy: null
-    modifiedDate: 1637737735631
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/primary-account/withdraw-amount/{id}"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
-      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
-      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
-      }"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5c831d2"
-    createdBy: null
-    createdDate: 1637737735624
-    modifiedBy: null
-    modifiedDate: 1637737735624
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/orgs/{id}"
-    payload: "{\n  \"billingEmail\" : \"{{@Faker.internet.emailAddress}}\",\n  \"\
-      company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\"\
-      \ : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n\
-      \  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"orgPlan\"\
-      \ : \"TEAM\",\n  \"orgType\" : \"ENTERPRISE\",\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5bf31cf"
-    createdBy: null
-    createdDate: 1637737735615
-    modifiedBy: null
-    modifiedDate: 1637737735615
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/recepient"
-    payload: "{\n  \"accountNumber\" : \"{{@Injection}}\",\n  \"createdBy\" : \"\"\
-      ,\n  \"createdDate\" : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"\
-      email\" : \"{{@Faker.internet.emailAddress}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\"\
-      \ : \"{{@Injection}}\",\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\"\
-      ,\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n\
-      \    \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n\
-      \    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\"\
-      \ : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5b931cc"
-    createdBy: null
-    createdDate: 1637737735609
-    modifiedBy: null
-    modifiedDate: 1637737735609
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/recepient"
-    payload: "{\n  \"accountNumber\" : \"{{@Injection}}\",\n  \"createdBy\" : \"\"\
-      ,\n  \"createdDate\" : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"\
-      email\" : \"{{@Faker.internet.emailAddress}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"name\"\
-      \ : \"{{@Injection}}\",\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\"\
-      ,\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n\
-      \    \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n\
-      \    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\"\
-      \ : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5b231c9"
-    createdBy: null
-    createdDate: 1637737735602
-    modifiedBy: null
-    modifiedDate: 1637737735602
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/orgs/{branchId}/users/{userId}/reset-password"
-    payload: "{\n  \"confirmPassword\" : \"{{@Injection}}\",\n  \"createdBy\" : \"\
-      \",\n  \"createdDate\" : \"\",\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
-      ,\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"\
-      modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"orgId\" : \"{{@Injection}}\"\
-      ,\n  \"orgRole\" : \"WRITE\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\",\n\
-      \  \"username\" : \"{{@Faker.name.username}}\",\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5ab31c6"
-    createdBy: null
-    createdDate: 1637737735595
-    modifiedBy: null
-    modifiedDate: 1637737735595
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/orgs/{branchId}/users/{userId}"
-    payload: "{\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\
-      \",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" :\
-      \ \"\",\n  \"org\" : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\"\
-      ,\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"modifiedBy\" : \"\"\
-      ,\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"\
-      version\" : \"\"\n  },\n  \"orgRole\" : \"ENTERPRISE_ADMIN\",\n  \"status\"\
-      \ : \"ACTIVE\",\n  \"users\" : {\n    \"company\" : \"{{@Faker.company.name}}\"\
-      ,\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"email\" : \"\
-      {{@Faker.internet.emailAddress}}\",\n    \"id\" : \"\",\n    \"inactive\" :\
-      \ false,\n    \"jobTitle\" : \"{{@Faker.job.title}}\",\n    \"location\" : \"\
-      {{@Injection}}\",\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n\
-      \    \"name\" : \"{{@Injection}}\",\n    \"username\" : \"{{@Faker.name.username}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5a231c3"
-    createdBy: null
-    createdDate: 1637737735586
-    modifiedBy: null
-    modifiedDate: 1637737735586
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/orgs/{branchId}/users/add-member"
-    payload: "{\n  \"confirmPassword\" : \"{{@Injection}}\",\n  \"createdBy\" : \"\
-      \",\n  \"createdDate\" : \"\",\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
-      ,\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n  \"\
-      modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"orgId\" : \"{{@Injection}}\"\
-      ,\n  \"orgRole\" : \"WRITE\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\",\n\
-      \  \"username\" : \"{{@Faker.name.username}}\",\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a59b31c0"
-    createdBy: null
-    createdDate: 1637737735579
-    modifiedBy: null
-    modifiedDate: 1637737735579
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/savings-transaction"
-    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
-      \ : \"{{@Injection}}\",\n  \"type\" : \"{{@Injection}}\",\n  \"user\" : {\n\
-      \    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n\
-      \    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
-      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
-      \  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a59631bd"
-    createdBy: null
-    createdDate: 1637737735574
-    modifiedBy: null
-    modifiedDate: 1637737735574
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/savings-transaction"
-    payload: "{\n  \"amount\" : \"{{@RandomDouble | 4}}\",\n  \"availableBalance\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"status\"\
-      \ : \"{{@Injection}}\",\n  \"type\" : \"{{@Injection}}\",\n  \"user\" : {\n\
-      \    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"id\" : \"\",\n\
-      \    \"inactive\" : false,\n    \"modifiedBy\" : \"\",\n    \"modifiedDate\"\
-      \ : \"\",\n    \"name\" : \"{{@Injection}}\",\n    \"version\" : \"\"\n  },\n\
-      \  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a59031ba"
-    createdBy: null
-    createdDate: 1637737735568
-    modifiedBy: null
-    modifiedDate: 1637737735568
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/users/personal-sign-up"
-    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
-      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
-      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
-      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
-      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
-      location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
-      \ : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
-      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
-      ,\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a58b31b7"
-    createdBy: null
-    createdDate: 1637737735563
-    modifiedBy: null
-    modifiedDate: 1637737735563
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/users/enterprise-sign-up"
-    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
-      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
-      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
-      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
-      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
-      location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
-      \ : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
-      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
-      ,\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a58631b4"
-    createdBy: null
-    createdDate: 1637737735557
-    modifiedBy: null
-    modifiedDate: 1637737735557
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/issues/ui"
-    payload: "{\n  \"assertions\" : \"{{@Injection}}\",\n  \"assignedTo\" : \"{{@Injection}}\"\
-      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
-      {{@Injection}}\",\n  \"endpoint\" : \"{{@Injection}}\",\n  \"env\" : \"{{@Injection}}\"\
-      ,\n  \"failedAssertions\" : \"{{@Injection}}\",\n  \"headers\" : [ \"{{@Random}}\"\
-      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Injection}}\"\
-      ,\n  \"issueStatus\" : \"CLOSED\",\n  \"issueType\" : \"MANUAL\",\n  \"method\"\
-      \ : \"PATCH\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
-      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
-      \ : \"{{@Injection}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n   \
-      \ \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
-      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
-      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Injection}}\"\
-      ,\n      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Injection}}\",\n \
-      \   \"version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Injection}}\",\n  \"\
-      responseBody\" : \"{{@Injection}}\",\n  \"responseHeaders\" : \"{{@Injection}}\"\
-      ,\n  \"result\" : \"{{@Injection}}\",\n  \"statusCode\" : \"{{@Injection}}\"\
-      ,\n  \"tags\" : [ \"{{@Random}}\" ],\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a57d31b1"
-    createdBy: null
-    createdDate: 1637737735549
-    modifiedBy: null
-    modifiedDate: 1637737735549
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/issues/ui"
-    payload: "{\n  \"assertions\" : \"{{@Injection}}\",\n  \"assignedTo\" : \"{{@Injection}}\"\
-      ,\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\",\n  \"description\" : \"\
-      {{@Injection}}\",\n  \"endpoint\" : \"{{@Injection}}\",\n  \"env\" : \"{{@Injection}}\"\
-      ,\n  \"failedAssertions\" : \"{{@Injection}}\",\n  \"headers\" : [ \"{{@Random}}\"\
-      \ ],\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"issueName\" : \"{{@Injection}}\"\
-      ,\n  \"issueStatus\" : \"CLOSED\",\n  \"issueType\" : \"MANUAL\",\n  \"method\"\
-      \ : \"PATCH\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"project\"\
-      \ : {\n    \"createdBy\" : \"\",\n    \"createdDate\" : \"\",\n    \"description\"\
-      \ : \"{{@Injection}}\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n   \
-      \ \"modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"org\" : {\n      \"createdBy\" : \"\",\n      \"createdDate\" : \"\"\
-      ,\n      \"id\" : \"\",\n      \"inactive\" : false,\n      \"modifiedBy\" :\
-      \ \"\",\n      \"modifiedDate\" : \"\",\n      \"name\" : \"{{@Injection}}\"\
-      ,\n      \"version\" : \"\"\n    },\n    \"refId\" : \"{{@Injection}}\",\n \
-      \   \"version\" : \"\"\n  },\n  \"requestBody\" : \"{{@Injection}}\",\n  \"\
-      responseBody\" : \"{{@Injection}}\",\n  \"responseHeaders\" : \"{{@Injection}}\"\
-      ,\n  \"result\" : \"{{@Injection}}\",\n  \"statusCode\" : \"{{@Injection}}\"\
-      ,\n  \"tags\" : [ \"{{@Random}}\" ],\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a57831ae"
-    createdBy: null
-    createdDate: 1637737735544
-    modifiedBy: null
-    modifiedDate: 1637737735544
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/bank-account/withdraw-amount"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a57331ab"
-    createdBy: null
-    createdDate: 1637737735539
-    modifiedBy: null
-    modifiedDate: 1637737735539
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/primary-account/primary-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
-      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
-      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
-      }"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a56d31a8"
-    createdBy: null
-    createdDate: 1637737735533
-    modifiedBy: null
-    modifiedDate: 1637737735533
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/primary-account/primary-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
-      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
-      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
-      }"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a56731a5"
-    createdBy: null
-    createdDate: 1637737735527
-    modifiedBy: null
-    modifiedDate: 1637737735527
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/branches/update"
-    payload: "{\n  \"access\" : \"{{@Injection}}\",\n  \"atmAtBranch\" : \"{{@Injection}}\"\
-      ,\n  \"branchMediatedServiceName\" : \"{{@Injection}}\",\n  \"branchName\" :\
-      \ \"{{@Injection}}\",\n  \"branchType\" : \"{{@Injection}}\",\n  \"createdBy\"\
-      \ : \"\",\n  \"createdDate\" : \"\",\n  \"customerSegment\" : \"{{@Injection}}\"\
-      ,\n  \"faxNumber\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\" :\
-      \ false,\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\"\
-      \ : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a56031a2"
-    createdBy: null
-    createdDate: 1637737735520
-    modifiedBy: null
-    modifiedDate: 1637737735520
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/orgs"
-    payload: "{\n  \"billingEmail\" : \"{{@Faker.internet.emailAddress}}\",\n  \"\
-      company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\"\
-      \ : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n\
-      \  \"modifiedDate\" : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"orgPlan\"\
-      \ : \"TEAM\",\n  \"orgType\" : \"ENTERPRISE\",\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a55b319f"
-    createdBy: null
-    createdDate: 1637737735515
-    modifiedBy: null
-    modifiedDate: 1637737735515
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a555319c"
-    createdBy: null
-    createdDate: 1637737735509
-    modifiedBy: null
-    modifiedDate: 1637737735509
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a54f3199"
-    createdBy: null
-    createdDate: 1637737735503
-    modifiedBy: null
-    modifiedDate: 1637737735503
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/users/team-sign-up"
-    payload: "{\n  \"accountNonExpired\" : false,\n  \"accountNonLocked\" : false,\n\
-      \  \"company\" : \"{{@Faker.company.name}}\",\n  \"createdBy\" : \"\",\n  \"\
-      createdDate\" : \"\",\n  \"credentialsNonExpired\" : false,\n  \"email\" : \"\
-      {{@Faker.internet.emailAddress}}\",\n  \"enabled\" : false,\n  \"id\" : \"\"\
-      ,\n  \"inactive\" : false,\n  \"jobTitle\" : \"{{@Faker.job.title}}\",\n  \"\
-      location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n  \"modifiedDate\"\
-      \ : \"\",\n  \"name\" : \"{{@Injection}}\",\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
-      ,\n  \"privileges\" : [ \"{{@Random}}\" ],\n  \"username\" : \"{{@Faker.name.username}}\"\
-      ,\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a54a3196"
-    createdBy: null
-    createdDate: 1637737735498
-    modifiedBy: null
-    modifiedDate: 1637737735498
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/transfers"
-    payload: "{\n  \"confirmed\" : false,\n  \"createdBy\" : \"\",\n  \"createdDate\"\
-      \ : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n\
-      \  \"modifiedDate\" : \"\",\n  \"transactionType\" : \"POS\",\n  \"version\"\
-      \ : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a5413193"
-    createdBy: null
-    createdDate: 1637737735489
-    modifiedBy: null
-    modifiedDate: 1637737735489
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/transfers"
-    payload: "{\n  \"confirmed\" : false,\n  \"createdBy\" : \"\",\n  \"createdDate\"\
-      \ : \"\",\n  \"description\" : \"{{@Injection}}\",\n  \"id\" : \"\",\n  \"inactive\"\
-      \ : false,\n  \"location\" : \"{{@Injection}}\",\n  \"modifiedBy\" : \"\",\n\
-      \  \"modifiedDate\" : \"\",\n  \"transactionType\" : \"POS\",\n  \"version\"\
-      \ : \"\"\n}"
-    resourceName: null
-    locked: false
-  - id: "8a8094e67d460c05017d50c6a53a3190"
-    createdBy: null
-    createdDate: 1637737735482
-    modifiedBy: null
-    modifiedDate: 1637737735482
-    version: null
-    inactive: false
-    projectId: "8a8094e67d460c05017d50c6948a302b"
-    categoryGroup: "STORED_INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/primary-account/deposit-amount/{id}"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"accountType\" : \"SAVING\",\n  \"createdBy\"\
-      \ : \"\",\n  \"createdDate\" : \"\",\n  \"id\" : \"\",\n  \"inactive\" : false,\n\
-      \  \"modifiedBy\" : \"\",\n  \"modifiedDate\" : \"\",\n  \"version\" : \"\"\n\
-      }"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: ""
   endpointSelection: null
