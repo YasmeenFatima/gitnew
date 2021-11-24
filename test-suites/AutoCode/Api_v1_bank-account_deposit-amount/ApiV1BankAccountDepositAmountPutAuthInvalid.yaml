@@ -40,7 +40,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 403'
+- '@StatusCode == 200'
 cleanup: []
 severity: Critical
 category: InvalidAuth
@@ -54,6 +54,7 @@ tags:
 - OWASP API Security Top 10
 - Broken Authentication
 - Non-Intrusive
+- '[MITRE ATT&CK] T1595.002'
 inactive: false
 policies:
   initExec: Request

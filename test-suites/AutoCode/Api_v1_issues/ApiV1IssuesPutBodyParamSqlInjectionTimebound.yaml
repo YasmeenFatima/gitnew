@@ -29,7 +29,7 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "OPEN",
+      "issueStatus" : "CLOSED",
       "issueType" : "MANUAL",
       "method" : "PATCH",
       "modifiedBy" : "",

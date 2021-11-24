@@ -30,8 +30,8 @@ testCases:
       "inactive" : false,
       "issueName" : "{{@Injection}}",
       "issueStatus" : "CLOSED",
-      "issueType" : "AUTOMATIC",
-      "method" : "OPTIONS",
+      "issueType" : "MANUAL",
+      "method" : "PATCH",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

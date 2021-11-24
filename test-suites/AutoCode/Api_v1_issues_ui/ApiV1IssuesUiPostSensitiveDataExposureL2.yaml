@@ -30,8 +30,8 @@ testCases:
       "inactive" : false,
       "issueName" : "{{@Random}}",
       "issueStatus" : "CLOSED",
-      "issueType" : "AUTOMATIC",
-      "method" : "OPTIONS",
+      "issueType" : "MANUAL",
+      "method" : "PATCH",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -85,6 +85,7 @@ tags:
 - INPUT VALIDATION
 - NON-INTRUSIVE
 - '[2020 CWE TOP 7] CWE - 200'
+- '[MITRE ATT&CK] T1119'
 inactive: false
 policies:
   initExec: Request

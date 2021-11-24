@@ -33,7 +33,7 @@ testCases:
         "name" : "{{@Injection}}",
         "version" : ""
       },
-      "orgRole" : "WRITE",
+      "orgRole" : "ENTERPRISE_ADMIN",
       "status" : "ACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",

@@ -29,7 +29,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgPlan" : "PRO",
-      "orgType" : "PERSONAL",
+      "orgType" : "ENTERPRISE",
       "version" : ""
     }
   inactive: false

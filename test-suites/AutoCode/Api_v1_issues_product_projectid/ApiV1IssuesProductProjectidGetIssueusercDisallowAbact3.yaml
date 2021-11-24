@@ -6,9 +6,9 @@ authors:
 - apisec Bot
 type: SUITE
 init:
-- IssueCreateUserAInitAbact3
+- Issue1CreateUserAInitAbact3
 path: /api/v1/issues/product/{projectId}
-endpoint: /api/v1/issues/product/{{@IssueCreateUserAInitAbact3_Response.data.id}}?page=0&pageSize=20
+endpoint: /api/v1/issues/product/{{@Issue1CreateUserAInitAbact3_Response.data.id}}?page=0&pageSize=20
 method: GET
 auth: UserC
 headers:
@@ -17,7 +17,7 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 401 OR @StatusCode == 403'
+- '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
 severity: High
 category: ABAC_Level3

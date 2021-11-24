@@ -29,7 +29,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgPlan" : "PAY_AS_YOU_GO",
-      "orgType" : "PERSONAL",
+      "orgType" : "ENTERPRISE",
       "version" : ""
     }
   inactive: false

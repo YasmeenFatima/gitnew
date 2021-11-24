@@ -31,7 +31,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@RequestHeaders.Authorization != null AND @RequestHeaders.Authorization startsWith
+- '@RequestHeaders.Authorization != null AND @RequestHeaders.Authorization startsWithIgnoreCase
   Bearer'
 cleanup: []
 severity: Medium

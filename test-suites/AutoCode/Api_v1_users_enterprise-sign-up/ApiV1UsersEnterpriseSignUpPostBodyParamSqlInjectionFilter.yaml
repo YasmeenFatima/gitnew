@@ -55,6 +55,7 @@ tags:
 - Injection
 - Intrusive
 - '[2020 CWE TOP 6] CWE - 89'
+- '[MITRE ATT&CK] T1190'
 inactive: false
 policies:
   initExec: Request

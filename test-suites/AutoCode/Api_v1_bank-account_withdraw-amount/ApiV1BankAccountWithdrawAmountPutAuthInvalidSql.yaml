@@ -40,9 +40,11 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@ResponseTime < 7000 AND @StatusCode == 401'
+- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 405 OR @StatusCode ==
+  406'
+- '@ResponseTime < 7000'
 cleanup: []
-severity: High
+severity: Critical
 category: InvalidAuthSQL
 tags:
 - V1
@@ -54,6 +56,7 @@ tags:
 - Non-Intrusive
 - Injection
 - '[2020 CWE TOP 14] CWE - 287'
+- '[MITRE ATT&CK] T1595.002'
 inactive: false
 policies:
   initExec: Request

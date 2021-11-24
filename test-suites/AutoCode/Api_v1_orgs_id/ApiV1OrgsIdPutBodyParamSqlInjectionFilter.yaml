@@ -28,8 +28,8 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "PAY_AS_YOU_GO",
-      "orgType" : "PERSONAL",
+      "orgPlan" : "TEAM",
+      "orgType" : "ENTERPRISE",
       "version" : ""
     }
   inactive: false
@@ -50,6 +50,7 @@ tags:
 - Injection
 - Intrusive
 - '[2020 CWE TOP 6] CWE - 89'
+- '[MITRE ATT&CK] T1190'
 inactive: false
 policies:
   initExec: Request

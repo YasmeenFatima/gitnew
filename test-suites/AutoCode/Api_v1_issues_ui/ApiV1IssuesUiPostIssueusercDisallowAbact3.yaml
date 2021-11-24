@@ -6,7 +6,7 @@ authors:
 - apisec Bot
 type: SUITE
 init:
-- Issue1CreateUserAInitAbact3
+- IssueCreateUserAInitAbact3
 path: /api/v1/issues/ui
 endpoint: /api/v1/issues/ui
 method: POST
@@ -27,12 +27,12 @@ testCases:
       "env" : "{{@Random}}",
       "failedAssertions" : "{{@Random}}",
       "headers" : [ "{{@Random}}" ],
-      "id" : "{{@Issue1CreateUserAInitAbact3_Response.data.id}}",
+      "id" : "{{@IssueCreateUserAInitAbact3_Response.data.id}}",
       "inactive" : false,
       "issueName" : "{{@Random}}",
       "issueStatus" : "CLOSED",
-      "issueType" : "AUTOMATIC",
-      "method" : "OPTIONS",
+      "issueType" : "MANUAL",
+      "method" : "PATCH",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -68,7 +68,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 401 OR @StatusCode == 403'
+- '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
 severity: High
 category: ABAC_Level3

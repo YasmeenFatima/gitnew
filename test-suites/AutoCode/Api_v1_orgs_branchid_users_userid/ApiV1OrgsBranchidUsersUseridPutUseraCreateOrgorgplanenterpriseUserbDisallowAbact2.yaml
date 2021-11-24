@@ -34,8 +34,8 @@ testCases:
         "name" : "{{@Random}}",
         "version" : ""
       },
-      "orgRole" : "BANK_ACCOUNTANT",
-      "status" : "REMOVED",
+      "orgRole" : "ENTERPRISE_ADMIN",
+      "status" : "ACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",

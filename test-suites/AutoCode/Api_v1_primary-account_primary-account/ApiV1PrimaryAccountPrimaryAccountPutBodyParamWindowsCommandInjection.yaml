@@ -49,6 +49,7 @@ tags:
 - INPUT VALIDATION
 - NON-INTRUSIVE
 - '[2020 CWE TOP 10 ] CWE - 78'
+- '[MITRE ATT&CK] T1055.011'
 inactive: false
 policies:
   initExec: Request
