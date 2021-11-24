@@ -46,7 +46,7 @@ assertions:
 - '@StatusCode != 404'
 - '@ResponseTime < 7000'
 cleanup: []
-severity: High
+severity: Critical
 category: oracle_sql_injection
 tags:
 - V1
