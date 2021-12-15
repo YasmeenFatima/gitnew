@@ -12,7 +12,9 @@ method: GET
 auth: Invalid_Auth
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Accept: application/json'
+- ' Content-Type: application/json'
 testCases: []
 useCategoryAssertion: false
 assertions:

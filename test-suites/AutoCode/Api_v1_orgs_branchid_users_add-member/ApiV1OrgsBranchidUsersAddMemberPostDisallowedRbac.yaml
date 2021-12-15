@@ -9,7 +9,7 @@ init: []
 path: /api/v1/orgs/{branchId}/users/add-member
 endpoint: /api/v1/orgs/{{@Var.branchId}}/users/add-member
 method: POST
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'
@@ -27,7 +27,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgId" : "{{@Random}}",
-      "orgRole" : "BANK_ACCOUNTANT",
+      "orgRole" : "PROJECT_MANAGER",
       "password" : "{{@PassAlphaNumSpl}}",
       "username" : "{{@Faker.name.username}}",
       "version" : ""

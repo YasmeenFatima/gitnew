@@ -45,7 +45,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@FXLabs/Common/customize'
+  repeatModule: ""
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

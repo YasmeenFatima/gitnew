@@ -9,7 +9,7 @@ init: []
 path: /api/v1/orgs/{id}
 endpoint: /api/v1/orgs/{{@Var.id}}
 method: PUT
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'
@@ -28,8 +28,8 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "TEAM",
-      "orgType" : "TEAM",
+      "orgPlan" : "PAY_AS_YOU_GO",
+      "orgType" : "ENTERPRISE",
       "version" : ""
     }
   inactive: false

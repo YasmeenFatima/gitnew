@@ -9,7 +9,7 @@ init: []
 path: /api/v1/orgs/login-status
 endpoint: /api/v1/orgs/login-status
 method: GET
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

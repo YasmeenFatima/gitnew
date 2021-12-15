@@ -20,7 +20,7 @@ assertions:
 - '@StatusCode != 404'
 - '@StatusCode != 401'
 cleanup: []
-severity: High
+severity: Medium
 category: ADoS
 tags:
 - V1

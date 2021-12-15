@@ -33,8 +33,8 @@ testCases:
         "name" : "{{@Injection}}",
         "version" : ""
       },
-      "orgRole" : "ADMIN",
-      "status" : "INVITED",
+      "orgRole" : "WRITE",
+      "status" : "INACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",
@@ -58,7 +58,7 @@ assertions:
 - '@ResponseTime < 7000'
 - '@StatusCode == 404'
 cleanup: []
-severity: High
+severity: Medium
 category: stored_oracle_sql_injection
 tags:
 - V1
@@ -78,7 +78,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/stored_oracle_sql_injection'
+  repeatModule: ""
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

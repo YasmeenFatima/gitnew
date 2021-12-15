@@ -9,7 +9,7 @@ init: []
 path: /api/v1/recepient
 endpoint: /api/v1/recepient
 method: POST
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

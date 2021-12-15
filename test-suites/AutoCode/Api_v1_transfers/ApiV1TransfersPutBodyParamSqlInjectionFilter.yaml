@@ -26,7 +26,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "CHARGE",
+      "transactionType" : "WITHDRAW",
       "version" : ""
     }
   inactive: false
@@ -56,7 +56,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/sql_injection_filter'
+  repeatModule: ""
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

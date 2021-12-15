@@ -35,7 +35,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 200'
+- '@StatusCode == 200'
 - '@Response.$..id != @Numbers'
 cleanup: []
 severity: Medium

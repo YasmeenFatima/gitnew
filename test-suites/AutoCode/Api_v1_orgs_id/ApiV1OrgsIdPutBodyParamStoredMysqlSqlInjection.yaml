@@ -28,8 +28,8 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "TEAM",
-      "orgType" : "TEAM",
+      "orgPlan" : "PAY_AS_YOU_GO",
+      "orgType" : "ENTERPRISE",
       "version" : ""
     }
   inactive: false
@@ -38,7 +38,7 @@ assertions:
 - '@ResponseTime < 7000'
 - '@StatusCode == 404'
 cleanup: []
-severity: Medium
+severity: High
 category: stored_mysql_sql_injection
 tags:
 - V1
@@ -59,7 +59,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/stored_mysql_sql_injection'
+  repeatModule: ""
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

@@ -22,7 +22,7 @@ testCases:
       "createdBy" : "",
       "createdDate" : "",
       "description" : "{{@Random}}",
-      "id" : "",
+      "id" : "12345",
       "inactive" : false,
       "modifiedBy" : "",
       "modifiedDate" : "",
@@ -43,7 +43,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 403'
+- '@StatusCode == 200'
 cleanup: []
 severity: Critical
 category: Unsecured

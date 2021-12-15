@@ -9,7 +9,7 @@ init: []
 path: /api/v1/primary-transaction
 endpoint: /api/v1/primary-transaction
 method: PUT
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'
@@ -22,7 +22,7 @@ testCases:
       "createdBy" : "",
       "createdDate" : "",
       "description" : "{{@Random}}",
-      "id" : "",
+      "id" : "12345",
       "inactive" : false,
       "modifiedBy" : "",
       "modifiedDate" : "",

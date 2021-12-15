@@ -9,7 +9,7 @@ init: []
 path: /api/v1/primary-transaction/{id}
 endpoint: /api/v1/primary-transaction/{{@Var.id}}
 method: DELETE
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

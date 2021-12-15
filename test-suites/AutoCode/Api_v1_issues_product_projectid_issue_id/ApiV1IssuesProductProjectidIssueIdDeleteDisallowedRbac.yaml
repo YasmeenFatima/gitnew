@@ -9,7 +9,7 @@ init: []
 path: /api/v1/issues/product/{projectId}/issue/{id}
 endpoint: /api/v1/issues/product/{{@Var.projectId}}/issue/{{@Var.id}}
 method: DELETE
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

@@ -19,7 +19,7 @@ assertions:
 - '@StatusCode != 404'
 - '@ResponseTime < 7000'
 cleanup: []
-severity: Medium
+severity: Critical
 category: postgres_sql_injection
 tags:
 - V1

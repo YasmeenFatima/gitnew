@@ -31,8 +31,8 @@ testCases:
       "inactive" : false,
       "issueName" : "{{@Random}}",
       "issueStatus" : "OPEN",
-      "issueType" : "MANUAL",
-      "method" : "PATCH",
+      "issueType" : "AUTOMATIC",
+      "method" : "TRACE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

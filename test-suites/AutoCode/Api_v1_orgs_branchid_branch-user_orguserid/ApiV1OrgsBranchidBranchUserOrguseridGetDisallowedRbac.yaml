@@ -9,7 +9,7 @@ init: []
 path: /api/v1/orgs/{branchId}/branch-user/{orgUserId}
 endpoint: /api/v1/orgs/{{@Var.branchId}}/branch-user/{{@Var.orgUserId}}
 method: GET
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

@@ -22,7 +22,7 @@ testCases:
       "createdBy" : "",
       "createdDate" : "",
       "description" : "{{@Random}}",
-      "id" : "",
+      "id" : "12345",
       "inactive" : false,
       "modifiedBy" : "",
       "modifiedDate" : "",
@@ -43,11 +43,9 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 405 OR @StatusCode ==
-  406'
-- '@ResponseTime < 7000'
+- '@StatusCode == 200'
 cleanup: []
-severity: Critical
+severity: Medium
 category: InvalidAuthSQL
 tags:
 - V1
@@ -68,7 +66,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@FXLabs/Common/auth_invalid_sql'
+  repeatModule: '@Apisec/Common/auth_invalid_sql'
   repeatDelay: 0
   unmaskToken: true
   postExecutionDelay: 0

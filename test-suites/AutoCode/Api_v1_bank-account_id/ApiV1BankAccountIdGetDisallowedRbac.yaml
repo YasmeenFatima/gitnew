@@ -9,7 +9,7 @@ init: []
 path: /api/v1/bank-account/{id}
 endpoint: /api/v1/bank-account/{{@Var.id}}
 method: GET
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

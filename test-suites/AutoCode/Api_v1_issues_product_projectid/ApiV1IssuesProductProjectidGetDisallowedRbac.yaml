@@ -9,7 +9,7 @@ init: []
 path: /api/v1/issues/product/{projectId}
 endpoint: /api/v1/issues/product/{{@Var.projectId}}
 method: GET
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

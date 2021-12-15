@@ -9,7 +9,7 @@ init: []
 path: /api/v1/issues
 endpoint: /api/v1/issues
 method: PUT
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

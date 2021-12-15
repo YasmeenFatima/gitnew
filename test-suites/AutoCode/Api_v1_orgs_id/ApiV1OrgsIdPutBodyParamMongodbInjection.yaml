@@ -28,17 +28,17 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "TEAM",
-      "orgType" : "TEAM",
+      "orgPlan" : "PAY_AS_YOU_GO",
+      "orgType" : "ENTERPRISE",
       "version" : ""
     }
   inactive: false
 useCategoryAssertion: false
 assertions:
+- '@StatusCode != 404'
 - '@ResponseTime < 7000'
-- '@StatusCode == 404'
 cleanup: []
-severity: Medium
+severity: Critical
 category: mongodb_injection
 tags:
 - V1
@@ -58,7 +58,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/mongodb_injection'
+  repeatModule: ""
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

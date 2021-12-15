@@ -9,7 +9,7 @@ init: []
 path: /api/v1/orgs/find-by-name/{name}
 endpoint: /api/v1/orgs/find-by-name/{{@Var.name}}
 method: GET
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

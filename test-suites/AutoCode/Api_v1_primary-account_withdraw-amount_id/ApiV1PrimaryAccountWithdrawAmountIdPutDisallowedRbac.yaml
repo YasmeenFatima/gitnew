@@ -9,7 +9,7 @@ init: []
 path: /api/v1/primary-account/withdraw-amount/{id}
 endpoint: /api/v1/primary-account/withdraw-amount/{{@Var.id}}
 method: PUT
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'

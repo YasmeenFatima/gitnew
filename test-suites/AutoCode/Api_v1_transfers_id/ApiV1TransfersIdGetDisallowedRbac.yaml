@@ -9,10 +9,12 @@ init: []
 path: /api/v1/transfers/{id}
 endpoint: /api/v1/transfers/{{@Var.id}}
 method: GET
-auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
+auth: ""
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Accept: application/json'
+- ' Content-Type: application/json'
 testCases: []
 useCategoryAssertion: false
 assertions:
