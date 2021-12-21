@@ -28,7 +28,7 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "TEAM",
+      "orgPlan" : "ENTERPRISE",
       "orgType" : "ENTERPRISE",
       "version" : ""
     }
@@ -41,7 +41,6 @@ severity: Critical
 category: test14
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request

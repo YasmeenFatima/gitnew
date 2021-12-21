@@ -29,9 +29,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "OPEN",
+      "issueStatus" : "CLOSED",
       "issueType" : "MANUAL",
-      "method" : "HEAD",
+      "method" : "OPTIONS",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -73,7 +73,6 @@ severity: Critical
 category: test14
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request

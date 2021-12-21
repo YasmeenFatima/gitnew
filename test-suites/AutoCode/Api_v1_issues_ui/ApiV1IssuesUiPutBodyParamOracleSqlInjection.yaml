@@ -31,7 +31,7 @@ testCases:
       "issueName" : "{{@Injection}}",
       "issueStatus" : "CLOSED",
       "issueType" : "MANUAL",
-      "method" : "POST",
+      "method" : "OPTIONS",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

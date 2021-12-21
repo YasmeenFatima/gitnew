@@ -29,9 +29,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "OPEN",
-      "issueType" : "AUTOMATIC",
-      "method" : "TRACE",
+      "issueStatus" : "CLOSED",
+      "issueType" : "MANUAL",
+      "method" : "OPTIONS",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

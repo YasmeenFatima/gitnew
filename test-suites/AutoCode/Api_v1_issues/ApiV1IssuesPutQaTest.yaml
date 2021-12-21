@@ -30,7 +30,7 @@ testCases:
       "inactive" : false,
       "issueName" : "{{@Random}}",
       "issueStatus" : "CLOSED",
-      "issueType" : "AUTOMATIC",
+      "issueType" : "MANUAL",
       "method" : "OPTIONS",
       "modifiedBy" : "",
       "modifiedDate" : "",

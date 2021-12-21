@@ -33,7 +33,7 @@ testCases:
         "name" : "{{@Random}}",
         "version" : ""
       },
-      "orgRole" : "BANK_ACCOUNTANT",
+      "orgRole" : "PROJECT_MANAGER",
       "status" : "REMOVED",
       "users" : {
         "company" : "{{@Faker.company.name}}",

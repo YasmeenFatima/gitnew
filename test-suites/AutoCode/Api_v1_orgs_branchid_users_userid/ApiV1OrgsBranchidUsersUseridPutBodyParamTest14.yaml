@@ -33,8 +33,8 @@ testCases:
         "name" : "{{@Injection}}",
         "version" : ""
       },
-      "orgRole" : "BANK_MANAGER",
-      "status" : "DECLINED",
+      "orgRole" : "PROJECT_MANAGER",
+      "status" : "REMOVED",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",
@@ -61,7 +61,6 @@ severity: Critical
 category: test14
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request

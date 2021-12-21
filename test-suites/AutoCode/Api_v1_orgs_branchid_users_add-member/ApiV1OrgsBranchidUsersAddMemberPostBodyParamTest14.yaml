@@ -27,7 +27,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
       "orgId" : "{{@Injection}}",
-      "orgRole" : "ADMIN",
+      "orgRole" : "ENTERPRISE_ADMIN",
       "password" : "{{@PassAlphaNumSpl}}",
       "username" : "{{@Faker.name.username}}",
       "version" : ""
@@ -41,7 +41,6 @@ severity: Critical
 category: test14
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request

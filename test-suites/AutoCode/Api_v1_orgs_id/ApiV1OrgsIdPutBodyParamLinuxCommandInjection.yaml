@@ -28,7 +28,7 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "PRO",
+      "orgPlan" : "ENTERPRISE",
       "orgType" : "ENTERPRISE",
       "version" : ""
     }

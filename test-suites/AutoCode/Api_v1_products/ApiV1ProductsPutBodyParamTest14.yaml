@@ -47,7 +47,6 @@ severity: Critical
 category: test14
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request
