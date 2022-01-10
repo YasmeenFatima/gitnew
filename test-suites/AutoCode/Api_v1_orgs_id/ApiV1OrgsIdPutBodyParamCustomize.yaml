@@ -29,7 +29,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
       "orgPlan" : "ENTERPRISE",
-      "orgType" : "ENTERPRISE",
+      "orgType" : "TEAM",
       "version" : ""
     }
   inactive: false
@@ -49,7 +49,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: ""
+  repeatModule: '@APIsec/Common/customize'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

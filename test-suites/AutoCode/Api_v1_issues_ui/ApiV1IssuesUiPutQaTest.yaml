@@ -29,9 +29,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "CLOSED",
+      "issueStatus" : "OPEN",
       "issueType" : "MANUAL",
-      "method" : "OPTIONS",
+      "method" : "DELETE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

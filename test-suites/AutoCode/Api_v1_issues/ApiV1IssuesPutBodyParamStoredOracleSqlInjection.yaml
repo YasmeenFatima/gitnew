@@ -12,7 +12,9 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Accept: application/json'
+- ' Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -30,8 +32,8 @@ testCases:
       "inactive" : false,
       "issueName" : "{{@Injection}}",
       "issueStatus" : "OPEN",
-      "issueType" : "AUTOMATIC",
-      "method" : "TRACE",
+      "issueType" : "MANUAL",
+      "method" : "DELETE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -70,7 +72,7 @@ assertions:
 - '@StatusCode != 404'
 - '@ResponseTime < 7000'
 cleanup: []
-severity: Critical
+severity: Medium
 category: stored_oracle_sql_injection
 tags:
 - V1
@@ -90,7 +92,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: ""
+  repeatModule: '@QA/Common/stored_oracle_sql_injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

@@ -28,15 +28,15 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "TEAM",
-      "orgType" : "ENTERPRISE",
+      "orgPlan" : "ENTERPRISE",
+      "orgType" : "TEAM",
       "version" : ""
     }
   inactive: false
 useCategoryAssertion: false
 assertions:
+- '@StatusCode != 404'
 - '@ResponseTime < 7000'
-- '@StatusCode == 404'
 cleanup: []
 severity: Critical
 category: oracle_sql_injection
@@ -58,7 +58,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: ""
+  repeatModule: '@QA/Common/oracle_sql_injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

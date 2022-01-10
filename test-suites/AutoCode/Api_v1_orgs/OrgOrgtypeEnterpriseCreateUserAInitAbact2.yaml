@@ -28,7 +28,7 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "BASIC",
+      "orgPlan" : "ENTERPRISE",
       "orgType" : "ENTERPRISE",
       "version" : ""
     }

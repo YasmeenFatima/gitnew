@@ -28,7 +28,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgId" : "{{@Random}}",
-      "orgRole" : "WRITE",
+      "orgRole" : "USER",
       "password" : "{{@PassAlphaNumSpl}}",
       "username" : "{{@Faker.name.username}}",
       "version" : ""

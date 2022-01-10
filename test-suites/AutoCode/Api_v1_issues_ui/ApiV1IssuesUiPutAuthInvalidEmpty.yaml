@@ -29,8 +29,8 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "CLOSED",
-      "issueType" : "AUTOMATIC",
+      "issueStatus" : "OPEN",
+      "issueType" : "MANUAL",
       "method" : "DELETE",
       "modifiedBy" : "",
       "modifiedDate" : "",
@@ -67,8 +67,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 405 OR @StatusCode ==
-  406'
+- '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
 severity: Critical
 category: InvalidAuthEmpty
@@ -82,7 +81,6 @@ tags:
 - Broken Authentication
 - Non-Intrusive
 - '[2020 CWE TOP 24] CWE - 306'
-- '[MITRE ATT&CK] T1595.002'
 inactive: false
 policies:
   initExec: Request

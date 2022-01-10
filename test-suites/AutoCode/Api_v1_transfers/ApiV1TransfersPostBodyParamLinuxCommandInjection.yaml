@@ -26,7 +26,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "ONLINE",
+      "transactionType" : "DEPOSIT",
       "version" : ""
     }
   inactive: false
@@ -38,6 +38,9 @@ severity: Critical
 category: Linux_Command_Injection
 tags:
 - V1
+- OWASP-API8
+- '[PCI DSS 3.0] 6.5.7'
+- '[PCI DSS 3.2] 6.5.1'
 - '[PCI DSS 3.2.1] 6.5.1'
 - OWASP - OTG-INPVAL-001
 - OWASP - OTG-INPVAL-002
@@ -47,9 +50,6 @@ tags:
 - INPUT VALIDATION
 - NON-INTRUSIVE
 - '[2020 CWE TOP 10 ] CWE - 78'
-- OWASP-API8
-- '[PCI DSS 3.0] 6.5.7'
-- '[PCI DSS 3.2] 6.5.1'
 inactive: false
 policies:
   initExec: Request

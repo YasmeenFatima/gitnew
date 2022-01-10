@@ -6,14 +6,16 @@ authors:
 - apisec Bot
 type: SUITE
 init:
-- Issue1CreateUserAInitAbact3
+- IssueCreateUserAInitAbact3
 path: /api/v1/issues
 endpoint: /api/v1/issues
 method: PUT
 auth: UserB
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Accept: application/json'
+- ' Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -27,12 +29,12 @@ testCases:
       "env" : "{{@Random}}",
       "failedAssertions" : "{{@Random}}",
       "headers" : [ "{{@Random}}" ],
-      "id" : "{{@Issue1CreateUserAInitAbact3_Response.data.id}}",
+      "id" : "{{@IssueCreateUserAInitAbact3_Response.data.id}}",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "CLOSED",
+      "issueStatus" : "OPEN",
       "issueType" : "AUTOMATIC",
-      "method" : "DELETE",
+      "method" : "TRACE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

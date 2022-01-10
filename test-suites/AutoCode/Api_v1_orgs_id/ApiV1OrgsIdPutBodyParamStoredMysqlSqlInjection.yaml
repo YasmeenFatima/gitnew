@@ -28,8 +28,8 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "PRO",
-      "orgType" : "ENTERPRISE",
+      "orgPlan" : "ENTERPRISE",
+      "orgType" : "TEAM",
       "version" : ""
     }
   inactive: false

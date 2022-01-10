@@ -6,9 +6,9 @@ authors:
 - apisec Bot
 type: SUITE
 init:
-- Issue1CreateUserAInitAbact3
+- IssueCreateUserAInitAbact3
 path: /api/v1/issues/{id}
-endpoint: /api/v1/issues/{{@Issue1CreateUserAInitAbact3_Response.data.id}}
+endpoint: /api/v1/issues/{{@IssueCreateUserAInitAbact3_Response.data.id}}
 method: GET
 auth: UserC
 headers:

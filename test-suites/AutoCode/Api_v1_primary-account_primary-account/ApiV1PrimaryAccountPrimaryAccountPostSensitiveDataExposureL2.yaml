@@ -19,7 +19,7 @@ testCases:
     {
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
-      "accountType" : "CURRENT",
+      "accountType" : "SAVING",
       "createdBy" : "",
       "createdDate" : "",
       "id" : "",
@@ -49,7 +49,6 @@ tags:
 - INPUT VALIDATION
 - NON-INTRUSIVE
 - '[2020 CWE TOP 7] CWE - 200'
-- '[MITRE ATT&CK] T1119'
 inactive: false
 policies:
   initExec: Request

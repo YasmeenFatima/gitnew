@@ -33,8 +33,8 @@ testCases:
         "name" : "{{@Injection}}",
         "version" : ""
       },
-      "orgRole" : "BANK_MANAGER",
-      "status" : "DECLINED",
+      "orgRole" : "PROJECT_MANAGER",
+      "status" : "INACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",
@@ -70,7 +70,6 @@ tags:
 - Injection
 - Intrusive
 - '[2020 CWE TOP 6] CWE - 89'
-- '[MITRE ATT&CK] T1190'
 inactive: false
 policies:
   initExec: Request
@@ -79,7 +78,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: ""
+  repeatModule: '@APIsec/Common/sql_injection_filter'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

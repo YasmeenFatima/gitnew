@@ -15,7 +15,31 @@ headers:
 - 'Content-Type: application/json'
 testCases:
 - id: 1
-  body: '{"amount":"{{@RandomDouble | 4}}","availableBalance":"{{@RandomInteger}}","createdBy":"","createdDate":"","description":"{{@Injection}}","id":"1345","inactive":false,"modifiedBy":"","modifiedDate":"","status":"{{@Injection}}","type":"{{@Injection}}","user":{"createdBy":"","createdDate":"","id":"","inactive":false,"modifiedBy":"","modifiedDate":"","name":"{{@Injection}}","version":""},"version":""}'
+  body: |-
+    {
+      "amount" : "{{@RandomDouble | 4}}",
+      "availableBalance" : "{{@RandomInteger}}",
+      "createdBy" : "",
+      "createdDate" : "",
+      "description" : "{{@Injection}}",
+      "id" : "",
+      "inactive" : false,
+      "modifiedBy" : "",
+      "modifiedDate" : "",
+      "status" : "{{@Injection}}",
+      "type" : "{{@Injection}}",
+      "user" : {
+        "createdBy" : "",
+        "createdDate" : "",
+        "id" : "",
+        "inactive" : false,
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "name" : "{{@Injection}}",
+        "version" : ""
+      },
+      "version" : ""
+    }
   inactive: false
 useCategoryAssertion: false
 assertions:

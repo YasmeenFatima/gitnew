@@ -12,7 +12,9 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Accept: application/json'
+- ' Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -29,9 +31,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "CLOSED",
+      "issueStatus" : "OPEN",
       "issueType" : "MANUAL",
-      "method" : "OPTIONS",
+      "method" : "DELETE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

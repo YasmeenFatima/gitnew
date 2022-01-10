@@ -29,8 +29,8 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "CLOSED",
-      "issueType" : "AUTOMATIC",
+      "issueStatus" : "OPEN",
+      "issueType" : "MANUAL",
       "method" : "DELETE",
       "modifiedBy" : "",
       "modifiedDate" : "",
@@ -85,7 +85,6 @@ tags:
 - INPUT VALIDATION
 - NON-INTRUSIVE
 - '[2020 CWE TOP 10 ] CWE - 78'
-- '[MITRE ATT&CK] T1055.011'
 inactive: false
 policies:
   initExec: Request

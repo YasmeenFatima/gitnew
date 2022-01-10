@@ -12,7 +12,9 @@ method: POST
 auth: Anonymous
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/json'
+- ' Accept: application/json'
+- ' Content-Type: application/json'
 testCases:
 - id: 1
   body: |-

@@ -58,7 +58,6 @@ tags:
 - INPUT VALIDATION
 - NON-INTRUSIVE
 - '[2020 CWE TOP 1 ] CWE - 79'
-- '[MITRE ATT&CK] T1190'
 inactive: false
 policies:
   initExec: Request

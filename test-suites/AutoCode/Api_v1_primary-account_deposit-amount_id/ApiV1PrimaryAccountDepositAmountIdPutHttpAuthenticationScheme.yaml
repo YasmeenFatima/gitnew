@@ -19,7 +19,7 @@ testCases:
     {
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
-      "accountType" : "CURRENT",
+      "accountType" : "SAVING",
       "createdBy" : "",
       "createdDate" : "",
       "id" : "",
@@ -31,7 +31,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@RequestHeaders.Authorization != null AND @RequestHeaders.Authorization startsWithIgnoreCase
+- '@RequestHeaders.Authorization != null AND @RequestHeaders.Authorization startsWith
   Bearer'
 cleanup: []
 severity: Medium

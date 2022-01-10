@@ -34,7 +34,7 @@ testCases:
         "version" : ""
       },
       "orgRole" : "PROJECT_MANAGER",
-      "status" : "REMOVED",
+      "status" : "INACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",
