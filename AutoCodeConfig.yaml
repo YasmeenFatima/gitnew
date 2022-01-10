@@ -23060,7 +23060,8 @@ generators:
   customHeaders: "PUT:/api/v1/issues[Accept: application/json, Content-Type: application/json,\
     \ Accept: application/json, Content-Type: application/json]\nPOST:/api/v1/users/enterprise-sign-up[Accept:\
     \ application/json, Content-Type: application/json, Accept: application/json,\
-    \ Content-Type: application/json]"
+    \ Content-Type: application/json]\nPOST:/api/v1/users/team-sign-up[Accept: application/json,\
+    \ Content-Type: application/json, Accept: application/json, Content-Type: application/json]"
   auth: null
   endpointSelection: "ALL"
 - type: "h2_db_sql_injection"
