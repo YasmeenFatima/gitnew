@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "ATM",
+      "transactionType" : "DEPOSIT",
       "version" : ""
     }
   inactive: false

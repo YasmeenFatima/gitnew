@@ -22,7 +22,7 @@ testCases:
       "accountNumber" : "{{@RandomInteger}}",
       "createdBy" : "",
       "createdDate" : "",
-      "id" : "",
+      "id" : "1234",
       "inactive" : false,
       "modifiedBy" : "",
       "modifiedDate" : "",

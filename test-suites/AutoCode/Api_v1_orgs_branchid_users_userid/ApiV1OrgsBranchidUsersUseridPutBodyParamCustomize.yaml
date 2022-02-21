@@ -13,9 +13,7 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/json'
-- ' Accept: application/json'
-- ' Content-Type: application/json'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -36,8 +34,8 @@ testCases:
         "name" : "{{@Injection}}",
         "version" : ""
       },
-      "orgRole" : "READ",
-      "status" : "ACTIVE",
+      "orgRole" : "PROJECT_MANAGER",
+      "status" : "REMOVED",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",

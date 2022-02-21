@@ -16,28 +16,7 @@ headers:
 - 'Content-Type: application/json'
 testCases:
 - id: 1
-  body: |-
-    {
-      "accountNonExpired" : false,
-      "accountNonLocked" : false,
-      "company" : "{{@Faker.company.name}}",
-      "createdBy" : "",
-      "createdDate" : "",
-      "credentialsNonExpired" : false,
-      "email" : "{{@Faker.internet.emailAddress}}",
-      "enabled" : false,
-      "id" : "",
-      "inactive" : false,
-      "jobTitle" : "{{@Faker.job.title}}",
-      "location" : "{{@Injection}}",
-      "modifiedBy" : "",
-      "modifiedDate" : "",
-      "name" : "{{@Injection}}",
-      "password" : "{{@PassAlphaNumSpl}}",
-      "privileges" : [ "{{@Random}}" ],
-      "username" : "{{@Faker.name.username}}",
-      "version" : ""
-    }
+  body: '{"accountNonExpired":false,"accountNonLocked":false,"company":"{{@Faker.company.name}}","createdBy":"","createdDate":"","credentialsNonExpired":false,"email":"{{@Faker.internet.emailAddress}}","enabled":false,"id":"{{@Var.Variable1}}","inactive":false,"jobTitle":"{{@Faker.job.title}}","location":"{{@Injection}}","modifiedBy":"","modifiedDate":"","name":"{{@Injection}}","password":"{{@PassAlphaNumSpl}}","privileges":["{{@Random}}"],"username":"{{@Faker.name.username}}","version":""}'
   inactive: false
 useCategoryAssertion: false
 assertions:
