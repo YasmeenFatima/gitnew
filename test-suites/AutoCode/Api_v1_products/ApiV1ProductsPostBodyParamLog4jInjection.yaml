@@ -61,7 +61,7 @@ tags:
   - NON-INTRUSIVE
   - "[2020 CWE TOP 10 ] CWE - 78"
   - "[MITRE ATT&CK] T1055.011"
-inactive: true
+inactive: false
 policies:
   initExec: Request
   cleanupExec: Request
