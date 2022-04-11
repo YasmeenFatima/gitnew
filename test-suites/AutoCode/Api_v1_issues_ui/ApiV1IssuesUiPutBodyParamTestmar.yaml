@@ -27,12 +27,12 @@ testCases:
       "env" : "{{@Injection}}",
       "failedAssertions" : "{{@Injection}}",
       "headers" : [ "{{@Random}}" ],
-      "id" : "",
+      "id" : "123456",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "OPEN",
-      "issueType" : "AUTOMATIC",
-      "method" : "PUT",
+      "issueStatus" : "CLOSED",
+      "issueType" : "MANUAL",
+      "method" : "GET",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -74,7 +74,6 @@ severity: Critical
 category: testmar
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request

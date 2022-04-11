@@ -23,7 +23,6 @@ severity: Critical
 category: testmar
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request

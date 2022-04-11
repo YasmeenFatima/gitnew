@@ -20,7 +20,7 @@ testCases:
     {
       "accountNumber" : "{{@Injection}}",
       "createdBy" : "",
-      "createdDate" : "",
+      "createdDate" : "11 April'22",
       "description" : "{{@Injection}}",
       "email" : "{{@Faker.internet.emailAddress}}",
       "id" : "",
@@ -50,7 +50,6 @@ severity: Critical
 category: testmar
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request

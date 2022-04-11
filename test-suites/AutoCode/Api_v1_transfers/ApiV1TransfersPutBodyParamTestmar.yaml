@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "CHECK",
+      "transactionType" : "CHARGE",
       "version" : ""
     }
   inactive: false
@@ -39,7 +39,6 @@ severity: Critical
 category: testmar
 tags:
 - V1
-- OWASP-API8
 inactive: false
 policies:
   initExec: Request

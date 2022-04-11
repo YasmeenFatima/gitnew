@@ -16,7 +16,28 @@ headers:
 - 'Content-Type: application/json'
 testCases:
 - id: 1
-  body: '{"accountBalance":"{{@RandomInteger}}","accountNumber":"{{@RandomInteger}}","createdBy":"","createdDate":"","id":"1234","inactive":false,"modifiedBy":"","modifiedDate":"","user":{"createdBy":"","createdDate":"","id":"","inactive":false,"modifiedBy":"","modifiedDate":"","name":"{{@Injection}}","version":""},"version":""}'
+  body: |-
+    {
+      "accountBalance" : "{{@RandomInteger}}",
+      "accountNumber" : "{{@RandomInteger}}",
+      "createdBy" : "",
+      "createdDate" : "",
+      "id" : "",
+      "inactive" : false,
+      "modifiedBy" : "",
+      "modifiedDate" : "",
+      "user" : {
+        "createdBy" : "",
+        "createdDate" : "",
+        "id" : "",
+        "inactive" : false,
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "name" : "{{@Injection}}",
+        "version" : ""
+      },
+      "version" : ""
+    }
   inactive: false
 useCategoryAssertion: false
 assertions:
