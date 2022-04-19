@@ -2,6 +2,89 @@
 genPolicy: "None"
 openAPISpec: null
 generators:
+- type: "amazon_simpledb_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_simpledb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "sql_anywhere_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "sql_anywhere_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "stored_mysql_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Stored_Mysql_Sql_Injection"
+  customType: "stored_injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
 - type: "anonymous_invalid"
   owner: "APIsec"
   assertions:
@@ -36,28 +119,120 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "resource_not_found_logging"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "OWASP-API10"
+  - "OWASP-A10"
+  - "Compliance"
+  - "OWASP-AT-004"
+  - "OWASP API Security Top 10"
+  - "Broken Authentication"
+  - "Non-Intrusive"
+  - "CWE - 392"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Resource_Not_Found_Logging"
+  customType: "Compliance1"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "mariadb_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: "Luqman"
+  abacResources: null
+  category: "mariadb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "null_value"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  tags:
+  - "OWASP - OTG-BUSLOGIC-001"
+  - "[2020 CWE TOP 3] CWE - 20"
+  - "Fuzz"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Null_Value"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "customize"
+  owner: "APIsec"
+  assertions: []
+  tags: []
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "Get:/api/v1/alerts[Accept=application/json,Content-Type=application/json]\n\
+      Post:/api/v1/accounts[Accept: application/json,Content-Type: application/json]"
+    queryParams: null
+    bodyProperties: null
+  authors: ""
+  abacResources: null
+  category: "Custom"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: "GET:/api/v1/orgs/search[Accept: application/json, Content-Type:\
+    \ application/json, Accept: application/json, Content-Type: application/json]"
   auth: null
   endpointSelection: "ALL"
 - type: "auth_invalid"
@@ -96,27 +271,32 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "empty_value"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  tags:
+  - "[2020 CWE TOP 3] CWE - 20"
+  - "Fuzz"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Empty_Value"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -156,121 +336,80 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "amazon_simpledb_sql_injection"
+- type: "h2_db_sql_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "INTRUSIVE  "
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: "Luqman"
+  abacResources: null
+  category: "h2_db_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "negative_number"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP - OTG-BUSLOGIC-001"
+  - "[2020 CWE TOP 3] CWE - 20"
+  - "Fuzz"
   severity: "Medium"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "amazon_simpledb_sql_injection"
+  category: "Negative_Number"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
-  auth: "Default"
+  auth: null
   endpointSelection: "ALL"
-- type: "resource_not_found_logging"
+- type: "report_successful_and_unsuccessful_login_attempts"
   owner: "APIsec"
   assertions:
   - "@StatusCode != 200"
   tags:
-  - "OWASP-API10"
-  - "OWASP-A10"
   - "Compliance"
-  - "OWASP-AT-004"
-  - "OWASP API Security Top 10"
-  - "Broken Authentication"
-  - "Non-Intrusive"
-  - "CWE - 392"
+  - "[PCI DSS 3.2] 10.2.4"
+  - "CWE - 778"
   severity: "Medium"
   database: null
-  inactive: false
+  inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Resource_Not_Found_Logging"
+  category: "Report_Successful_And_Unsuccessful_Login_Attempts"
   customType: "Compliance1"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -303,124 +442,9 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "mariadb_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: "Luqman"
-  abacResources: null
-  category: "mariadb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "sql_anywhere_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "sql_anywhere_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "Linux_command_injection_filter"
   owner: "APIsec"
@@ -450,129 +474,35 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "stored_mysql_sql_injection"
+- type: "amazon_aurora_sql_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
   tags:
-  - "OWASP-API8"
+  - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
   severity: "Medium"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Stored_Mysql_Sql_Injection"
-  customType: "stored_injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
-- type: "customize"
-  owner: "APIsec"
-  assertions: []
-  tags: []
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: "Get:/api/v1/alerts[Accept=application/json,Content-Type=application/json]\n\
-      Post:/api/v1/accounts[Accept: application/json,Content-Type: application/json]"
-    queryParams: null
-    bodyProperties: null
-  authors: ""
-  abacResources: null
-  category: "Custom"
+  category: "amazon_aurora_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: "GET:/api/v1/orgs/search[Accept: application/json, Content-Type:\
-    \ application/json, Accept: application/json, Content-Type: application/json]"
-  auth: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
   endpointSelection: "ALL"
 - type: "Linux_Command_Injection"
   owner: "APIsec"
@@ -602,167 +532,100 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "h2_db_sql_injection"
+- type: "hsqldb_sql_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
   tags:
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE  "
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
   severity: "Medium"
   database: null
   inactive: true
   matches: []
-  authors: "Luqman"
+  authors: ""
   abacResources: null
-  category: "h2_db_sql_injection"
+  category: "hsqldb_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "null_value"
+- type: "amazon_neptune_injection"
   owner: "APIsec"
   assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
+  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   tags:
-  - "OWASP - OTG-BUSLOGIC-001"
-  - "[2020 CWE TOP 3] CWE - 20"
-  - "Fuzz"
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
   severity: "Medium"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Null_Value"
+  category: "amazon_neptune_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
-  auth: null
+  auth: "Default"
   endpointSelection: "ALL"
-- type: "empty_value"
+- type: "mongodb_injection"
   owner: "APIsec"
   assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
+  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   tags:
-  - "[2020 CWE TOP 3] CWE - 20"
-  - "Fuzz"
-  severity: "Medium"
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "High"
   database: null
-  inactive: true
-  matches: []
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
   authors: ""
   abacResources: null
-  category: "Empty_Value"
+  category: "Mongodb_Injection"
   customType: "Injection"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
   customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
+  auth: ""
+  endpointSelection: null
 - type: "auth_invalid_sql"
   owner: "APIsec"
   assertions:
@@ -801,432 +664,9 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "negative_number"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
-  - "[2020 CWE TOP 3] CWE - 20"
-  - "Fuzz"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Negative_Number"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-- type: "report_successful_and_unsuccessful_login_attempts"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  - "[PCI DSS 3.2] 10.2.4"
-  - "CWE - 778"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Report_Successful_And_Unsuccessful_Login_Attempts"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "sql_injection_filter"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000 OR @ResponseTime > 10000"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
-  severity: "Medium"
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: "User-Create"
-    queryParams: null
-    bodyProperties: "id,name"
-  authors: ""
-  abacResources: null
-  category: "SQL_Injection_Filter"
-  customType: "stored_injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-- type: "hsqldb_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "hsqldb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "amazon_aurora_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_aurora_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "mongodb_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "High"
-  database: null
-  inactive: false
-  matches:
-  - name: ""
-    value: null
-    methods: ""
-    denyRoles: ""
-    allowRoles: ""
-    pathPatterns: ""
-    resourceSamples: ""
-    queryParams: ""
-    bodyProperties: ""
-  authors: ""
-  abacResources: null
-  category: "Mongodb_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
-- type: "sql_injection_timebound"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000 OR @ResponseTime > 10000"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
-  severity: "Critical"
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: "User-Create"
-    queryParams: null
-    bodyProperties: "id,name"
-  authors: ""
-  abacResources: null
-  category: "SQL_Injection_Timebound"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-- type: "amazon_neptune_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_neptune_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "ibm_db2_sql_injection"
   owner: "APIsec"
@@ -1250,130 +690,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "sql_injection2_timebound"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
-  severity: "Critical"
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: true
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: "User-Create"
-    queryParams: null
-    bodyProperties: "id,name"
-  authors: ""
-  abacResources: null
-  category: "SQL_Injection2"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-- type: "insufficient_monitoring"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 693"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Insufficient_Monitoring"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -1420,29 +737,282 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
+  endpointSelection: "ALL"
+- type: "insufficient_monitoring"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 693"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Insufficient_Monitoring"
+  customType: "Compliance1"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "sql_injection_filter"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000 OR @ResponseTime > 10000"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Medium"
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "User-Create"
+    queryParams: null
+    bodyProperties: "id,name"
+  authors: ""
+  abacResources: null
+  category: "SQL_Injection_Filter"
+  customType: "stored_injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "alchemy_db_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "alchemy_db_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "sql_injection_timebound"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000 OR @ResponseTime > 10000"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Critical"
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "User-Create"
+    queryParams: null
+    bodyProperties: "id,name"
+  authors: ""
+  abacResources: null
+  category: "SQL_Injection_Timebound"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "amazon_redshift_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_redshift_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "hive_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "hive_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "hbase_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "hbase_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "sql_injection2_timebound"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Critical"
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: true
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "User-Create"
+    queryParams: null
+    bodyProperties: "id,name"
+  authors: ""
+  abacResources: null
+  category: "SQL_Injection2"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "clustrix_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "clustrix_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
   endpointSelection: "ALL"
 - type: "rbac"
   owner: "APIsec"
@@ -1487,123 +1057,77 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "alchemy_db_sql_injection"
+- type: "postgres_sql_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
   tags:
-  - "OWASP A1"
+  - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "alchemy_db_sql_injection"
+  category: "Postgres_Sql_Injection"
   customType: "Injection"
   useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
   customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "amazon_redshift_sql_injection"
+  auth: ""
+  endpointSelection: null
+- type: "ADoS"
   owner: "APIsec"
   assertions:
-  - "@ResponseTime < 7000"
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
   - "@StatusCode != 404"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "OWASP-API4"
+  - "[PCI DSS 3.0] 6.5.2"
+  - "OWASP API Security Top 10"
+  - "Lack of Resources & Rate Limiting"
+  - "Intrusive"
+  - "[2020 CWE TOP 23] CWE - 400"
   severity: "Medium"
   database: null
-  inactive: true
-  matches: []
+  inactive: false
+  matches:
+  - name: "pageSize, page_size, maxResults, max_results"
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
-  category: "amazon_redshift_sql_injection"
+  category: "ADoS"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
-  auth: "Default"
+  auth: null
   endpointSelection: "ALL"
-- type: "hive_sql_injection"
+- type: "hazelcast_sql_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
@@ -1620,32 +1144,12 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "hive_sql_injection"
+  category: "hazelcast_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -1684,31 +1188,11 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "clustrix_sql_injection"
+- type: "sqlite_sql_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
@@ -1718,43 +1202,46 @@ generators:
   - "[PCI DSS 3.0] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
+  - "INTRUSIVE"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "clustrix_sql_injection"
+  category: "sqlite_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "hbase_injection"
+- type: "incremental_ids_l2"
+  owner: "APIsec"
+  assertions:
+  - "@Response.$..id != @Numbers"
+  tags:
+  - "OWASP-API3"
+  - "CWE - 99"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Incremental_Ids_L2"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "amazon_elasticache_sql_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
@@ -1771,32 +1258,12 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "hbase_injection"
+  category: "amazon_elasticache_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -1834,353 +1301,9 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "postgres_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Postgres_Sql_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
-- type: "ADoS"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API4"
-  - "[PCI DSS 3.0] 6.5.2"
-  - "OWASP API Security Top 10"
-  - "Lack of Resources & Rate Limiting"
-  - "Intrusive"
-  - "[2020 CWE TOP 23] CWE - 400"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches:
-  - name: "pageSize, page_size, maxResults, max_results"
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-  authors: ""
-  abacResources: null
-  category: "ADoS"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-- type: "incremental_ids"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode == 200"
-  - "@Response.$..id != @Numbers"
-  tags:
-  - "OWASP-API3"
-  - "CWE - 99"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Incremental_Ids"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-- type: "incremental_ids_l2"
-  owner: "APIsec"
-  assertions:
-  - "@Response.$..id != @Numbers"
-  tags:
-  - "OWASP-API3"
-  - "CWE - 99"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Incremental_Ids_L2"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "hazelcast_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "hazelcast_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "sla"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode == 200 AND @ResponseTime < 1000"
-  tags: []
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "SLA"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-- type: "sqlite_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "sqlite_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "impala_sql_injection"
   owner: "APIsec"
@@ -2204,29 +1327,167 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
+  endpointSelection: "ALL"
+- type: "incremental_ids"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode == 200"
+  - "@Response.$..id != @Numbers"
+  tags:
+  - "OWASP-API3"
+  - "CWE - 99"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Incremental_Ids"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "stored_postgres_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  - "[MITRE ATT&CK] T1190"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Stored_Postgres_Sql_Injection"
+  customType: "stored_injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
+- type: "deepsql_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "deepsql_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "hypergraph_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "hypergraph_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "sla"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode == 200 AND @ResponseTime < 1000"
+  tags: []
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "SLA"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "XSS_Injection"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.7"
+  - "[PCI DSS 3.2.1] 6.5.7"
+  - "OWASP - OTG-INPVAL-001"
+  - "OWASP - OTG-INPVAL-002"
+  - "OWASP API Security Top 10"
+  - "Excessive Data Exposure"
+  - "Security Misconfiguration"
+  - "INPUT VALIDATION"
+  - "NON-INTRUSIVE"
+  - "[2020 CWE TOP 1 ] CWE - 79"
+  - "[MITRE ATT&CK] T1190"
+  severity: "High"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "XSS_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
   endpointSelection: "ALL"
 - type: "abac"
   owner: "APIsec"
@@ -2287,101 +1548,9 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "deepsql_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "deepsql_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "amazon_elasticache_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_elasticache_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "invalid_datatype"
   owner: "APIsec"
@@ -2403,174 +1572,35 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "stored_postgres_sql_injection"
+- type: "apache_drill_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
   tags:
-  - "OWASP-API8"
+  - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  - "[MITRE ATT&CK] T1190"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
   severity: "Medium"
   database: null
   inactive: true
   matches: []
   authors: ""
   abacResources: null
-  category: "Stored_Postgres_Sql_Injection"
-  customType: "stored_injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
-- type: "XSS_Injection"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.7"
-  - "[PCI DSS 3.2.1] 6.5.7"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "OWASP API Security Top 10"
-  - "Excessive Data Exposure"
-  - "Security Misconfiguration"
-  - "INPUT VALIDATION"
-  - "NON-INTRUSIVE"
-  - "[2020 CWE TOP 1 ] CWE - 79"
-  - "[MITRE ATT&CK] T1190"
-  severity: "High"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "XSS_Injection"
+  category: "apache_drill_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-- type: "no_params"
-  owner: "APIsec"
-  assertions:
-  - "true == true"
-  tags:
-  - "OWASP - OTG-CONFIG-006"
-  - "Fuzz"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "SimpleGET"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: null
+  auth: "Default"
   endpointSelection: "ALL"
 - type: "excessive_data_exposure"
   owner: "APIsec"
@@ -2604,31 +1634,11 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-- type: "hypergraph_injection"
+- type: "informix_sql_injection"
   owner: "APIsec"
   assertions:
   - "@ResponseTime < 7000"
@@ -2645,32 +1655,83 @@ generators:
   matches: []
   authors: ""
   abacResources: null
-  category: "hypergraph_injection"
+  category: "informix_sql_injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "error_logging"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 392"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Error_Logging"
+  customType: "Compliance1"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "no_params"
+  owner: "APIsec"
+  assertions:
+  - "true == true"
+  tags:
+  - "OWASP - OTG-CONFIG-006"
+  - "Fuzz"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "SimpleGET"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+- type: "memsql_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "memsql_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -2696,119 +1757,30 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
-- type: "apache_drill_injection"
+- type: "insufficient_logging"
   owner: "APIsec"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
+  - "@StatusCode != 200"
   tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
+  - "Compliance"
+  - "OWASP-API10"
+  - "CWE - 778"
   severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches: []
   authors: ""
   abacResources: null
-  category: "apache_drill_injection"
-  customType: "Injection"
+  category: "Insufficient_Logging"
+  customType: "Compliance1"
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "memsql_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "memsql_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -2841,253 +1813,9 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
-  endpointSelection: "ALL"
-- type: "extremedb_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "extremedb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "amazon_rds_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_rds_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "informix_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "informix_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "error_logging"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 392"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Error_Logging"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "insufficient_logging"
-  owner: "APIsec"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  - "OWASP-API10"
-  - "CWE - 778"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Insufficient_Logging"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
   endpointSelection: "ALL"
 - type: "stored_sqlserver_sql_injection"
   owner: "APIsec"
@@ -3115,16 +1843,139 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
+- type: "extremedb_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "extremedb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "amazon_rds_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_rds_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "log4j_injection"
+  owner: "APIsec"
+  assertions:
+  - "@SafeServer.@LocalVariable.uuid == null"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-001"
+  - "OWASP - OTG-INPVAL-002"
+  - "OWASP OTG-INPVAL-013"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "INPUT VALIDATION"
+  - "NON-INTRUSIVE"
+  - "[2020 CWE TOP 10 ] CWE - 78"
+  - "[MITRE ATT&CK] T1055.011"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Log4j_Injection"
+  customType: "stored_injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: null
+- type: "oracle_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
+  authors: ""
+  abacResources: null
+  category: "Oracle_Sql_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
+  - id: "8a8087fc80415c3d018041d0f0e23b9c"
     createdBy: null
-    createdDate: 1650371653859
+    createdDate: 1650371653858
     modifiedBy: null
-    modifiedDate: 1650371653859
+    modifiedDate: 1650371653858
     version: null
     inactive: false
     projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
+    categoryGroup: "INJECTION"
     method: "POST"
     endpoint: "/bank-account"
     payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
@@ -3164,27 +2015,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: ""
   endpointSelection: null
@@ -3210,317 +2041,10 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "GET_SINGLE_PLAYBOOK"
-- type: "log4j_injection"
-  owner: "APIsec"
-  assertions:
-  - "@SafeServer.@LocalVariable.uuid == null"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "OWASP OTG-INPVAL-013"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "INPUT VALIDATION"
-  - "NON-INTRUSIVE"
-  - "[2020 CWE TOP 10 ] CWE - 78"
-  - "[MITRE ATT&CK] T1055.011"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Log4j_Injection"
-  customType: "stored_injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e33b9d"
-    createdBy: null
-    createdDate: 1650371653859
-    modifiedBy: null
-    modifiedDate: 1650371653859
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "STORED_INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: null
-- type: "oracle_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Oracle_Sql_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
-- type: "infobright_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "infobright_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "amazon_dynamodb_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_dynamodb_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "amazon_qldb_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE "
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "amazon_qldb_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-- type: "sqlbase_sql_injection"
-  owner: "APIsec"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP - OTG-INPVAL-005"
-  - "FX TOP 10 - API VULNERABILITY"
-  - "INTRUSIVE"
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "sqlbase_sql_injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "kognitio_sql_injection"
   owner: "APIsec"
   assertions:
@@ -3543,27 +2067,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -3589,27 +2093,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -3638,27 +2122,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: ""
   endpointSelection: null
@@ -3684,27 +2148,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -3730,27 +2174,112 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "infobright_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "infobright_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "amazon_dynamodb_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_dynamodb_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "amazon_qldb_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE "
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "amazon_qldb_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+- type: "sqlbase_sql_injection"
+  owner: "APIsec"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP - OTG-INPVAL-005"
+  - "FX TOP 10 - API VULNERABILITY"
+  - "INTRUSIVE"
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "sqlbase_sql_injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: null
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -3776,27 +2305,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -3820,27 +2329,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -3866,27 +2355,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -3916,27 +2385,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: ""
   endpointSelection: null
@@ -3962,27 +2411,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Anonymous"
   endpointSelection: "GET_SINGLE_PLAYBOOK"
@@ -7930,7 +6359,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -7956,27 +6385,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -8012,27 +6421,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -8058,27 +6447,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -8104,27 +6473,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -9937,7 +8286,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -9963,27 +8312,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -10006,27 +8335,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -10088,7 +8397,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -10114,27 +8423,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -10160,27 +8449,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -10206,27 +8475,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -12465,7 +10714,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -12491,27 +10740,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -12538,27 +10767,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -13678,7 +11887,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -13704,27 +11913,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -13750,27 +11939,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -13796,27 +11965,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -13842,27 +11991,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -13888,27 +12017,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -13934,27 +12043,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -13981,27 +12070,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14027,27 +12096,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14078,27 +12127,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: null
@@ -14124,27 +12153,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14170,27 +12179,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14216,27 +12205,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14262,27 +12231,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "SINGLE_PLAYBOOK"
@@ -14319,7 +12268,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -14352,27 +12301,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14394,27 +12323,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0cb3b9b"
-    createdBy: null
-    createdDate: 1650371653835
-    modifiedBy: null
-    modifiedDate: 1650371653835
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "DEFAULT"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Random}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14440,27 +12349,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14486,27 +12375,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14542,7 +12411,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads: []
+  payloads: null
   customHeaders: null
   auth: null
   endpointSelection: "ALL"
@@ -14568,27 +12437,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
@@ -14614,27 +12463,7 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: null
-  payloads:
-  - id: "8a8087fc80415c3d018041d0f0e23b9c"
-    createdBy: null
-    createdDate: 1650371653858
-    modifiedBy: null
-    modifiedDate: 1650371653858
-    version: null
-    inactive: false
-    projectId: "8a8087fc80415c3d0180416596ce1ad9"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/bank-account"
-    payload: "{\n  \"accountBalance\" : \"{{@RandomInteger}}\",\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\n  \"createdBy\" : \"\",\n  \"createdDate\" : \"\
-      \",\n  \"id\" : \"\",\n  \"inactive\" : false,\n  \"modifiedBy\" : \"\",\n \
-      \ \"modifiedDate\" : \"\",\n  \"user\" : {\n    \"createdBy\" : \"\",\n    \"\
-      createdDate\" : \"\",\n    \"id\" : \"\",\n    \"inactive\" : false,\n    \"\
-      modifiedBy\" : \"\",\n    \"modifiedDate\" : \"\",\n    \"name\" : \"{{@Injection}}\"\
-      ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
-    resourceName: null
-    locked: false
+  payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
