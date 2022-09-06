@@ -28,7 +28,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
       "orgId" : "{{@Injection}}",
-      "orgRole" : "BANK_MANAGER",
+      "orgRole" : "BANK_ACCOUNTANT",
       "password" : "{{@PassAlphaNumSpl}}",
       "username" : "{{@Faker.name.username}}",
       "version" : ""

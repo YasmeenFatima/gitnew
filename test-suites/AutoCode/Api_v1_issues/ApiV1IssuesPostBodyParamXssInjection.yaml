@@ -95,7 +95,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/XSS_Injection'
+  repeatModule: '@FXLabs/Common/XSS_Injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

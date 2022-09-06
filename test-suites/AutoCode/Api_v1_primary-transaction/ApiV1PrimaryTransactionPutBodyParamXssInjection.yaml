@@ -13,7 +13,7 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-
@@ -71,7 +71,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/XSS_Injection'
+  repeatModule: '@FXLabs/Common/XSS_Injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

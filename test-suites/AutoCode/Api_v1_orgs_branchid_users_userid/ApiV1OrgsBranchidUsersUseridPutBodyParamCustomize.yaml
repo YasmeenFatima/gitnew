@@ -34,8 +34,8 @@ testCases:
         "name" : "{{@Injection}}",
         "version" : ""
       },
-      "orgRole" : "PROJECT_MANAGER",
-      "status" : "ACTIVE",
+      "orgRole" : "BANK_ACCOUNTANT",
+      "status" : "REMOVED",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",

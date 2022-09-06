@@ -14,7 +14,7 @@ method: PUT
 auth: UserB
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-

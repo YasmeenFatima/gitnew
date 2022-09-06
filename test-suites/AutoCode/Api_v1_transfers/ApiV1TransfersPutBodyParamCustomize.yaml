@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "CHARGE",
+      "transactionType" : "WITHDRAW",
       "version" : ""
     }
   inactive: false

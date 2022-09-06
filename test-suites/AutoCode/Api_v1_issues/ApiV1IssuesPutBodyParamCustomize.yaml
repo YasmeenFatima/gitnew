@@ -30,9 +30,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "CLOSED",
+      "issueStatus" : "OPEN",
       "issueType" : "MANUAL",
-      "method" : "GET",
+      "method" : "TRACE",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
