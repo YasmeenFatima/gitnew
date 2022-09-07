@@ -52,7 +52,7 @@ generators:
   owner: "Default"
   assertions:
   - "Allowed:@StatusCode == 200"
-  - "Disallowed:@StatusCode ==== 401 OR @StatusCode == 403"
+  - "Disallowed:@StatusCode !!= 401 OR @StatusCode == 403"
   tags:
   - "OWASP-API2"
   - "OWASP-API7"
