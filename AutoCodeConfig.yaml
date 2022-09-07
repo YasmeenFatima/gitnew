@@ -51,8 +51,8 @@ generators:
 - type: "anonymous_invalid"
   owner: "Default"
   assertions:
-  - "Allowed:@StatusCode == 200"
   - "Disallowed:@StatusCode !!= 401 OR @StatusCode == 403"
+  - "Allowed:@StatusCode == 200"
   tags:
   - "OWASP-API2"
   - "OWASP-API7"
@@ -81,7 +81,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: "DEFAULT"
+  categoryGroup: null
   payloads: null
   customHeaders: null
   auth: null
@@ -4595,45 +4595,6 @@ generators:
   auth: "Default"
   endpointSelection: "ALL"
   safeServerUrl: null
-- type: "mongodb_injection"
-  owner: "Default"
-  assertions:
-  - "@StatusCode != 404"
-  - "@ResponseTime < 7000"
-  tags:
-  - "OWASP-API8"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "[PCI DSS 3.2.1] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "OWASP API Security Top 10"
-  - "Injection"
-  - "Intrusive"
-  - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches:
-  - name: ""
-    value: null
-    methods: ""
-    denyRoles: ""
-    allowRoles: ""
-    pathPatterns: ""
-    resourceSamples: ""
-    queryParams: ""
-    bodyProperties: ""
-  authors: ""
-  abacResources: null
-  category: "Mongodb_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: ""
-  endpointSelection: null
-  safeServerUrl: null
 - type: "cors_config_origin_reflection"
   owner: "QA Team"
   assertions:
@@ -5018,6 +4979,45 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
+  safeServerUrl: null
+- type: "mongodb_injection"
+  owner: "Default"
+  assertions:
+  - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
+  tags:
+  - "OWASP-API8"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "[PCI DSS 3.2.1] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "OWASP API Security Top 10"
+  - "Injection"
+  - "Intrusive"
+  - "[2020 CWE TOP 6] CWE - 89"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
+  authors: ""
+  abacResources: null
+  category: "Mongodb_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: ""
+  endpointSelection: null
   safeServerUrl: null
 - type: "postgres_sql_injection"
   owner: "Default"
