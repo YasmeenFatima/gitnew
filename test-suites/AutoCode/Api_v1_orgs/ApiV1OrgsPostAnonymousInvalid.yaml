@@ -29,8 +29,8 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "TEAM",
-      "orgType" : "ENTERPRISE",
+      "orgPlan" : "PRO",
+      "orgType" : "PERSONAL",
       "version" : ""
     }
   inactive: false
@@ -38,14 +38,16 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: Medium
+severity: Critical
 category: Unsecured
 tags:
 - V1
 - OWASP-API2
+- OWASP-API7
 - OWASP - OTG-AUTHN-002
 - OWASP API Security Top 10
 - Broken Authentication
+- Security Misconfiguration
 - Non-Intrusive
 - '[2020 CWE TOP 24] CWE - 306'
 inactive: false

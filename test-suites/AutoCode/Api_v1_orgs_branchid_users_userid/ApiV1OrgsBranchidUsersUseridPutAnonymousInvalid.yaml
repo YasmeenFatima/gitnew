@@ -34,8 +34,8 @@ testCases:
         "name" : "{{@Random}}",
         "version" : ""
       },
-      "orgRole" : "BANK_ACCOUNTANT",
-      "status" : "REMOVED",
+      "orgRole" : "BANK_MANAGER",
+      "status" : "INACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",
@@ -58,14 +58,16 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: Medium
+severity: Critical
 category: Unsecured
 tags:
 - V1
 - OWASP-API2
+- OWASP-API7
 - OWASP - OTG-AUTHN-002
 - OWASP API Security Top 10
 - Broken Authentication
+- Security Misconfiguration
 - Non-Intrusive
 - '[2020 CWE TOP 24] CWE - 306'
 inactive: false

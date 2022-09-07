@@ -51,8 +51,8 @@ generators:
 - type: "anonymous_invalid"
   owner: "Default"
   assertions:
-  - "Allowed:@StatusCode == 200"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  - "Allowed:@StatusCode == 200"
   tags:
   - "OWASP-API2"
   - "OWASP-API7"
@@ -81,7 +81,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -4628,7 +4628,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: false
-  categoryGroup: "INJECTION"
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: ""
