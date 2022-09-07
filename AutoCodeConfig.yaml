@@ -51,8 +51,8 @@ generators:
 - type: "anonymous_invalid"
   owner: "Default"
   assertions:
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
   - "Allowed:@StatusCode == 200"
+  - "Disallowed:@StatusCode ==== 401 OR @StatusCode == 403"
   tags:
   - "OWASP-API2"
   - "OWASP-API7"
