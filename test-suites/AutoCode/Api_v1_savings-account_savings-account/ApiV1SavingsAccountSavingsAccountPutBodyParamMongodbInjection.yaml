@@ -22,7 +22,7 @@ testCases:
       "accountNumber" : "{{@RandomInteger}}",
       "createdBy" : "",
       "createdDate" : "",
-      "id" : "78976",
+      "id" : "",
       "inactive" : false,
       "modifiedBy" : "",
       "modifiedDate" : "",
@@ -41,10 +41,10 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
+- '@StatusCode != 404'
 - '@ResponseTime < 7000'
-- '@StatusCode == 404'
 cleanup: []
-severity: Medium
+severity: Critical
 category: mongodb_injection
 tags:
 - V1
