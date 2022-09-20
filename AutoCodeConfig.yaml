@@ -11830,7 +11830,7 @@ generators:
   - "Injection"
   - "Intrusive"
   - "[2020 CWE TOP 6] CWE - 89"
-  severity: "Critical"
+  severity: "High"
   database: null
   inactive: false
   matches:
