@@ -5,8 +5,8 @@ generators:
 - type: "anonymous_invalid"
   owner: "Default"
   assertions:
-  - "Disallowed:@StatusCode !!= 401 OR @StatusCode == 403"
   - "Allowed:@StatusCode == 200"
+  - "Disallowed:@StatusCode !!= 401 OR @StatusCode == 403"
   tags:
   - "OWASP-API2"
   - "OWASP-API7"
@@ -35,7 +35,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -44,8 +44,8 @@ generators:
 - type: "abact1positive"
   owner: "Default"
   assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Allowed:@StatusCode == 200 AND @Response.errors == false"
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   tags:
   - "Penetration Testing"
   - "Data_Access_Control"
@@ -91,7 +91,7 @@ generators:
       ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
     deleteEndpoint: null
     validations: []
-    scripts: null
+    scripts: []
     lock: false
     enumValues: null
   category: "ABAC_Level4"
@@ -107,8 +107,8 @@ generators:
 - type: "abact2positive"
   owner: "Default"
   assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Allowed:@StatusCode == 200 AND @Response.errors == false"
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   tags:
   - "OWASP-API1"
   - "OWASP API Security Top 10"
@@ -2347,8 +2347,8 @@ generators:
 - type: "abact3positive"
   owner: "Default"
   assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Allowed:@StatusCode == 200 AND @Response.errors == false"
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   tags:
   - "OWASP-API1"
   - "OWASP API Security Top 10"
@@ -3562,8 +3562,8 @@ generators:
 - type: "abact7"
   owner: "Default"
   assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   tags:
   - "OWASP-API1"
   - "OWASP API Security Top 10"
@@ -3600,8 +3600,8 @@ generators:
 - type: "hijack1"
   owner: "Default"
   assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   tags:
   - "OWASP-API6"
   - "OWASP API Security Top 10"
@@ -3704,8 +3704,8 @@ generators:
 - type: "sql_injection2_timebound"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -3745,8 +3745,8 @@ generators:
 - type: "invalid_datatype"
   owner: "Default"
   assertions:
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 401"
   tags:
   - "OWASP - OTG-BUSLOGIC-001"
   - "Fuzz"
@@ -3770,10 +3770,10 @@ generators:
 - type: "special_chars"
   owner: "Default"
   assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
   - "@StatusCode != 500"
+  - "@StatusCode != 404"
+  - "@StatusCode != 401"
+  - "@StatusCode != 200"
   tags:
   - "OWASP - OTG-BUSLOGIC-001"
   - "[2020 CWE TOP 3] CWE - 20"
@@ -3797,10 +3797,10 @@ generators:
 - type: "null_value"
   owner: "Default"
   assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
   - "@StatusCode != 500"
+  - "@StatusCode != 404"
+  - "@StatusCode != 401"
+  - "@StatusCode != 200"
   tags:
   - "OWASP - OTG-BUSLOGIC-001"
   - "[2020 CWE TOP 3] CWE - 20"
@@ -3824,10 +3824,10 @@ generators:
 - type: "empty_value"
   owner: "Default"
   assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
   - "@StatusCode != 500"
+  - "@StatusCode != 404"
+  - "@StatusCode != 401"
+  - "@StatusCode != 200"
   tags:
   - "[2020 CWE TOP 3] CWE - 20"
   - "Fuzz"
@@ -3850,8 +3850,8 @@ generators:
 - type: "negative_number"
   owner: "Default"
   assertions:
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 401"
   tags:
   - "OWASP - OTG-BUSLOGIC-001"
   - "[2020 CWE TOP 3] CWE - 20"
@@ -3905,8 +3905,8 @@ generators:
 - type: "h2_db_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
@@ -3932,8 +3932,8 @@ generators:
 - type: "ibm_db2_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -3959,8 +3959,8 @@ generators:
 - type: "amazon_redshift_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -3986,8 +3986,8 @@ generators:
 - type: "hbase_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4013,8 +4013,8 @@ generators:
 - type: "apache_drill_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4040,8 +4040,8 @@ generators:
 - type: "informix_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4067,8 +4067,8 @@ generators:
 - type: "stored_sqlserver_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "[PCI DSS 3.2.1] 6.5.1"
   - "OWASP - OTG-INPVAL-005"
@@ -4098,8 +4098,8 @@ generators:
 - type: "stored_oracle_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4150,8 +4150,8 @@ generators:
 - type: "memcachedb_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4177,8 +4177,8 @@ generators:
 - type: "sqlserver_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4208,8 +4208,8 @@ generators:
 - type: "extremedb_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4235,8 +4235,8 @@ generators:
 - type: "amazon_simpledb_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4262,8 +4262,8 @@ generators:
 - type: "sql_anywhere_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4290,8 +4290,8 @@ generators:
 - type: "stored_mysql_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "[PCI DSS 3.0] 6.5.1"
   - "[PCI DSS 3.2.1] 6.5.1"
@@ -4321,8 +4321,8 @@ generators:
 - type: "amazon_aurora_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4348,8 +4348,8 @@ generators:
 - type: "mariadb_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4430,8 +4430,8 @@ generators:
 - type: "hsqldb_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4457,8 +4457,8 @@ generators:
 - type: "postgres_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4487,8 +4487,8 @@ generators:
 - type: "hazelcast_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4514,8 +4514,8 @@ generators:
 - type: "sqlite_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4542,8 +4542,8 @@ generators:
 - type: "amazon_elasticache_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4569,8 +4569,8 @@ generators:
 - type: "stored_postgres_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4600,8 +4600,8 @@ generators:
 - type: "hypergraph_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4627,8 +4627,8 @@ generators:
 - type: "kognitio_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4654,8 +4654,8 @@ generators:
 - type: "infogrid_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4681,8 +4681,8 @@ generators:
 - type: "mysql_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "[2020 CWE TOP 6] CWE - 89"
   - "OWASP-API8"
@@ -4711,8 +4711,8 @@ generators:
 - type: "4d_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4738,8 +4738,8 @@ generators:
 - type: "helix_database_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4765,8 +4765,8 @@ generators:
 - type: "splice_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4844,8 +4844,8 @@ generators:
 - type: "cockroachdb_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4871,8 +4871,8 @@ generators:
 - type: "rbac_scope"
   owner: "Default"
   assertions:
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
   - "Allowed:@StatusCode != 401 AND @StatusCode != 403"
+  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
   tags:
   - "OWASP-API5"
   - "OWASP - OTG-IDENT-001"
@@ -4908,8 +4908,8 @@ generators:
 - type: "derby_(aka_java_db)_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4935,8 +4935,8 @@ generators:
 - type: "hadoop_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4962,8 +4962,8 @@ generators:
 - type: "couchbase_server_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -4989,8 +4989,8 @@ generators:
 - type: "amazon_documentdb_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5016,8 +5016,8 @@ generators:
 - type: "redis_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5043,8 +5043,8 @@ generators:
 - type: "solr_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5070,8 +5070,8 @@ generators:
 - type: "nexusdb_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5097,8 +5097,8 @@ generators:
 - type: "orient_db_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5149,8 +5149,8 @@ generators:
 - type: "microsoft_access_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5176,8 +5176,8 @@ generators:
 - type: "apache_derby_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5203,8 +5203,8 @@ generators:
 - type: "teradata_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5230,8 +5230,8 @@ generators:
 - type: "azure_cosmos_db_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5257,8 +5257,8 @@ generators:
 - type: "ibm_lotus_approach_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5284,8 +5284,8 @@ generators:
 - type: "elasticsearch_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5311,8 +5311,8 @@ generators:
 - type: "sqlite"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5339,8 +5339,8 @@ generators:
 - type: "ibm_db2_express-c_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5366,12 +5366,12 @@ generators:
 - type: "missing_response_headers_authenticated"
   owner: "Default"
   assertions:
-  - "@ResponseHeaders.X-Frame-Options != null"
-  - "@ResponseHeaders.X-CSRF-Token != null"
-  - "@ResponseHeaders.X-Content-Type-Options != null"
-  - "@ResponseHeaders.Strict-Transport-Security != null"
-  - "@ResponseHeaders.Content-Security-Policy != null"
   - "@ResponseHeaders.access-control-allow-methods != null"
+  - "@ResponseHeaders.Content-Security-Policy != null"
+  - "@ResponseHeaders.Strict-Transport-Security != null"
+  - "@ResponseHeaders.X-Content-Type-Options != null"
+  - "@ResponseHeaders.X-CSRF-Token != null"
+  - "@ResponseHeaders.X-Frame-Options != null"
   tags:
   - "- V1"
   - "- OWASP-API4"
@@ -5398,8 +5398,8 @@ generators:
 - type: "h2_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5425,8 +5425,8 @@ generators:
 - type: "snowflake_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5452,8 +5452,8 @@ generators:
 - type: "azure_table_storage_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5506,8 +5506,8 @@ generators:
 - type: "sensitive_data_exposure_l2"
   owner: "Default"
   assertions:
-  - "@Response.$..email == @Empty"
   - "@Response.$..ssn == @Empty"
+  - "@Response.$..email == @Empty"
   tags:
   - "OWASP-API3"
   - "[PCI DSS 3.0] 6.5.7"
@@ -5540,8 +5540,8 @@ generators:
 - type: "cassandra_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5567,8 +5567,8 @@ generators:
 - type: "openbase_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5594,8 +5594,8 @@ generators:
 - type: "ingres_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5621,8 +5621,8 @@ generators:
 - type: "couchdb_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5648,8 +5648,8 @@ generators:
 - type: "amazon_neptune_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5675,8 +5675,8 @@ generators:
 - type: "alchemy_db_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5702,8 +5702,8 @@ generators:
 - type: "hive_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5729,8 +5729,8 @@ generators:
 - type: "clustrix_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5756,8 +5756,8 @@ generators:
 - type: "impala_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5783,8 +5783,8 @@ generators:
 - type: "deepsql_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5810,8 +5810,8 @@ generators:
 - type: "memsql_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5837,8 +5837,8 @@ generators:
 - type: "amazon_rds_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5864,8 +5864,8 @@ generators:
 - type: "oracle_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5894,8 +5894,8 @@ generators:
 - type: "infobright_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5921,8 +5921,8 @@ generators:
 - type: "amazon_dynamodb_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5948,8 +5948,8 @@ generators:
 - type: "amazon_qldb_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP A1"
   - "[PCI DSS 3.0] 6.5.1"
@@ -5975,8 +5975,8 @@ generators:
 - type: "sqlbase_sql_injection"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP - OTG-INPVAL-005"
   - "FX TOP 10 - API VULNERABILITY"
@@ -6120,9 +6120,9 @@ generators:
 - type: "auth_invalid"
   owner: "Default"
   assertions:
-  - "Allowed:@StatusCode == 200"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 405 OR\
     \ @StatusCode == 406"
+  - "Allowed:@StatusCode == 200"
   tags:
   - "[2020 CWE TOP 14] CWE - 287"
   - "OWASP-API2"
@@ -6161,9 +6161,9 @@ generators:
 - type: "auth_invalid_empty"
   owner: "Default"
   assertions:
-  - "Allowed:@StatusCode == 200"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 405 OR\
     \ @StatusCode == 406"
+  - "Allowed:@StatusCode == 200"
   tags:
   - "OWASP-API2"
   - "[PCI DSS 3.0] 6.5.8"
@@ -6202,9 +6202,9 @@ generators:
 - type: "auth_invalid_sql"
   owner: "Default"
   assertions:
-  - "@ResponseTime < 7000"
   - "@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 405 OR @StatusCode\
     \ == 406"
+  - "@ResponseTime < 7000"
   tags:
   - "OWASP-API2"
   - "[PCI DSS 3.0] 6.5.1"
@@ -6245,8 +6245,8 @@ generators:
 - type: "rbac"
   owner: "Default"
   assertions:
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
   - "Allowed:@StatusCode != 401 AND @StatusCode != 403"
+  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
   tags:
   - "OWASP-API5"
   - "OWASP - OTG-IDENT-001"
@@ -6285,9 +6285,9 @@ generators:
 - type: "abac"
   owner: "Default"
   assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404 OR\
     \ @Response.errors == true"
+  - "Create:@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true"
   tags:
   - "OWASP-API1"
   - "OWASP API Security Top 10"
@@ -6333,7 +6333,7 @@ generators:
       ,\n    \"version\" : \"\"\n  },\n  \"version\" : \"\"\n}"
     deleteEndpoint: null
     validations: []
-    scripts: null
+    scripts: []
     lock: false
     enumValues: null
   category: "ABAC_Level1"
@@ -6349,9 +6349,9 @@ generators:
 - type: "abact2"
   owner: "Default"
   assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404 OR\
     \ @Response.errors == true"
+  - "Create:@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true"
   tags:
   - "OWASP-API1"
   - "OWASP API Security Top 10"
@@ -10298,8 +10298,8 @@ generators:
 - type: "abact3"
   owner: "Default"
   assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
   tags:
   - "Data_Access_Control"
   - "[2020 CWE TOP 22 ] CWE - 269"
@@ -12104,8 +12104,8 @@ generators:
 - type: "sensitive_data_exposure"
   owner: "Default"
   assertions:
-  - "@Response.$..email == @Empty"
   - "@Response.$..ssn == @Empty"
+  - "@Response.$..email == @Empty"
   tags:
   - "OWASP-API3"
   - "[PCI DSS 3.0] 6.5.7"
@@ -12152,9 +12152,9 @@ generators:
 - type: "ADoS"
   owner: "Default"
   assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 401"
+  - "@StatusCode != 200"
   tags:
   - "OWASP-API4"
   - "[PCI DSS 3.0] 6.5.2"
@@ -12452,8 +12452,8 @@ generators:
 - type: "incremental_ids"
   owner: "Default"
   assertions:
-  - "@StatusCode == 200"
   - "@Response.$..id != @Numbers"
+  - "@StatusCode == 200"
   tags:
   - "OWASP-API3"
   - "CWE - 99"
@@ -12619,8 +12619,8 @@ generators:
 - type: "mongodb_injection"
   owner: "Default"
   assertions:
-  - "@StatusCode != 404"
   - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
   tags:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.1"
@@ -12649,7 +12649,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: ""
