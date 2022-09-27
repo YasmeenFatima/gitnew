@@ -34,8 +34,8 @@ testCases:
         "name" : "{{@Injection}}",
         "version" : ""
       },
-      "orgRole" : "WRITE",
-      "status" : "DECLINED",
+      "orgRole" : "READ",
+      "status" : "REMOVED",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",
@@ -78,7 +78,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/no_sql_injection_timebound_filter'
+  repeatModule: '@APIsec/Common/no_sql_injection_timebound_filter'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

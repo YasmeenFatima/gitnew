@@ -18,7 +18,7 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 401 OR @StatusCode == 403 OR @StatusCode == 404 OR @Response.errors
+- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404 OR @Response.errors
   == true'
 cleanup:
 - ApiV1TransfersIdDeleteTransferstransactiontypeposAbstractAbact2

@@ -13,7 +13,7 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-
@@ -32,7 +32,7 @@ testCases:
       "issueName" : "{{@Injection}}",
       "issueStatus" : "OPEN",
       "issueType" : "MANUAL",
-      "method" : "TRACE",
+      "method" : "PUT",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

@@ -21,7 +21,7 @@ testCases:
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
       "createdBy" : "",
-      "createdDate" : "09-88-76",
+      "createdDate" : "",
       "id" : "",
       "inactive" : false,
       "modifiedBy" : "",

@@ -22,7 +22,7 @@ testCases:
       "accountNumber" : "{{@RandomInteger}}",
       "createdBy" : "",
       "createdDate" : "",
-      "id" : "0987",
+      "id" : "",
       "inactive" : false,
       "modifiedBy" : "",
       "modifiedDate" : "",
@@ -63,7 +63,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/no_sql_injection_timebound_filter'
+  repeatModule: '@APIsec/Common/no_sql_injection_timebound_filter'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

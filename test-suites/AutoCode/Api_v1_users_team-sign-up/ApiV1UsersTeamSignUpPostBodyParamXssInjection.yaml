@@ -43,7 +43,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode != 200'
 cleanup: []
-severity: Medium
+severity: Critical
 category: XSS_Injection
 tags:
 - V1
@@ -68,7 +68,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/XSS_Injection'
+  repeatModule: '@FXLabs/Common/XSS_Injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

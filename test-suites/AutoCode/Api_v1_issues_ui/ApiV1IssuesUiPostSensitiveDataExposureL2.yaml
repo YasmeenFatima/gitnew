@@ -30,9 +30,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "CLOSED",
+      "issueStatus" : "OPEN",
       "issueType" : "MANUAL",
-      "method" : "TRACE",
+      "method" : "PUT",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

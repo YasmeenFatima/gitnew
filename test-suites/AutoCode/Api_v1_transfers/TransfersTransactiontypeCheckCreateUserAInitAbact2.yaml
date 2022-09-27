@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : " CHECK",
+      "transactionType" : "CHECK",
       "version" : ""
     }
   inactive: false

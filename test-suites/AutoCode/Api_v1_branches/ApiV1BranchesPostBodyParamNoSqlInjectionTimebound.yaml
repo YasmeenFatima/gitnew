@@ -57,7 +57,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/no_sql_injection_timebound'
+  repeatModule: '@APIsec/Common/no_sql_injection_timebound'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

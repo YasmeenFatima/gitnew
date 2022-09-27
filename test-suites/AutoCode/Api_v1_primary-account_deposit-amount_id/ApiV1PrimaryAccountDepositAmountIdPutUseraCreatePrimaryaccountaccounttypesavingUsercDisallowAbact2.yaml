@@ -21,7 +21,7 @@ testCases:
     {
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
-      "accountType" : "SAVING",
+      "accountType" : "CURRENT",
       "createdBy" : "",
       "createdDate" : "",
       "id" : "{{@PrimaryaccountAccounttypeSavingCreateUserAInitAbact2_Response.requestId}}",
@@ -33,7 +33,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 401 OR @StatusCode == 403 OR @StatusCode == 404 OR @Response.errors
+- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404 OR @Response.errors
   == true'
 cleanup:
 - ApiV1PrimaryAccountPrimaryAccountIdDeletePrimaryaccountaccounttypesavingAbstractAbact2

@@ -13,7 +13,7 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/xml'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "DEPOSIT",
+      "transactionType" : "POS",
       "version" : ""
     }
   inactive: false
@@ -35,7 +35,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode != 200'
 cleanup: []
-severity: Medium
+severity: Critical
 category: XSS_Injection
 tags:
 - V1
@@ -60,7 +60,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/XSS_Injection'
+  repeatModule: '@FXLabs/Common/XSS_Injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

@@ -30,14 +30,14 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "PAY_AS_YOU_GO",
+      "orgPlan" : "FREE",
       "orgType" : "ENTERPRISE",
       "version" : ""
     }
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 401 OR @StatusCode == 403 OR @StatusCode == 404 OR @Response.errors
+- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404 OR @Response.errors
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgorgplanproAbstractAbact2

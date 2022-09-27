@@ -64,7 +64,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/mongodb_injection'
+  repeatModule: '@APIsec/Common/mongodb_injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

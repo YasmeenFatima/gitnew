@@ -29,7 +29,7 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "PAY_AS_YOU_GO",
+      "orgPlan" : "FREE",
       "orgType" : "ENTERPRISE",
       "version" : ""
     }
@@ -59,7 +59,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/sql_injection_filter'
+  repeatModule: '@APIsec/Common/sql_injection_filter'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

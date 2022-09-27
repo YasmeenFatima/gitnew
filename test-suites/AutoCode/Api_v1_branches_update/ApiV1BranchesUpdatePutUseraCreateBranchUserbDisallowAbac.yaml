@@ -30,7 +30,7 @@ testCases:
       "faxNumber" : "{{@Random}}",
       "id" : "{{@BranchCreateUserAInitAbac_Response.data.id}}",
       "inactive" : false,
-      "modifiedBy" : "Me",
+      "modifiedBy" : "",
       "modifiedDate" : "",
       "version" : ""
     }

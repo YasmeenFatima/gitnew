@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "DEPOSIT",
+      "transactionType" : "POS",
       "version" : ""
     }
   inactive: false
@@ -35,7 +35,7 @@ useCategoryAssertion: false
 assertions:
 - '@ResponseTime < 7000 OR @StatusCode == 400'
 cleanup: []
-severity: High
+severity: Critical
 category: Windows_Command_Injection
 tags:
 - V1
@@ -60,7 +60,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/Windows_Command_Injection'
+  repeatModule: '@APIsec/Common/Windows_Command_Injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

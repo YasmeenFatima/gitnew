@@ -29,7 +29,7 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Injection}}",
-      "orgPlan" : "TEAM",
+      "orgPlan" : "FREE",
       "orgType" : "ENTERPRISE",
       "version" : ""
     }

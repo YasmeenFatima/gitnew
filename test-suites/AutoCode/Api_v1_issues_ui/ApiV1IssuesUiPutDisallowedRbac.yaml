@@ -13,7 +13,7 @@ method: PUT
 auth: ""
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-
@@ -30,9 +30,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Random}}",
-      "issueStatus" : "CLOSED",
+      "issueStatus" : "OPEN",
       "issueType" : "MANUAL",
-      "method" : "TRACE",
+      "method" : "PUT",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {

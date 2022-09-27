@@ -13,7 +13,7 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/xml'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Injection}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "DEPOSIT",
+      "transactionType" : "POS",
       "version" : ""
     }
   inactive: false
@@ -59,7 +59,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/Linux_Command_Injection'
+  repeatModule: '@APIsec/Common/Linux_Command_Injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

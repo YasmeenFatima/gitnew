@@ -13,7 +13,7 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-
@@ -30,9 +30,9 @@ testCases:
       "id" : "",
       "inactive" : false,
       "issueName" : "{{@Injection}}",
-      "issueStatus" : "CLOSED",
+      "issueStatus" : "OPEN",
       "issueType" : "MANUAL",
-      "method" : "TRACE",
+      "method" : "PUT",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -89,7 +89,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/no_sql_injection_timebound'
+  repeatModule: '@APIsec/Common/no_sql_injection_timebound'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

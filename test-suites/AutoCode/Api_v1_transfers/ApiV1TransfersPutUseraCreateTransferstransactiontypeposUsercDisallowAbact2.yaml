@@ -14,7 +14,7 @@ method: PUT
 auth: UserC
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/xml'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -28,13 +28,13 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "DEPOSIT",
+      "transactionType" : "POS",
       "version" : ""
     }
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 401 OR @StatusCode == 403 OR @StatusCode == 404 OR @Response.errors
+- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404 OR @Response.errors
   == true'
 cleanup:
 - ApiV1TransfersIdDeleteTransferstransactiontypeposAbstractAbact2

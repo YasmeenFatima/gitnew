@@ -8,7 +8,7 @@ type: ABSTRACT
 init: []
 localVariables: []
 path: /api/v1/products/id
-endpoint: /api/v1/products/{{@IssueCreateUserAInitAbact3_Response.data.id}}
+endpoint: /api/v1/products/{{@Issue1CreateUserAInitAbact3_Response.data.id}}
 method: DELETE
 auth: UserA
 headers:
@@ -19,7 +19,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 200'
 cleanup: []
-severity: Medium
+severity: High
 category: ABAC_Level3
 tags:
 - V1

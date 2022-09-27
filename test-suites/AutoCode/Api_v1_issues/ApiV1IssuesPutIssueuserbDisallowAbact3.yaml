@@ -6,7 +6,7 @@ authors:
 - apisec Bot
 type: SUITE
 init:
-- IssueCreateUserAInitAbact3
+- Issue1CreateUserAInitAbact3
 localVariables: []
 path: /api/v1/issues
 endpoint: /api/v1/issues
@@ -28,12 +28,12 @@ testCases:
       "env" : "{{@Random}}",
       "failedAssertions" : "{{@Random}}",
       "headers" : [ "{{@Random}}" ],
-      "id" : "{{@IssueCreateUserAInitAbact3_Response.data.id}}",
+      "id" : "{{@Issue1CreateUserAInitAbact3_Response.data.id}}",
       "inactive" : false,
       "issueName" : "{{@Random}}",
       "issueStatus" : "CLOSED",
       "issueType" : "MANUAL",
-      "method" : "TRACE",
+      "method" : "PUT",
       "modifiedBy" : "",
       "modifiedDate" : "",
       "project" : {
@@ -71,7 +71,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: Medium
+severity: High
 category: ABAC_Level3
 tags:
 - V1

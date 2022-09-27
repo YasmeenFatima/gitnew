@@ -27,7 +27,7 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : " POS",
+      "transactionType" : "POS",
       "version" : ""
     }
   inactive: false

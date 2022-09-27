@@ -29,7 +29,7 @@ testCases:
       "faxNumber" : "{{@Random}}",
       "id" : "",
       "inactive" : false,
-      "modifiedBy" : "Me",
+      "modifiedBy" : "",
       "modifiedDate" : "",
       "version" : ""
     }

@@ -29,8 +29,8 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "ENTERPRISE",
-      "orgType" : "PERSONAL",
+      "orgPlan" : "PRO",
+      "orgType" : "TEAM",
       "version" : ""
     }
   inactive: false
@@ -39,7 +39,7 @@ assertions:
 - '@StatusCode == 200 OR @StatusCode == 201'
 cleanup:
 - ApiV1OrgsIdDeleteAbact3
-severity: Medium
+severity: High
 category: ABAC_Level3
 tags:
 - V1
