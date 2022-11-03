@@ -37,7 +37,7 @@ assertions:
 - '@StatusCode == 200 OR @StatusCode == 201'
 cleanup:
 - ApiV1ProductsIdDeleteProjectabact3
-severity: High
+severity: Low
 category: ABAC_Level3
 tags:
 - V1
