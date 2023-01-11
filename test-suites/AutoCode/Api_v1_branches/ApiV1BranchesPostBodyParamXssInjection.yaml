@@ -18,11 +18,14 @@ testCases:
 - id: 1
   body: |-
     {
+      "access" : "{{@Injection}}",
       "atmAtBranch" : "{{@Injection}}",
+      "branchMediatedServiceName" : "{{@Injection}}",
       "branchName" : "{{@Injection}}",
       "branchType" : "{{@Injection}}",
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
+      "customerSegment" : "{{@Injection}}",
       "faxNumber" : "{{@Injection}}",
       "id" : "{{@Var.id}}",
       "inactive" : false,
@@ -60,7 +63,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@Default/Common/XSS_Injection'
+  repeatModule: '@APIsec/Common/XSS_Injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

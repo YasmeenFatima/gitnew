@@ -13,7 +13,7 @@ method: POST
 auth: Default
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/xml'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-
@@ -44,7 +44,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 404'
+- '@StatusCode != 200'
 cleanup: []
 severity: Medium
 category: insecure_cookies

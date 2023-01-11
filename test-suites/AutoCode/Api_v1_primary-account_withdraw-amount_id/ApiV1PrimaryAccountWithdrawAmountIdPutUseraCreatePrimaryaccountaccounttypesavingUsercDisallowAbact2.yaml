@@ -14,14 +14,14 @@ method: PUT
 auth: UserC
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-
     {
       "accountBalance" : "{{@RandomInteger}}",
       "accountNumber" : "{{@RandomInteger}}",
-      "accountType" : "CURRENT",
+      "accountType" : "CREDIT",
       "createdBy" : "",
       "createdDate" : "",
       "id" : "{{@PrimaryaccountAccounttypeSavingCreateUserAInitAbact2_Response.requestId}}",

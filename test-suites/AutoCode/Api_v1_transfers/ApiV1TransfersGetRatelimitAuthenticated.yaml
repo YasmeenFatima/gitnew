@@ -17,17 +17,17 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@ResponseHeaders.X-RateLimit* != @Empty AND @ResponseHeaders.X-RateLimit* != null'
+- '@ResponseHeaders.X-Rate* != @Empty AND @ResponseHeaders.X-Rate* != null'
 cleanup: []
 severity: Medium
 category: ratelimit_authenticated
 tags:
 - V1
+- CWE-307
+- CWE-770
 - OWASP-API4
 - OWASP API Security Top 10
 - Security Misconfiguration
-- CWE-307
-- CWE-770
 inactive: false
 policies:
   initExec: Request

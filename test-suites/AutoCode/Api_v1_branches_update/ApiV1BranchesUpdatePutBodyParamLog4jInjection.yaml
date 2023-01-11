@@ -19,11 +19,14 @@ testCases:
 - id: 1
   body: |-
     {
+      "access" : "{{@Injection}}",
       "atmAtBranch" : "{{@Injection}}",
+      "branchMediatedServiceName" : "{{@Injection}}",
       "branchName" : "{{@Injection}}",
       "branchType" : "{{@Injection}}",
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
+      "customerSegment" : "{{@Injection}}",
       "faxNumber" : "{{@Injection}}",
       "id" : "{{@Var.id}}",
       "inactive" : false,
@@ -61,7 +64,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: ${jndi:ldap://stg.apisec.ai:4389/{{@LocalVariable.uuid}}}
+  repeatModule: ${jndi:ldap://cloud.apisec.ai:4389/{{@LocalVariable.uuid}}}
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

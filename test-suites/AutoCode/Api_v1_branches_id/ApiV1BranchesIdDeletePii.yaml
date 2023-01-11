@@ -19,6 +19,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode != 404'
 - '@Response.$..branchName != @PlainText'
+- '@Response.$..branchMediatedServiceName != @PlainText'
 - '@Response.$..messages != @PlainText'
 - '@Response.$..faxNumber != @PlainText'
 - '@Response.$..branchType != @PlainText'

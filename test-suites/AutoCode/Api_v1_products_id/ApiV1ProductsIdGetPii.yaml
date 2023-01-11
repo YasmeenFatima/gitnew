@@ -20,6 +20,8 @@ assertions:
 - '@StatusCode != 404'
 - '@Response.$..org != @PlainText'
 - '@Response.$..name != @PlainText'
+- '@Response.$..messages != @PlainText'
+- '@Response.$..id != @PlainText'
 cleanup: []
 severity: Medium
 category: Pii

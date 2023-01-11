@@ -33,7 +33,6 @@ testCases:
 useCategoryAssertion: false
 assertions:
 - '@ResponseHeaders.strict-transport-security =~ (.*)(?i)(includeSubDomains)(.*)'
-- '@ResponseHeaders.content-security-policy != @NULL'
 cleanup: []
 severity: Medium
 category: tls_headers

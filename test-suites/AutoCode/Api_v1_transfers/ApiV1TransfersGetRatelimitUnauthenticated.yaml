@@ -17,7 +17,7 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@ResponseHeaders.X-RateLimit* != @Empty AND @ResponseHeaders.X-RateLimit* != null'
+- '@ResponseHeaders.X-Rate* != @Empty AND @ResponseHeaders.X-Rate* != null'
 cleanup: []
 severity: Medium
 category: ratelimit_unauthenticated

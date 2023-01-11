@@ -20,7 +20,7 @@ testCases:
     {
       "amount" : "{{@Var.amount}}",
       "availableBalance" : "{{@Var.availableBalance}}",
-      "createdBy" : "Fatima",
+      "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
       "description" : "{{@Var.description}}",
       "id" : "{{@Var.id}}",

@@ -28,7 +28,7 @@ testCases:
       "location" : "{{@Random}}",
       "modifiedBy" : "",
       "modifiedDate" : "",
-      "transactionType" : "CHARGE",
+      "transactionType" : "TRANSFER",
       "version" : ""
     }
   inactive: false

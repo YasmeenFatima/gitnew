@@ -18,11 +18,14 @@ testCases:
 - id: 1
   body: |-
     {
+      "access" : "{{@Var.access}}",
       "atmAtBranch" : "{{@Var.atmAtBranch}}",
+      "branchMediatedServiceName" : "{{@Var.branchMediatedServiceName}}",
       "branchName" : "{{@Var.branchName}}",
       "branchType" : "{{@Var.branchType}}",
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
+      "customerSegment" : "{{@Var.customerSegment}}",
       "faxNumber" : "{{@Var.faxNumber}}",
       "id" : "{{@Var.id}}",
       "inactive" : false,
@@ -33,7 +36,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 404'
+- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404'
 cleanup: []
 severity: Critical
 category: Unsecured

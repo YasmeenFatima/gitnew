@@ -17,7 +17,7 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@StatusCode != 404'
+- '@StatusCode != 200'
 cleanup: []
 severity: Medium
 category: insecure_cookies

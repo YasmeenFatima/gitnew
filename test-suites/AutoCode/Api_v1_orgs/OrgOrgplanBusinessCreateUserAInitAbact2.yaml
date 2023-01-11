@@ -30,7 +30,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgPlan" : "BUSINESS",
-      "orgType" : "PERSONAL",
+      "orgType" : "ENTERPRISE",
       "version" : ""
     }
   inactive: false

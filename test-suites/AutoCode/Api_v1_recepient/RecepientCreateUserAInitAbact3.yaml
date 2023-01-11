@@ -14,7 +14,7 @@ method: POST
 auth: UserA
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/xml'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-

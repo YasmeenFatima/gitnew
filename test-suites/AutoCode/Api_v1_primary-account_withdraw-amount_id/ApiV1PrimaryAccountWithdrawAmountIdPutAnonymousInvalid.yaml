@@ -13,7 +13,7 @@ method: PUT
 auth: Anonymous
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-
@@ -32,7 +32,7 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 401 OR @StatusCode == 404'
+- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 404'
 cleanup: []
 severity: Critical
 category: Unsecured

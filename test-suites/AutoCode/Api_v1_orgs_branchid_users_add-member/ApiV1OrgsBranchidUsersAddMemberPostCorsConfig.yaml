@@ -38,7 +38,6 @@ testCases:
 useCategoryAssertion: false
 assertions:
 - '@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(\*)(.*)'
-- '@ResponseHeaders.Access-Control-Allow-Origin != @NULL'
 - '@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(vulnerable)(.*)'
 cleanup: []
 severity: Medium

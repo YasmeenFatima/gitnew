@@ -29,7 +29,7 @@ testCases:
       "modifiedBy" : "",
       "modifiedDate" : "",
       "name" : "{{@Random}}",
-      "orgPlan" : "PAY_AS_YOU_GO",
+      "orgPlan" : "FREE",
       "orgType" : "TEAM",
       "version" : ""
     }

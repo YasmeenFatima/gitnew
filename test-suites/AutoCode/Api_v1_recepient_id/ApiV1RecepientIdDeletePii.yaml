@@ -18,8 +18,12 @@ testCases: []
 useCategoryAssertion: false
 assertions:
 - '@StatusCode != 404'
+- '@Response.$..accountNumber != @PlainText'
 - '@Response.$..phone != @PlainText'
 - '@Response.$..name != @PlainText'
+- '@Response.$..messages != @PlainText'
+- '@Response.$..id != @PlainText'
+- '@Response.$..user != @PlainText'
 - '@Response.$..email != @PlainText'
 cleanup: []
 severity: Medium

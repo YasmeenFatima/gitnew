@@ -18,11 +18,14 @@ testCases:
 - id: 1
   body: |-
     {
+      "access" : "{{@Var.access}}",
       "atmAtBranch" : "{{@Var.atmAtBranch}}",
+      "branchMediatedServiceName" : "{{@Var.branchMediatedServiceName}}",
       "branchName" : "{{@Var.branchName}}",
       "branchType" : "{{@Var.branchType}}",
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
+      "customerSegment" : "{{@Var.customerSegment}}",
       "faxNumber" : "{{@Var.faxNumber}}",
       "id" : "{{@Var.id}}",
       "inactive" : false,
@@ -35,6 +38,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode != 404'
 - '@Response.$..branchName != @PlainText'
+- '@Response.$..branchMediatedServiceName != @PlainText'
 - '@Response.$..messages != @PlainText'
 - '@Response.$..faxNumber != @PlainText'
 - '@Response.$..branchType != @PlainText'
