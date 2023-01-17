@@ -10,7 +10,7 @@ localVariables: []
 path: /api/v1/branches
 endpoint: /api/v1/branches
 method: POST
-auth: ""
+auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'
@@ -22,7 +22,7 @@ testCases:
       "branchName" : "{{@Var.branchName}}",
       "branchType" : "{{@Var.branchType}}",
       "createdBy" : "{{@Var.createdBy}}",
-      "createdDate" : "{{@Var.createdDate}}",
+      "createdDate" : "67-54-34",
       "faxNumber" : "{{@Var.faxNumber}}",
       "id" : "{{@Var.id}}",
       "inactive" : false,
@@ -35,7 +35,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: High
+severity: Low
 category: RBAC
 tags:
 - V1

@@ -10,7 +10,7 @@ localVariables: []
 path: /api/v1/primary-account/deposit-amount/{id}
 endpoint: /api/v1/primary-account/deposit-amount/{{@Var.id}}
 method: PUT
-auth: ""
+auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'
@@ -34,7 +34,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: High
+severity: Low
 category: RBAC
 tags:
 - V1
