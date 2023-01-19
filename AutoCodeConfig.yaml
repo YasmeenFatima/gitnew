@@ -6,7 +6,7 @@ generators:
   owner: "Default"
   assertions:
   - "Allowed:@StatusCode == 200"
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 404"
+  - "Disallowed:@StatusCode == 401 OR @Response.errors == true"
   tags:
   - "OWASP-API2"
   - "OWASP - OTG-AUTHN-002"
@@ -24,7 +24,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: ""
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -33,7 +33,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -59,7 +59,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "InvalidAuthL2"
@@ -99,7 +108,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: ""
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -141,7 +150,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: ""
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -176,7 +185,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "InvalidAuthEmptyL2"
@@ -218,7 +236,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: ""
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -261,7 +279,8 @@ generators:
       GET:/api/v1/transfers:Allowed[ROLE_USER,ROLE_ADMIN,ROLE_PM]\nGET:/api/v1/primary-transaction/{id}:Allowed[ROLE_USER,ROLE_ADMIN,ROLE_PM]\n\
       POST:/api/v1/users/personal-sign-up:Allowed[ROLE_PM,ROLE_USER,ROLE_ADMIN]\n\
       GET:/api/v1/savings-account/savings-account:Allowed[ROLE_ADMIN,ROLE_USER,ROLE_PM]\n\
-      GET:/api/v1/savings-transaction:Allowed[ROLE_PM,ROLE_USER,ROLE_ADMIN]\nGET:/api/v1/transfers/{id}:Allowed[ROLE_ADMIN,ROLE_USER,ROLE_PM]\n"
+      GET:/api/v1/savings-transaction:Allowed[ROLE_PM,ROLE_USER,ROLE_ADMIN]\nGET:/api/v1/transfers/{id}:Allowed[ROLE_ADMIN,ROLE_USER,ROLE_PM]\n\
+      DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -270,7 +289,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: "DEFAULT"
+  categoryGroup: null
   payloads: null
   customHeaders: null
   auth: null
@@ -300,8 +319,8 @@ generators:
     methods: null
     denyRoles: "UserB,UserC"
     allowRoles: "UserA"
-    pathPatterns: null
-    resourceSamples: null
+    pathPatterns: "PUT:/api/v1/transfers"
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -1242,8 +1261,8 @@ generators:
     methods: null
     denyRoles: "UserB,UserC"
     allowRoles: "UserA"
-    pathPatterns: null
-    resourceSamples: null
+    pathPatterns: "GET:/api/v1/transfers/{id}"
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -5192,8 +5211,8 @@ generators:
     methods: null
     denyRoles: "UserB,UserC"
     allowRoles: "UserA"
-    pathPatterns: null
-    resourceSamples: null
+    pathPatterns: "GET:/api/v1/primary-transaction/{id}"
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -6322,7 +6341,7 @@ generators:
     denyRoles: "UserA"
     allowRoles: "UserA"
     pathPatterns: null
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -6899,7 +6918,7 @@ generators:
     denyRoles: "UserA"
     allowRoles: "UserA"
     pathPatterns: null
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -9141,7 +9160,7 @@ generators:
     denyRoles: "UserA"
     allowRoles: "UserA"
     pathPatterns: null
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -9963,7 +9982,7 @@ generators:
     denyRoles: "UserB,UserC"
     allowRoles: "UserA"
     pathPatterns: null
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -10001,7 +10020,7 @@ generators:
     denyRoles: "UserB"
     allowRoles: "UserA"
     pathPatterns: null
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -10049,7 +10068,7 @@ generators:
       GET:/api/v1/orgs/allorgs\nGET:/api/v1/users/status\nGET:/api/v1/orgs/search\n\
       GET:/api/v1/orgs/by-user\nGET:/api/v1/orgs/login-status\nGET:/api/v1/branches\n\
       GET:/api/v1/primary-transaction\nGET:/api/v1/savings-account/savings-account\n"
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -10088,7 +10107,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: null
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -10125,7 +10144,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "XSS_Injection"
@@ -10160,7 +10188,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Windows_Command_Injection_Filter"
@@ -10195,7 +10232,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Windows_Command_Injection"
@@ -10229,7 +10275,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Linux_Command_Injection_Filter"
@@ -10263,7 +10318,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Linux_Command_Injection"
@@ -10303,7 +10367,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: null
-    resourceSamples: "User-Create"
+    resourceSamples: "User-CreateDELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: "id,name"
   authors: ""
@@ -10345,7 +10409,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: null
-    resourceSamples: "User-Create"
+    resourceSamples: "User-CreateDELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: "id,name"
   authors: ""
@@ -10387,7 +10451,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: null
-    resourceSamples: "User-Create"
+    resourceSamples: "User-CreateDELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: "id,name"
   authors: ""
@@ -10428,7 +10492,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: null
-    resourceSamples: "User-Create"
+    resourceSamples: "User-CreateDELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: "id,name"
   authors: ""
@@ -10468,7 +10532,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: null
-    resourceSamples: "User-Create"
+    resourceSamples: "User-CreateDELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: "id,name"
   authors: ""
@@ -10495,7 +10559,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Incremental_Ids"
@@ -10517,7 +10590,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "SLA"
@@ -10543,7 +10625,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Invalid_Data"
@@ -10567,7 +10658,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "SimpleGET"
@@ -10595,7 +10695,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Special_Chars"
@@ -10623,7 +10732,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Null_Value"
@@ -10650,7 +10768,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Empty_Value"
@@ -10676,7 +10803,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Negative_Number"
@@ -10705,7 +10841,7 @@ generators:
     allowRoles: null
     pathPatterns: null
     resourceSamples: "Get:/api/v1/alerts[Accept=application/json,Content-Type=application/json]\n\
-      Post:/api/v1/accounts[Accept: application/json,Content-Type: application/json]"
+      Post:/api/v1/accounts[Accept: application/json,Content-Type: application/json]DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -10736,7 +10872,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: "Luqman"
   abacResources: null
   category: "h2_db_sql_injection"
@@ -10769,7 +10914,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Mongodb_Injection"
@@ -10799,7 +10953,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "ibm_db2_sql_injection"
@@ -10827,7 +10990,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_redshift_sql_injection"
@@ -10857,7 +11029,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "hbase_injection"
@@ -10885,7 +11066,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "apache_drill_injection"
@@ -10915,7 +11105,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "informix_sql_injection"
@@ -10940,7 +11139,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Error_Logging"
@@ -10965,7 +11173,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Insufficient_Logging"
@@ -10997,7 +11214,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Stored_Sqlserver_Sql_Injection"
@@ -11028,7 +11254,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Stored_Oracle_Sql_Injection"
@@ -11051,7 +11286,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Special_Character_Injection"
@@ -11079,7 +11323,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Ratelimit_Authenticated"
@@ -11107,7 +11360,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "memcachedb_injection"
@@ -11141,7 +11403,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Sqlserver_Sql_Injection"
@@ -11171,7 +11442,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "extremedb_sql_injection"
@@ -11199,7 +11479,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_simpledb_sql_injection"
@@ -11228,7 +11517,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "sql_anywhere_sql_injection"
@@ -11260,7 +11558,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Stored_Mysql_Sql_Injection"
@@ -11288,7 +11595,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_aurora_sql_injection"
@@ -11318,7 +11634,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Resource_Not_Found_Logging"
@@ -11348,7 +11673,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: "Luqman"
   abacResources: null
   category: "mariadb_sql_injection"
@@ -11373,7 +11707,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Report_Successful_And_Unsuccessful_Login_Attempts"
@@ -11401,7 +11744,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "hsqldb_sql_injection"
@@ -11426,7 +11778,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Insufficient_Monitoring"
@@ -11457,7 +11818,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Postgres_Sql_Injection"
@@ -11485,7 +11855,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "hazelcast_sql_injection"
@@ -11512,7 +11891,16 @@ generators:
   severity: "High"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: null
   abacResources: null
   category: "Cors_Config"
@@ -11542,7 +11930,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: null
   abacResources: null
   category: "PII"
@@ -11563,7 +11960,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: null
   abacResources: null
   category: "Insecure_Cookies"
@@ -11588,7 +11994,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "TLS_Headers"
@@ -11617,7 +12032,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "sqlite_sql_injection"
@@ -11645,7 +12069,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_elasticache_sql_injection"
@@ -11679,7 +12112,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Stored_Postgres_Sql_Injection"
@@ -11707,7 +12149,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "hypergraph_injection"
@@ -11730,7 +12181,16 @@ generators:
   severity: "Low"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Test"
@@ -11760,7 +12220,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "kognitio_sql_injection"
@@ -11788,7 +12257,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "infogrid_injection"
@@ -11819,7 +12297,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Mysql_Sql_Injection"
@@ -11847,7 +12334,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "4d_sql_injection"
@@ -11875,7 +12371,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "helix_database_sql_injection"
@@ -11903,7 +12408,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "splice_injection"
@@ -11929,7 +12443,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Disable_User_After_5_Failed_Login_Attempts"
@@ -11957,7 +12480,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Ratelimit_Unauthenticated"
@@ -11985,7 +12517,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "cockroachdb_sql_injection"
@@ -12021,7 +12562,7 @@ generators:
     denyRoles: null
     allowRoles: null
     pathPatterns: null
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -12044,7 +12585,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: null
   abacResources: null
   category: "Reflected_Post_Injection"
@@ -12065,7 +12615,16 @@ generators:
   severity: "High"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Reflected_Get_Injection"
@@ -12093,7 +12652,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "derby_(aka_java_db)_sql_injection"
@@ -12121,7 +12689,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "hadoop_injection"
@@ -12149,7 +12726,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "couchbase_server_injection"
@@ -12172,7 +12758,16 @@ generators:
   severity: "Low"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: null
   abacResources: null
   category: "Server_Properties_Leak_In_Headers"
@@ -12197,7 +12792,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Strong_And_Unique_Password"
@@ -12225,7 +12829,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_documentdb_injection"
@@ -12253,7 +12866,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "redis_sql_injection"
@@ -12281,7 +12903,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "solr_sql_injection"
@@ -12302,7 +12933,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: null
   abacResources: null
   category: "Http_Method_Options_Check"
@@ -12323,7 +12963,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Ssl_Certificate_Issues"
@@ -12351,7 +13000,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "nexusdb_sql_injection"
@@ -12380,7 +13038,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "orient_db_injection"
@@ -12408,7 +13075,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "microsoft_access_sql_injection"
@@ -12436,7 +13112,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "apache_derby_sql_injection"
@@ -12464,7 +13149,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "teradata_sql_injection"
@@ -12492,7 +13186,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "azure_cosmos_db_injection"
@@ -12520,7 +13223,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "ibm_lotus_approach_sql_injection"
@@ -12548,7 +13260,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "elasticsearch_injection"
@@ -12577,7 +13298,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: "Luqman"
   abacResources: null
   category: "sqlite"
@@ -12607,7 +13337,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "ibm_db2_express-c_sql_injection"
@@ -12640,7 +13379,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Missing_Response_Headers_Authenticated"
@@ -12668,7 +13416,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "h2_sql_injection"
@@ -12696,7 +13453,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "snowflake_sql_injection"
@@ -12724,7 +13490,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "azure_table_storage_injection"
@@ -12751,7 +13526,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Http_Authentication_Scheme"
@@ -12786,7 +13570,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Sensitive_Data_Exposure_L2"
@@ -12810,7 +13603,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Open_API_Spec_Compliance"
@@ -12838,7 +13640,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "cassandra_injection"
@@ -12866,7 +13677,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "openbase_sql_injection"
@@ -12896,7 +13716,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "ingres_sql_injection"
@@ -12924,7 +13753,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "couchdb_injection"
@@ -12952,7 +13790,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_neptune_injection"
@@ -12980,7 +13827,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "alchemy_db_sql_injection"
@@ -13008,7 +13864,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "hive_sql_injection"
@@ -13036,7 +13901,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "clustrix_sql_injection"
@@ -13060,7 +13934,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Incremental_Ids_L2"
@@ -13088,7 +13971,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "impala_sql_injection"
@@ -13118,7 +14010,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "deepsql_sql_injection"
@@ -13153,7 +14054,7 @@ generators:
       GET:/api/v1/orgs/allorgs\nGET:/api/v1/users/status\nGET:/api/v1/orgs/search\n\
       GET:/api/v1/orgs/by-user\nGET:/api/v1/orgs/login-status\nGET:/api/v1/branches\n\
       GET:/api/v1/primary-transaction\nGET:/api/v1/savings-account/savings-account\n"
-    resourceSamples: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
     queryParams: null
     bodyProperties: null
   authors: ""
@@ -13183,7 +14084,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "memsql_sql_injection"
@@ -13211,7 +14121,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_rds_sql_injection"
@@ -13246,7 +14165,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Log4j_Injection"
@@ -13277,7 +14205,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "Oracle_Sql_Injection"
@@ -13305,7 +14242,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "infobright_sql_injection"
@@ -13333,7 +14279,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_dynamodb_injection"
@@ -13361,7 +14316,16 @@ generators:
   severity: "Medium"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "amazon_qldb_sql_injection"
@@ -13390,7 +14354,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "DELETE:/api/v1/primary-transaction/{id}\n"
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
   category: "sqlbase_sql_injection"
