@@ -35,7 +35,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: Low
+severity: Medium
 category: RBAC
 tags:
 - V1

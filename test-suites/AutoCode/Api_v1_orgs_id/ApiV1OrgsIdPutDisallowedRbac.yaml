@@ -23,7 +23,7 @@ testCases:
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
       "description" : "{{@Var.description}}",
-      "id" : "{{@Var.id}}",
+      "id" : "12345}",
       "inactive" : false,
       "location" : "{{@Var.location}}",
       "modifiedBy" : "{{@Var.modifiedBy}}",
@@ -38,7 +38,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: Low
+severity: Medium
 category: RBAC
 tags:
 - V1

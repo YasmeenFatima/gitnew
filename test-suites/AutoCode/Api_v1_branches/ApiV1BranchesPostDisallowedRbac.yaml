@@ -22,7 +22,7 @@ testCases:
       "branchName" : "{{@Var.branchName}}",
       "branchType" : "{{@Var.branchType}}",
       "createdBy" : "{{@Var.createdBy}}",
-      "createdDate" : "67-54-34",
+      "createdDate" : "{{@Var.createdDate}}",
       "faxNumber" : "{{@Var.faxNumber}}",
       "id" : "{{@Var.id}}",
       "inactive" : false,
@@ -35,7 +35,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: Low
+severity: Medium
 category: RBAC
 tags:
 - V1

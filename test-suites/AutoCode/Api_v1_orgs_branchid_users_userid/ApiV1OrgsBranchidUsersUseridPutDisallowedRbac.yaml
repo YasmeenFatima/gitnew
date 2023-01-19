@@ -12,8 +12,9 @@ endpoint: /api/v1/orgs/{{@Var.branchId}}/users/{{@Var.userId}}
 method: PUT
 auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
 headers:
-- 'Accept: application/json'
-- 'Content-Type: application/json'
+- 'Accept: application/xml'
+- ' Content-Type: application/json'
+- ' Origin: vulnerable.{{@Host}}'
 testCases:
 - id: 1
   body: |-
@@ -58,7 +59,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: Low
+severity: Medium
 category: RBAC
 tags:
 - V1
