@@ -31,7 +31,7 @@ testCases:
         "createdDate" : "{{@Var.createdDate}}",
         "id" : "{{@Var.id}}",
         "inactive" : false,
-        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedBy" : "Fatima",
         "modifiedDate" : "{{@Var.modifiedDate}}",
         "name" : "{{@Var.name}}",
         "version" : "{{@Var.version}}"

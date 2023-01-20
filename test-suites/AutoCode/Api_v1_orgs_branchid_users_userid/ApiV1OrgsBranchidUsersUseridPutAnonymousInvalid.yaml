@@ -12,9 +12,8 @@ endpoint: /api/v1/orgs/{{@Var.branchId}}/users/{{@Var.userId}}
 method: PUT
 auth: Anonymous
 headers:
-- 'Accept: application/xml'
-- ' Content-Type: application/json'
-- ' Origin: vulnerable.{{@Host}}'
+- 'Accept: application/json'
+- 'Content-Type: application/json'
 testCases:
 - id: 1
   body: |-

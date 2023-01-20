@@ -23,7 +23,7 @@ testCases:
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
       "description" : "{{@Var.description}}",
-      "id" : "12345}",
+      "id" : "{{@Var.id}}",
       "inactive" : false,
       "location" : "{{@Var.location}}",
       "modifiedBy" : "{{@Var.modifiedBy}}",
