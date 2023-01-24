@@ -17,18 +17,18 @@ headers:
 testCases: []
 useCategoryAssertion: false
 assertions:
-- '@StatusCode == 200'
+- '@StatusCode == 401 OR @Response.errors == true'
 cleanup: []
 severity: Critical
 category: Unsecured
 tags:
 - V1
-- OWASP-API2
-- OWASP - OTG-AUTHN-002
-- OWASP API Security Top 10
 - Broken Authentication
 - Non-Intrusive
 - '[2020 CWE TOP 24] CWE - 306'
+- OWASP-API2
+- OWASP - OTG-AUTHN-002
+- OWASP API Security Top 10
 inactive: false
 policies:
   initExec: Request
