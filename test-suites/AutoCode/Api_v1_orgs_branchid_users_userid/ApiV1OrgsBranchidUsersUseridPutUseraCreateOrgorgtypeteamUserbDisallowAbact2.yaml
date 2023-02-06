@@ -35,8 +35,8 @@ testCases:
         "name" : "{{@Random}}",
         "version" : ""
       },
-      "orgRole" : "WRITE",
-      "status" : "REMOVED",
+      "orgRole" : "ENTERPRISE_ADMIN",
+      "status" : "INACTIVE",
       "users" : {
         "company" : "{{@Faker.company.name}}",
         "createdBy" : "",
@@ -61,7 +61,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgorgtypeteamAbstractAbact2
-severity: Low
+severity: High
 category: ABAC_Level2
 tags:
 - V1

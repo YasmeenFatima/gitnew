@@ -24,7 +24,7 @@ testCases:
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
       "faxNumber" : "{{@Var.faxNumber}}",
-      "id" : "{{@Var.id}}",
+      "id" : "12345",
       "inactive" : false,
       "modifiedBy" : "{{@Var.modifiedBy}}",
       "modifiedDate" : "{{@Var.modifiedDate}}",

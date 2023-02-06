@@ -14,7 +14,7 @@ method: PUT
 auth: UserC
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-
@@ -41,7 +41,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgorgplanteamAbstractAbact2
-severity: Low
+severity: High
 category: ABAC_Level2
 tags:
 - V1

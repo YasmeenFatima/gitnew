@@ -24,7 +24,7 @@ testCases:
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
       "faxNumber" : "{{@Injection}}",
-      "id" : "{{@Var.id}}",
+      "id" : "12345",
       "inactive" : false,
       "modifiedBy" : "{{@Var.modifiedBy}}",
       "modifiedDate" : "{{@Var.modifiedDate}}",
@@ -56,7 +56,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/sql_injection_timebound'
+  repeatModule: '@Default/Common/sql_injection_timebound'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

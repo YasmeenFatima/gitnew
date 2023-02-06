@@ -29,7 +29,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgId" : "{{@Random}}",
-      "orgRole" : "WRITE",
+      "orgRole" : "ADMIN",
       "password" : "{{@PassAlphaNumSpl}}",
       "username" : "{{@Faker.name.username}}",
       "version" : ""
@@ -41,7 +41,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgorgplanenterpriseAbstractAbact2
-severity: Low
+severity: High
 category: ABAC_Level2
 tags:
 - V1

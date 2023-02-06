@@ -9,7 +9,7 @@ init:
 - OrgOrgplanBusinessCreateUserAInitAbact2
 localVariables: []
 path: /api/v1/orgs/search
-endpoint: /api/v1/orgs/search?keyword={{@OrgOrgplanBusinessCreateUserAInitAbact2_Response.data.id}}&page=0&pageSize=20
+endpoint: /api/v1/orgs/search?pageSize=20&page=0&keyword={{@OrgOrgplanBusinessCreateUserAInitAbact2_Response.data.id}}
 method: GET
 auth: UserC
 headers:
@@ -22,7 +22,7 @@ assertions:
   == true'
 cleanup:
 - ApiV1OrgsIdDeleteOrgorgplanbusinessAbstractAbact2
-severity: Low
+severity: High
 category: ABAC_Level2
 tags:
 - V1

@@ -13,7 +13,7 @@ method: PUT
 auth: Default
 headers:
 - 'Accept: application/json'
-- 'Content-Type: application/json'
+- ' Content-Type: application/xml'
 testCases:
 - id: 1
   body: |-
@@ -42,13 +42,13 @@ severity: Critical
 category: NoSQL_Injection
 tags:
 - V1
-- OWASP API Security Top 10
 - Injection
 - '[2020 CWE TOP 6] CWE - 89'
 - OWASP-API8
 - '[PCI DSS 3.0] 6.5.1'
 - '[PCI DSS 3.2.1] 6.5.1'
 - OWASP - OTG-INPVAL-005
+- OWASP API Security Top 10
 inactive: false
 policies:
   initExec: Request
@@ -57,7 +57,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/no_sql_injection_timebound'
+  repeatModule: '@Default/Common/no_sql_injection_timebound'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

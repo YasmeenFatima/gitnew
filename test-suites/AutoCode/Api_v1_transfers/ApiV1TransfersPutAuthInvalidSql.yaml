@@ -33,6 +33,8 @@ testCases:
   inactive: false
 useCategoryAssertion: false
 assertions:
+- '@StatusCode == 401 OR @StatusCode == 403 OR @StatusCode == 405 OR @StatusCode ==
+  406'
 - '@ResponseTime < 7000'
 cleanup: []
 severity: Critical

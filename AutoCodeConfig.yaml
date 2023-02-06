@@ -33,7 +33,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -117,7 +117,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -159,7 +159,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -245,7 +245,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -284,7 +284,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -1226,7 +1226,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "ABAC"
   payloads: null
   customHeaders: null
   auth: null
@@ -5177,7 +5177,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "ABAC"
   payloads: null
   customHeaders: null
   auth: null
@@ -6306,7 +6306,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "ABAC"
   payloads: null
   customHeaders: null
   auth: null
@@ -10110,7 +10110,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -10154,7 +10154,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: null
@@ -10242,7 +10242,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: null
@@ -10370,7 +10370,7 @@ generators:
   customType: "stored_injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "STORED_INJECTION"
   payloads: null
   customHeaders: null
   auth: null
@@ -10412,7 +10412,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "STORED_INJECTION"
   payloads: null
   customHeaders: null
   auth: null
@@ -10495,7 +10495,7 @@ generators:
   customType: "stored_injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "STORED_INJECTION"
   payloads: null
   customHeaders: null
   auth: null
@@ -10535,7 +10535,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: null
@@ -10569,7 +10569,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -10600,7 +10600,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -10668,7 +10668,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -10824,9 +10824,9 @@ generators:
   owner: "Default"
   assertions: []
   tags: []
-  severity: null
+  severity: "Medium"
   database: null
-  inactive: true
+  inactive: false
   matches:
   - name: null
     value: null
@@ -10845,9 +10845,9 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
-  customHeaders: null
+  customHeaders: "PUT:/api/v1/orgs/{id}[Accept: application/json, Content-Type: application/xml]"
   auth: null
   endpointSelection: "ALL"
   safeServerUrl: null
@@ -11368,7 +11368,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -11825,7 +11825,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -11972,7 +11972,7 @@ generators:
   customType: "BasicCustomHeader"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: "*:/**[Origin: vulnerable.{{@Host}}]"
   auth: "Default"
@@ -12011,7 +12011,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -12041,7 +12041,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -12075,7 +12075,7 @@ generators:
   customType: "BasicCustomHeader"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Anonymous"
@@ -12634,7 +12634,7 @@ generators:
   customType: "stored_injection"
   useCategoryAssertion: null
   addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  categoryGroup: "STORED_INJECTION"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -12664,7 +12664,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -13684,7 +13684,7 @@ generators:
   customType: "Compliance1"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -14127,7 +14127,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: "Default"
@@ -14245,12 +14245,12 @@ generators:
   customType: "stored_injection"
   useCategoryAssertion: null
   addOptionalParams: false
-  categoryGroup: "DEFAULT"
+  categoryGroup: "STORED_INJECTION"
   payloads: null
   customHeaders: null
   auth: "Default"
   endpointSelection: "ALL"
-  safeServerUrl: null
+  safeServerUrl: "stg.apisec.ai"
   showResponse: true
 - type: "oracle_sql_injection"
   owner: "Default"

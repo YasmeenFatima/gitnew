@@ -30,7 +30,7 @@ testCases:
       "modifiedDate" : "",
       "name" : "{{@Random}}",
       "orgPlan" : "ENTERPRISE",
-      "orgType" : "TEAM",
+      "orgType" : " TEAM",
       "version" : ""
     }
   inactive: false
@@ -38,7 +38,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 200 OR @StatusCode == 201 OR @Response.errors != true'
 cleanup: []
-severity: Low
+severity: High
 category: ABAC_Level2
 tags:
 - V1
