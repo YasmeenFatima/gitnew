@@ -33,7 +33,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: "DEFAULT"
+  categoryGroup: null
   payloads: null
   customHeaders: null
   auth: null
@@ -10309,7 +10309,7 @@ generators:
   - "OWASP-API8"
   - "[PCI DSS 3.0] 6.5.7"
   - "[PCI DSS 3.2] 6.5.1"
-  severity: "Critical"
+  severity: "High"
   database: null
   inactive: false
   matches:
@@ -10328,7 +10328,7 @@ generators:
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: null

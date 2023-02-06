@@ -24,7 +24,7 @@ testCases:
       "createdBy" : "{{@Var.createdBy}}",
       "createdDate" : "{{@Var.createdDate}}",
       "faxNumber" : "{{@Injection}}",
-      "id" : "{{@Var.id}}",
+      "id" : "12345",
       "inactive" : false,
       "modifiedBy" : "{{@Var.modifiedBy}}",
       "modifiedDate" : "{{@Var.modifiedDate}}",
@@ -35,7 +35,7 @@ useCategoryAssertion: false
 assertions:
 - '@ResponseTime < 7000 OR @StatusCode == 400'
 cleanup: []
-severity: Critical
+severity: High
 category: Linux_Command_Injection
 tags:
 - V1
@@ -59,7 +59,7 @@ policies:
   timeoutSeconds: 300
   repeatOnFailure: 0
   repeat: 0
-  repeatModule: '@APIsec/Common/Linux_Command_Injection'
+  repeatModule: '@Default/Common/Linux_Command_Injection'
   repeatDelay: 0
   unmaskToken: false
   postExecutionDelay: 0
