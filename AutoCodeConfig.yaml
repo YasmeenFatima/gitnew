@@ -5,8 +5,8 @@ generators:
 - type: "anonymous_invalid"
   owner: "Default"
   assertions:
+  - "Disallowed:@StatusCode == 401 OR @Response.errors == true"
   - "Allowed:@StatusCode == 200"
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 404"
   tags:
   - "OWASP-API2"
   - "OWASP - OTG-AUTHN-002"
@@ -33,7 +33,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: null
+  categoryGroup: "DEFAULT"
   payloads: null
   customHeaders: null
   auth: null
@@ -1226,7 +1226,7 @@ generators:
   customType: "Basic"
   useCategoryAssertion: null
   addOptionalParams: null
-  categoryGroup: "ABAC"
+  categoryGroup: null
   payloads: null
   customHeaders: null
   auth: null
