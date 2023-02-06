@@ -10,7 +10,7 @@ localVariables: []
 path: /api/v1/bank-account
 endpoint: /api/v1/bank-account
 method: PUT
-auth: ""
+auth: ROLE_USER,ROLE_ADMIN,ROLE_PM
 headers:
 - 'Accept: application/json'
 - 'Content-Type: application/json'
@@ -43,7 +43,7 @@ useCategoryAssertion: false
 assertions:
 - '@StatusCode == 401 OR @StatusCode == 403'
 cleanup: []
-severity: High
+severity: Medium
 category: RBAC
 tags:
 - V1
